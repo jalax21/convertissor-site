@@ -17,38 +17,38 @@ export default async function HomePage({
 
   bottomTitle:
     locale === "fr"
-      ? "Convertisseur"
-      : "Converter",
+      ? "Convertisseurs"
+      : "Converters",
 
     distance:
       locale === "fr"
-        ? "Distance"
-        : "Distance",
+        ? "Distances"
+        : "Distances",
 
     power:
       locale === "fr"
-        ? "Puissance"
-        : "Power",
+        ? "Puissances"
+        : "Powers",
 
     volume:
       locale === "fr"
-        ? "Volume"
-        : "Volume",
+        ? "Volumes"
+        : "Volumes",
 
     force:
       locale === "fr"
-        ? "Force"
-        : "Force",
+        ? "Forces"
+        : "Forces",
 
     surface:
       locale === "fr"
-        ? "Surface"
-        : "Surface",
+        ? "Surfaces"
+        : "Surfaces",
 
     temperature:
       locale === "fr"
-        ? "Température"
-        : "Temperature",
+        ? "Températures"
+        : "Temperatures",
 
     weight:
       locale === "fr"
@@ -57,8 +57,8 @@ export default async function HomePage({
 
     storage:
       locale === "fr"
-       ? "Stockage"
-       : "Storage",
+       ? "Stockages"
+       : "Storages",
 
     internetSpeed:
       locale === "fr"
@@ -148,7 +148,7 @@ export default async function HomePage({
       ⚡
     </span>
   </a>
-
+  
   {/* VOLUME */}
 
   <a
@@ -231,7 +231,7 @@ export default async function HomePage({
   className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
 >
   <span className="text-lg font-bold">
-    {locale === "fr" ? "Vitesse" : "Speed"}
+    {locale === "fr" ? "Vitesses" : "Speed"}
   </span>
 
   <span className="text-3xl">
@@ -255,6 +255,21 @@ export default async function HomePage({
     ⏱️
   </span>
 
+</a>
+
+<a
+  href={`/${locale}/convert/angle`}
+  className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+>
+  <span className="text-lg font-bold">
+    {locale === "fr"
+      ? "Angles"
+      : "Angles"}
+  </span>
+
+  <span className="text-3xl">
+    📐
+  </span>
 </a>
 
 {/* STORAGE */}
