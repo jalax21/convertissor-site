@@ -18,7 +18,7 @@ export const mathsFiches = [
         "AB² + BC² = AC²",
 
       exemple:
-        "3² + 4² = 5²",
+        "3² + 4² = 5² = 25",
 
     },
   },
@@ -81,13 +81,13 @@ export const mathsFiches = [
     content: {
 
       definition:
-        "Une équation est une égalité contenant une inconnue.",
+        "Une équation est une égalité contenant une ou plusieurs inconnues.",
 
       formule:
         "ax + b = 0",
 
       exemple:
-        "2x + 4 = 0 → x = -2",
+        "2x + 4 = 0 → x = -2 ",
 
     },
   },
@@ -104,13 +104,13 @@ export const mathsFiches = [
     content: {
 
       definition:
-        "Une puissance permet d’écrire des multiplications répétées.",
+        "On considère un nombre <strong>a</strong> quelconque et un entier naturel <strong>n</strong> non nul. La puissance n-ième de <strong>a</strong>, notée <strong>aⁿ</strong> et lue « <strong>a</strong> puissance <strong>n</strong> », ou « <strong>a</strong> exposant <strong>n</strong>  » est le produit de <strong>n</strong> facteurs tous égaux à <strong>a</strong>.",
 
       formule:
-        "aⁿ",
+        "aⁿ = a x a x ... x a = n facteurs de a",
 
       exemple:
-        "2³ = 8",
+        "2³ = 2 x 2 x 2 = 8",
 
     },
   },

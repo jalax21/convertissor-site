@@ -91,7 +91,7 @@ export default async function Page({
             🧠 Formule
           </h2>
 
-          <div className="text-3xl font-black text-center">
+          <div className="text-xl font-black text-center">
             {fiche.content.formule}
           </div>
 
@@ -105,7 +105,7 @@ export default async function Page({
             ✏ Exemple
           </h2>
 
-          <p className="text-3xl font-black text-center">
+          <p className="text-xl font-black text-center">
             {fiche.content.exemple}
           </p>
 
