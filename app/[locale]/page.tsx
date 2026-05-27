@@ -114,13 +114,13 @@ export default async function HomePage({
 
         {/* TITRE CATEGORIES */}
 
-<h2 className="text-3xl font-bold mb-8 text-left">
+<h2 className="text-3xl font-bold mt-12 mb-8 text-left">
   {text.bottomTitle}
 </h2>
 
 {/* CATEGORIES */}
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
 
   {/* DISTANCE */}
 
