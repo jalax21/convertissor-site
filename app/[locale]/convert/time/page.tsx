@@ -2,7 +2,7 @@
 
 import { use, useState } from "react"
 import Link from "next/link"
-import AdBanner from "@/component/AdBanner"
+import AdBanner from "@/components/AdBanner"
 
 const units: Record<string, number> = {
 

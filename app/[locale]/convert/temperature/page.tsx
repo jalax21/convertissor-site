@@ -2,7 +2,7 @@
 
 import { use, useState } from "react"
 import Link from "next/link"
-import AdBanner from "@/component/AdBanner"
+import AdBanner from "@/components/AdBanner"
 
 export default function TemperatureConverter({
   params,

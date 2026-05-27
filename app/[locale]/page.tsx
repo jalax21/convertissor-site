@@ -1,5 +1,5 @@
 import Script from "next/script"
-import AdBanner from "@/component/AdBanner"
+import AdBanner from "@/components/AdBanner"
 
 export default async function HomePage({
   params
