@@ -16,47 +16,47 @@ export default async function MathsPage({
     {
       title: "Thalès",
       emoji: "📏",
-      href: "/revisions/maths/thales",
+      href: "/${locale}/revisions/maths/thales",
     },
     {
       title: "Fractions",
       emoji: "➗",
-      href: "/revisions/maths/fractions",
+      href: "/${locale}/revisions/maths/fractions",
     },
     {
       title: "Pourcentages",
       emoji: "💯",
-      href: "/revisions/maths/pourcentages",
+      href: "/${locale}/revisions/maths/pourcentages",
     },
     {
       title: "Équations",
       emoji: "✏️",
-      href: "/revisions/maths/equations",
+      href: "/${locale}/revisions/maths/equations",
     },
     {
       title: "Puissances",
       emoji: "⚡",
-      href: "/revisions/maths/puissances",
+      href: "/${locale}/revisions/maths/puissances",
     },
     {
       title: "Fonctions",
       emoji: "📈",
-      href: "/revisions/maths/fonctions",
+      href: "/${locale}/revisions/maths/fonctions",
     },
     {
       title: "Probabilités",
       emoji: "🎲",
-      href: "/revisions/maths/probabilites",
+      href: "/${locale}/revisions/maths/probabilites",
     },
     {
       title: "Statistiques",
       emoji: "📊",
-      href: "/revisions/maths/statistiques",
+      href: "/${locale}/revisions/maths/statistiques",
     },
     {
       title: "Racines carrées",
       emoji: "√",
-      href: "/revisions/maths/racines-carrees",
+      href: "/${locale}/revisions/maths/racines-carrees",
     },
   ]
 

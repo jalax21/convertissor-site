@@ -1,4 +1,5 @@
-import { mathsFiches } from "@/app/data/revisions/maths"
+import { mathsFiches } from "@/data/revisions/maths"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import AdBanner from "@/components/AdBanner"
 
@@ -58,6 +59,27 @@ export default async function Page({
           </p>
 
         </section>
+        {/* IMAGE */}
+
+<section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
+
+  <h2 className="text-2xl font-bold mb-4">
+    🖼 Illustration
+  </h2>
+
+  <div className="flex justify-center">
+
+    <Image
+  src={fiche.image}
+  alt={fiche.title}
+  width={900}
+  height={600}
+  className="rounded-2xl"
+/>
+
+  </div>
+
+</section>
 
         {/* FORMULE */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
@@ -72,6 +94,7 @@ export default async function Page({
 
         </section>
 
+        
         {/* EXEMPLE */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
@@ -79,7 +102,7 @@ export default async function Page({
             ✏ Exemple
           </h2>
 
-          <p className="text-lg leading-8 text-gray-700 dark:text-gray-300">
+          <p className="text-3xl font-black text-center">
             {fiche.content.exemple}
           </p>
 
