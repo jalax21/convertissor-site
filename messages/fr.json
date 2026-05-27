@@ -1,0 +1,12 @@
+{
+  "home": {
+    "title": "Convertissor",
+    "distance": "Distance",
+    "weight": "Poids",
+    "temperature": "Température",
+    "volume": "Volume",
+    "surface": "Surface",
+    "power": "Puissance",
+    "force": "Force"
+  }
+}
