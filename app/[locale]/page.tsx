@@ -74,6 +74,10 @@ export default async function HomePage({
 
 <div className="relative mb-12">
 
+  {/* BANNIERE PUB */}
+
+         <AdBanner />
+  
   {/* TITRE CENTRE */}
 
   <h1 className="text-6xl md:text-7xl font-bold text-center">
@@ -105,9 +109,7 @@ export default async function HomePage({
       <div className="max-w-2xl mx-auto">
 
       
-        {/* BANNIERE PUB */}
-
-         <AdBanner />
+        
 
         {/* TITRE CATEGORIES */}
 
