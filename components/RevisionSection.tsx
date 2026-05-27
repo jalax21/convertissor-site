@@ -1,12 +1,17 @@
 "use client"
 
 import Link from "next/link"
+export default function RevisionSection({
+  locale,
+}: {
+  locale: string
+}) {
 
 const revisions = [
   {
     title: "Maths",
     emoji: "📐",
-    href: "/revisions/maths",
+    href: `/${locale}/revisions/maths`
   },
   {
     title: "Physique",
@@ -35,7 +40,7 @@ const revisions = [
   },
 ]
 
-export default function RevisionSection() {
+
   return (
     <section className="mt-12">
       {/* TITRE */}

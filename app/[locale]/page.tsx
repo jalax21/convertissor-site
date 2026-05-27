@@ -13,8 +13,8 @@ export default async function HomePage({
   const text = {
   title:
     locale === "fr"
-      ? "QuickUnits"
-      : "QuickUnits",
+      ? "QuickUnits.fr"
+      : "QuickUnits.fr",
 
   bottomTitle:
     locale === "fr"
@@ -48,8 +48,8 @@ export default async function HomePage({
 
     temperature:
       locale === "fr"
-        ? "Températures"
-        : "Temperatures",
+        ? "Température"
+        : "Temperature",
 
     weight:
       locale === "fr"
@@ -114,9 +114,25 @@ export default async function HomePage({
 
         {/* TITRE CATEGORIES */}
 
-<h2 className="text-3xl font-bold mt-12 mb-8 text-left">
-  {text.bottomTitle}
-</h2>
+<div className="mt-12 mb-8">
+
+  <div className="flex items-center gap-3">
+    <span className="text-4xl">
+      🧮
+    </span>
+
+    <h2 className="text-3xl font-bold">
+      {text.bottomTitle}
+    </h2>
+  </div>
+
+  <p className="mt-2 text-gray-500 dark:text-gray-400">
+    {locale === "fr"
+      ? "Convertisseurs simples et rapides"
+      : "Fast and simple converters"}
+  </p>
+
+</div>
 
 {/* CATEGORIES */}
 
@@ -128,7 +144,7 @@ export default async function HomePage({
     href={`/${locale}/convert/distance`}
     className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
   >
-    <span className="text-lg font-bold">
+    <span className="text-base font-bold">
       {text.distance}
     </span>
 
@@ -143,7 +159,7 @@ export default async function HomePage({
     href={`/${locale}/convert/puissance`}
     className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
   >
-    <span className="text-lg font-bold">
+    <span className="text-base font-bold">
       {text.power}
     </span>
 
@@ -158,7 +174,7 @@ export default async function HomePage({
     href={`/${locale}/convert/volume`}
     className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
   >
-    <span className="text-lg font-bold">
+    <span className="text-base font-bold">
       {text.volume}
     </span>
 
@@ -173,7 +189,7 @@ export default async function HomePage({
     href={`/${locale}/convert/force`}
     className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
   >
-    <span className="text-lg font-bold">
+    <span className="text-base font-bold">
       {text.force}
     </span>
 
@@ -188,7 +204,7 @@ export default async function HomePage({
     href={`/${locale}/convert/surface`}
     className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
   >
-    <span className="text-lg font-bold">
+    <span className="text-base font-bold">
       {text.surface}
     </span>
 
@@ -203,7 +219,7 @@ export default async function HomePage({
     href={`/${locale}/convert/temperature`}
     className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
   >
-    <span className="text-lg font-bold">
+    <span className="text-base font-bold">
       {text.temperature}
     </span>
 
@@ -218,7 +234,7 @@ export default async function HomePage({
     href={`/${locale}/convert/weight`}
     className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
   >
-    <span className="text-lg font-bold">
+    <span className="text-base font-bold">
       {text.weight}
     </span>
 
@@ -233,7 +249,7 @@ export default async function HomePage({
   href={`/${locale}/convert/speed`}
   className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
 >
-  <span className="text-lg font-bold">
+  <span className="text-base font-bold">
     {locale === "fr" ? "Vitesses" : "Speed"}
   </span>
 
@@ -248,7 +264,7 @@ export default async function HomePage({
   href={`/${locale}/convert/time`}
   className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
 >
-  <span className="text-lg font-bold">
+  <span className="text-base font-bold">
     {locale === "fr"
       ? "Temps"
       : "Time"}
@@ -264,7 +280,7 @@ export default async function HomePage({
   href={`/${locale}/convert/angle`}
   className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
 >
-  <span className="text-lg font-bold">
+  <span className="text-base font-bold">
     {locale === "fr"
       ? "Angles"
       : "Angles"}
@@ -281,7 +297,7 @@ export default async function HomePage({
   href={`/${locale}/convert/storage`}
   className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
 >
-  <span className="text-lg font-bold">
+  <span className="text-base font-bold">
     {locale === "fr"
       ? "Stockage"
       : "Storage"}
@@ -299,7 +315,7 @@ export default async function HomePage({
   href={`/${locale}/convert/internet-speed`}
   className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
 >
-  <span className="text-lg font-bold">
+  <span className="text-base font-bold">
     {locale === "fr"
       ? "Débit internet"
       : "Internet Speed"}
@@ -315,7 +331,7 @@ export default async function HomePage({
 
         </div>
         
-        <RevisionSection />
+        <RevisionSection locale={locale} />
 
       </div>
 
