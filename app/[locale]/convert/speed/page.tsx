@@ -2,6 +2,7 @@
 
 import { use, useState } from "react"
 import Link from "next/link"
+import AdBanner from "@/component/AdBanner"
 
 const units: Record<string, number> = {
 
@@ -325,9 +326,7 @@ export default function SpeedConverter({
 
         {/* BANNIERE PUB */}
 
-        <div className="w-full h-24 rounded-2xl border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400 text-lg font-semibold">
-          Publicité
-        </div>
+        <AdBanner />
 
       </div>
 

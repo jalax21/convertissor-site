@@ -1,4 +1,6 @@
 import Script from "next/script"
+import AdBanner from "@/component/AdBanner"
+
 export default async function HomePage({
   params
 }: {
@@ -103,27 +105,9 @@ export default async function HomePage({
       <div className="max-w-2xl mx-auto">
 
       
-        {/* TOP BANNER */}
+        {/* BANNIERE PUB */}
 
-<div className="border border-gray-300 dark:border-gray-700 rounded-2xl h-28 mb-10 flex items-center justify-center text-xl font-bold">
-
-  <Script
-    async
-    strategy="afterInteractive"
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2235128568846852"
-    crossOrigin="anonymous"
-  />
-
-  <ins
-    className="adsbygoogle"
-    style={{ display: "block", width: "100%" }}
-    data-ad-client="ca-pub-2235128568846852"
-    data-ad-slot="1234567890"
-    data-ad-format="auto"
-    data-full-width-responsive="true"
-  />
-
-</div>
+         <AdBanner />
 
         {/* TITRE CATEGORIES */}
 
