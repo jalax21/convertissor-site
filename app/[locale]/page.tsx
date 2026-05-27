@@ -1,3 +1,4 @@
+import Script from "next/script"
 export default async function HomePage({
   params
 }: {
@@ -9,8 +10,8 @@ export default async function HomePage({
   const text = {
   title:
     locale === "fr"
-      ? "TITRE"
-      : "TITLE",
+      ? "QuickUnits"
+      : "QuickUnits",
 
   bottomTitle:
     locale === "fr"
@@ -104,11 +105,25 @@ export default async function HomePage({
       
         {/* TOP BANNER */}
 
-        <div className="border border-gray-300 dark:border-gray-700 rounded-2xl h-28 mb-10 flex items-center justify-center text-xl font-bold">
+<div className="border border-gray-300 dark:border-gray-700 rounded-2xl h-28 mb-10 flex items-center justify-center text-xl font-bold">
 
-          PUB BANNER
+  <Script
+    async
+    strategy="afterInteractive"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2235128568846852"
+    crossOrigin="anonymous"
+  />
 
-        </div>
+  <ins
+    className="adsbygoogle"
+    style={{ display: "block", width: "100%" }}
+    data-ad-client="ca-pub-2235128568846852"
+    data-ad-slot="1234567890"
+    data-ad-format="auto"
+    data-full-width-responsive="true"
+  />
+
+</div>
 
         {/* TITRE CATEGORIES */}
 
