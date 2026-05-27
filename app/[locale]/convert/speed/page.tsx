@@ -312,6 +312,18 @@ export default function SpeedConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    km/h to mph • mph to km/h • knots to km/h •
+    km/h to knots • m/s to km/h
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 

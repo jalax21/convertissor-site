@@ -292,6 +292,19 @@ export default function ForceConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    newtons to pounds-force • pounds-force to newtons •
+    kilonewtons to newtons • newtons to kilonewtons •
+    dynes to newtons
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 

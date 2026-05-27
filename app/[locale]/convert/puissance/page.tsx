@@ -290,6 +290,18 @@ export default function PowerConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    watts to horsepower • horsepower to watts •
+    kilowatts to watts • watts to kilowatts
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 

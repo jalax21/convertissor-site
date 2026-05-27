@@ -253,6 +253,18 @@ export default function StorageConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    MB to GB • GB to TB • KB to MB • bytes to gigabytes •
+    TB to GB • GB to MB
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 

@@ -298,6 +298,19 @@ export default function TimeConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    seconds to minutes • minutes to hours • hours to days •
+    days to weeks • milliseconds to seconds •
+    years to days
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 

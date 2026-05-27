@@ -273,6 +273,18 @@ export default function TemperatureConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    celsius to fahrenheit • fahrenheit to celsius •
+    kelvin to celsius • celsius to kelvin
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 

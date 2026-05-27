@@ -304,6 +304,18 @@ export default function WeightConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    kg to lbs • lbs to kg • grams to ounces • ounces to grams •
+    tons to kilograms • kilograms to tons
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 

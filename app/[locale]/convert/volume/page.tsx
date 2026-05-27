@@ -401,6 +401,18 @@ export default function VolumeConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    liters to gallons • gallons to liters • ml to cups • cups to ml •
+    liters to milliliters • milliliters to liters
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 

@@ -308,6 +308,18 @@ export default function SurfaceConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    square meters to square feet • square feet to square meters •
+    hectares to acres • acres to hectares
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 

@@ -270,6 +270,18 @@ export default function InternetSpeedConverter({
           </div>
 
         </div>
+        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+
+  {locale === "fr"
+    ? "Conversions populaires :"
+    : "Popular conversions:"}
+
+  <div className="mt-2">
+    Mbps to MB/s • MB/s to Mbps • kbps to Mbps •
+    Mbps to Gbps • Gbps to Mbps • bytes to bits
+  </div>
+
+</div>
 
         {/* BOUTON RETOUR */}
 
