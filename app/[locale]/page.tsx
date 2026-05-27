@@ -72,7 +72,7 @@ export default async function HomePage({
 
       {/* HEADER */}
 
-<div className="relative mb-12">
+<div className="relative mt-8">
 
   {/* BANNIERE PUB */}
 
