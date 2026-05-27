@@ -1,5 +1,6 @@
 import Script from "next/script"
 import AdBanner from "@/components/AdBanner"
+import RevisionSection from "@/components/RevisionSection"
 
 export default async function HomePage({
   params
@@ -310,7 +311,11 @@ export default async function HomePage({
 
 </a>
 
+
+
         </div>
+        
+        <RevisionSection />
 
       </div>
 
