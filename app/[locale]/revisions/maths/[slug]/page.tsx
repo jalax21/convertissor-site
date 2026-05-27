@@ -54,9 +54,12 @@ export default async function Page({
             📘 Définition
           </h2>
 
-          <p className="text-lg leading-8 text-gray-700 dark:text-gray-300">
-            {fiche.content.definition}
-          </p>
+          <p
+  className="text-xl leading-8 text-gray-700 dark:text-gray-300"
+  dangerouslySetInnerHTML={{
+    __html: fiche.content.definition,
+  }}
+/>
 
         </section>
         {/* IMAGE */}

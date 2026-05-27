@@ -12,7 +12,7 @@ export const mathsFiches = [
     content: {
 
       definition:
-        "Dans un triangle rectangle, le carré de l’hypoténuse est égal à la somme des carrés des deux autres côtés.",
+        " Dans un triangle rectangle, le carré de la longueur de l’hypoténuse (ou côté opposé à l'angle droit) est égal à la somme des carrés des longueurs des deux autres côtés",
 
       formule:
         "AB² + BC² = AC²",
@@ -24,50 +24,27 @@ export const mathsFiches = [
   },
 
   {
-    slug: "thales",
+  slug: "thales",
 
-    title: "Théorème de Thalès",
+  title: "Théorème de Thalès",
 
-    emoji: "📏",
+  emoji: "📏",
 
-    image: "/images/revisions/maths/thales.png",
+  image: "/images/revisions/maths/thales.png",
 
-    content: {
+  content: {
 
-      definition:
-        "Dans des triangles en configuration de Thalès, les longueurs sont proportionnelles.",
+    definition:
+  "<strong><u>Théorème de Thalès</u></strong> - Soit un triangle ABC, et deux points D et E, D sur la droite (AB) et E sur la droite (AC), de sorte que la droite (DE) soit parallèle à la droite (BC).Alors :<br /><div style='text-align:center'>AD/AB = AE/AC = DE/BC</div><br /><br /><strong><u>Réciproque du théorème de Thalès</u></strong> - Dans un triangle ABC, supposons donnés des points D et E appartenant respectivement aux segments [AB] et [AC]. Si les rapports AD/AB et AE/AC sont égaux, alors les droites (DE) et (BC) sont parallèles.",
 
-      formule:
-        "AB / AC = DE / DF",
+    formule:
+      "AD / AB = AE / AC = DE / BC",
 
-      exemple:
-        "2 / 4 = 3 / 6",
+    exemple:
+      "2 / 4 = 2 / 4 = 3 / 6",
 
-    },
   },
-
-  {
-    slug: "fractions",
-
-    title: "Fractions",
-
-    emoji: "➗",
-
-    image: "/images/revisions/maths/fractions.png",
-
-    content: {
-
-      definition:
-        "Une fraction représente une partie d’un tout.",
-
-      formule:
-        "a / b",
-
-      exemple:
-        "1/2 + 1/2 = 1",
-
-    },
-  },
+},
 
   {
     slug: "pourcentages",
