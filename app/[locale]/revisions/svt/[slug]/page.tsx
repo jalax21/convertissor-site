@@ -2,6 +2,7 @@ import { svtFiches } from "@/data/revisions/svt"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import AdBanner from "@/components/AdBanner"
+import Link from "next/link"
 
 export default async function Page({
   params,
@@ -12,7 +13,7 @@ export default async function Page({
   }>
 }) {
 
-  const { slug } = await params
+  const { slug, locale } = await params
 
   const fiche = svtFiches.find(
     (f) => f.slug === slug
@@ -30,21 +31,27 @@ export default async function Page({
       <div className="max-w-3xl mx-auto">
 
         {/* TITRE */}
-        <div className="mt-8 mb-10">
+        <div className="mt-8 flex justify-center">
 
-          <div className="flex items-center gap-3">
+  <Link
+    href={`/${locale}`}
+    className="
+      px-8
+      py-4
+      rounded-2xl
+      bg-blue-600
+      text-white
+      hover:bg-blue-700
+      transition
+      font-bold
+      shadow-md
+      text-lg
+    "
+  >
+    ← Retour
+  </Link>
 
-            <span className="text-5xl">
-              {fiche.emoji}
-            </span>
-
-            <h1 className="text-4xl font-black">
-              {fiche.title}
-            </h1>
-
-          </div>
-
-        </div>
+</div>
 
         {/* DEFINITION */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">

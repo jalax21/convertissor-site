@@ -1,5 +1,6 @@
 import { francaisFiches } from "@/data/revisions/francais"
 import { notFound } from "next/navigation"
+import Link from "next/link"
 import AdBanner from "@/components/AdBanner"
 
 export default async function Page({
@@ -11,7 +12,7 @@ export default async function Page({
   }>
 }) {
 
-  const { slug } = await params
+  const { slug, locale } = await params
 
   const fiche = francaisFiches.find(
     (f) => f.slug === slug
@@ -28,22 +29,45 @@ export default async function Page({
 
       <div className="max-w-3xl mx-auto">
 
+        {/* TITRE + BOUTON RETOUR */}
         <div className="mt-8 mb-10">
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center justify-between gap-4">
 
-            <span className="text-5xl">
-              {fiche.emoji}
-            </span>
+            <div className="flex items-center gap-3">
 
-            <h1 className="text-4xl font-black">
-              {fiche.title}
-            </h1>
+              <span className="text-5xl">
+                {fiche.emoji}
+              </span>
+
+              <h1 className="text-4xl font-black">
+                {fiche.title}
+              </h1>
+
+            </div>
+
+            <Link
+              href={`/${locale}/revisions/francais`}
+              className="
+                px-6
+                py-3
+                rounded-2xl
+                bg-blue-600
+                text-white
+                hover:bg-blue-700
+                transition
+                font-bold
+                shadow-md
+              "
+            >
+              ← Retour
+            </Link>
 
           </div>
 
         </div>
 
+        {/* DEFINITION */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
@@ -59,6 +83,7 @@ export default async function Page({
 
         </section>
 
+        {/* EXEMPLE */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
@@ -71,6 +96,7 @@ export default async function Page({
 
         </section>
 
+        {/* A RETENIR */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
@@ -82,8 +108,6 @@ export default async function Page({
           </div>
 
         </section>
-
-        
 
       </div>
 

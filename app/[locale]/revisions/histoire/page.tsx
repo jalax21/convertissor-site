@@ -1,7 +1,7 @@
 import Link from "next/link"
 import AdBanner from "@/components/AdBanner"
 
-export default async function SvtPage({
+export default async function HistoirePage({
   params,
 }: {
   params: Promise<{ locale: string }>
@@ -11,54 +11,54 @@ export default async function SvtPage({
 
   const fiches = [
     {
-      title: "La cellule",
-      emoji: "🔬",
-      href: `/${locale}/revisions/svt/cellule`,
+      title: "La Préhistoire",
+      emoji: "🦴",
+      href: `/${locale}/revisions/histoire/prehistoire`,
     },
     {
-      title: "L'ADN",
-      emoji: "🧬",
-      href: `/${locale}/revisions/svt/adn`,
+      title: "L'Égypte antique",
+      emoji: "🏺",
+      href: `/${locale}/revisions/histoire/egypte-antique`,
     },
     {
-      title: "Génétique",
-      emoji: "🧬",
-      href: `/${locale}/revisions/svt/genetique`,
+      title: "La Grèce antique",
+      emoji: "🏛️",
+      href: `/${locale}/revisions/histoire/grece-antique`,
     },
     {
-      title: "Respiration",
-      emoji: "🫁",
-      href: `/${locale}/revisions/svt/respiration`,
+      title: "L'Empire romain",
+      emoji: "🦅",
+      href: `/${locale}/revisions/histoire/empire-romain`,
     },
     {
-      title: "Circulation sanguine",
-      emoji: "❤️",
-      href: `/${locale}/revisions/svt/circulation-sanguine`,
+      title: "Le Moyen Âge",
+      emoji: "🏰",
+      href: `/${locale}/revisions/histoire/moyen-age`,
     },
     {
-      title: "Digestion",
-      emoji: "🍎",
-      href: `/${locale}/revisions/svt/digestion`,
+      title: "La Renaissance",
+      emoji: "🎨",
+      href: `/${locale}/revisions/histoire/renaissance`,
     },
     {
-      title: "Photosynthèse",
-      emoji: "🌿",
-      href: `/${locale}/revisions/svt/photosynthese`,
+      title: "La Révolution française",
+      emoji: "🇫🇷",
+      href: `/${locale}/revisions/histoire/revolution-francaise`,
     },
     {
-      title: "Système nerveux",
-      emoji: "🧠",
-      href: `/${locale}/revisions/svt/systeme-nerveux`,
+      title: "Première Guerre mondiale",
+      emoji: "⚔️",
+      href: `/${locale}/revisions/histoire/premiere-guerre-mondiale`,
     },
     {
-      title: "Écosystèmes",
+      title: "Seconde Guerre mondiale",
       emoji: "🌍",
-      href: `/${locale}/revisions/svt/ecosystemes`,
+      href: `/${locale}/revisions/histoire/seconde-guerre-mondiale`,
     },
     {
-      title: "Évolution",
-      emoji: "🐒",
-      href: `/${locale}/revisions/svt/evolution`,
+      title: "La Guerre froide",
+      emoji: "☢️",
+      href: `/${locale}/revisions/histoire/guerre-froide`,
     },
   ]
 
@@ -77,11 +77,11 @@ export default async function SvtPage({
             <div className="flex items-center gap-3">
 
               <span className="text-5xl">
-                🧬
+                🏛️
               </span>
 
               <h1 className="text-4xl font-black">
-                Fiches SVT
+                Fiches Histoire
               </h1>
 
             </div>
@@ -106,7 +106,7 @@ export default async function SvtPage({
           </div>
 
           <p className="mt-3 text-gray-500 dark:text-gray-400">
-            Révise rapidement les notions importantes de SVT.
+            Révise rapidement les grandes périodes et événements historiques.
           </p>
 
         </div>
@@ -115,7 +115,7 @@ export default async function SvtPage({
         <div className="grid grid-cols-2 gap-4">
 
           {fiches.map((fiche) => (
-            <Link
+            <a
               key={fiche.href}
               href={fiche.href}
               className="
@@ -142,7 +142,7 @@ export default async function SvtPage({
                 {fiche.title}
               </span>
 
-            </Link>
+            </a>
           ))}
 
         </div>

@@ -1,4 +1,5 @@
 import AdBanner from "@/components/AdBanner"
+import Link from "next/link"
 
 export default async function FrancaisPage({
   params,
@@ -71,21 +72,44 @@ export default async function FrancaisPage({
         {/* TITRE */}
         <div className="mt-8 mb-10">
 
-          <div className="flex items-center gap-3">
-            <span className="text-5xl">
-              📚
-            </span>
+  <div className="flex items-center justify-between gap-4">
 
-            <h1 className="text-4xl font-black">
-              Fiches Francais
-            </h1>
-          </div>
+    <div className="flex items-center gap-3">
 
-          <p className="mt-3 text-gray-500 dark:text-gray-400">
-            Révise rapidement les notions importantes de mathématiques
-          </p>
+      <span className="text-5xl">
+        📚
+      </span>
 
-        </div>
+      <h1 className="text-4xl font-black">
+        Fiches Français
+      </h1>
+
+    </div>
+
+    <Link
+      href={`/${locale}`}
+      className="
+        px-6
+        py-3
+        rounded-2xl
+        bg-blue-600
+        text-white
+        hover:bg-blue-700
+        transition
+        font-bold
+        shadow-md
+      "
+    >
+      ← Retour
+    </Link>
+
+  </div>
+
+  <p className="mt-3 text-gray-500 dark:text-gray-400">
+    Révise rapidement les notions importantes.
+  </p>
+
+</div>
 
         {/* BOUTONS */}
         <div className="grid grid-cols-2 gap-4">
