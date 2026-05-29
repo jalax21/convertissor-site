@@ -7,7 +7,7 @@ export const mathsFiches = [
 
     emoji: "📐",
 
-    image: "/images/revisions/maths/pythagore.png",
+    image: "/images/revisions/maths/pythagore.webp",
 
     content: {
 
@@ -30,7 +30,7 @@ export const mathsFiches = [
 
   emoji: "📏",
 
-  image: "/images/revisions/maths/thales.png",
+  image: "/images/revisions/maths/thales.webp",
 
   content: {
 
@@ -52,7 +52,7 @@ export const mathsFiches = [
 
     emoji: "💯",
 
-    image: "/images/revisions/maths/pourcentages.png",
+    image: "/images/revisions/maths/pourcentages.webp",
 
     content: {
 
@@ -75,7 +75,7 @@ export const mathsFiches = [
 
     emoji: "✏️",
 
-    image: "/images/revisions/maths/equations.png",
+    image: "/images/revisions/maths/equations.webp",
 
     content: {
 
@@ -98,7 +98,7 @@ export const mathsFiches = [
 
     emoji: "⚡",
 
-    image: "/images/revisions/maths/puissances.png",
+    image: "/images/revisions/maths/puissances.webp",
 
     content: {
 
@@ -121,7 +121,7 @@ export const mathsFiches = [
 
     emoji: "📈",
 
-    image: "/images/revisions/maths/fonctions.png",
+    image: "/images/revisions/maths/fonctions.webp",
 
     content: {
 
@@ -144,7 +144,7 @@ export const mathsFiches = [
 
     emoji: "🎲",
 
-    image: "/images/revisions/maths/probabilites.png",
+    image: "/images/revisions/maths/probabilites.webp",
 
     content: {
 
@@ -167,7 +167,7 @@ export const mathsFiches = [
 
     emoji: "📊",
 
-    image: "/images/revisions/maths/statistiques.png",
+    image: "/images/revisions/maths/statistiques.webp",
 
     content: {
 
@@ -190,7 +190,7 @@ export const mathsFiches = [
 
     emoji: "√",
 
-    image: "/images/revisions/maths/racines.png",
+    image: "/images/revisions/maths/racines.webp",
 
     content: {
 

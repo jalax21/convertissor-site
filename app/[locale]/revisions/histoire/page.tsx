@@ -11,53 +11,44 @@ export default async function HistoirePage({
 
   const fiches = [
     {
-      title: "La Préhistoire",
-      emoji: "🦴",
+      title: "🦴 La Préhistoire",
       href: `/${locale}/revisions/histoire/prehistoire`,
     },
     {
-      title: "L'Égypte antique",
-      emoji: "🏺",
+      title: "🏺 L'Égypte antique",
       href: `/${locale}/revisions/histoire/egypte-antique`,
     },
     {
-      title: "La Grèce antique",
-      emoji: "🏛️",
+      title: "🏛️ La Grèce antique",
       href: `/${locale}/revisions/histoire/grece-antique`,
     },
     {
-      title: "L'Empire romain",
-      emoji: "🦅",
+      title: "🦅 L'Empire romain",
       href: `/${locale}/revisions/histoire/empire-romain`,
     },
     {
-      title: "Le Moyen Âge",
-      emoji: "🏰",
+      title: "🏰 Le Moyen Âge",
       href: `/${locale}/revisions/histoire/moyen-age`,
     },
     {
-      title: "La Renaissance",
-      emoji: "🎨",
+      title: "🎨 La Renaissance",
       href: `/${locale}/revisions/histoire/renaissance`,
     },
     {
-      title: "La Révolution française",
-      emoji: "🇫🇷",
+      title: "🇫🇷 La Révolution française",
       href: `/${locale}/revisions/histoire/revolution-francaise`,
     },
     {
-      title: "Première Guerre mondiale",
-      emoji: "⚔️",
+      title: "⚔️ Première Guerre mondiale",
+      emoji: "",
       href: `/${locale}/revisions/histoire/premiere-guerre-mondiale`,
     },
     {
-      title: "Seconde Guerre mondiale",
-      emoji: "🌍",
+      title: "🌍 Seconde Guerre mondiale",
       href: `/${locale}/revisions/histoire/seconde-guerre-mondiale`,
     },
     {
-      title: "La Guerre froide",
-      emoji: "☢️",
+      title: "☢️ La Guerre froide",
       href: `/${locale}/revisions/histoire/guerre-froide`,
     },
   ]

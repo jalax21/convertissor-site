@@ -4,7 +4,7 @@ export const svtFiches = [
   slug: "cellule",
   title: "La cellule",
   emoji: "🔬",
-  image: "/images/revisions/svt/cellule.png",
+  image: "/images/revisions/svt/cellule.webp",
 
   content: {
     definition:
@@ -22,7 +22,7 @@ export const svtFiches = [
   slug: "adn",
   title: "L'ADN",
   emoji: "🧬",
-  image: "/images/revisions/svt/adn.png",
+  image: "/images/revisions/svt/adn.webp",
 
   content: {
     definition:
@@ -40,7 +40,7 @@ export const svtFiches = [
   slug: "genetique",
   title: "La Génétique",
   emoji: "🧬",
-  image: "/images/revisions/svt/genetique.png",
+  image: "/images/revisions/svt/genetique.webp",
 
   content: {
     definition:
@@ -58,7 +58,7 @@ export const svtFiches = [
   slug: "respiration",
   title: "La Respiration",
   emoji: "🫁",
-  image: "/images/revisions/svt/respiration.png",
+  image: "/images/revisions/svt/respiration.webp",
 
   content: {
     definition:
@@ -76,7 +76,7 @@ export const svtFiches = [
   slug: "circulation-sanguine",
   title: "La Circulation sanguine",
   emoji: "❤️",
-  image: "/images/revisions/svt/circulation-sanguine.png",
+  image: "/images/revisions/svt/circulation-sanguine.webp",
 
   content: {
     definition:
@@ -94,7 +94,7 @@ export const svtFiches = [
   slug: "digestion",
   title: "La Digestion",
   emoji: "🍎",
-  image: "/images/revisions/svt/digestion.png",
+  image: "/images/revisions/svt/digestion.webp",
 
   content: {
     definition:
@@ -112,7 +112,7 @@ export const svtFiches = [
   slug: "photosynthese",
   title: "La Photosynthèse",
   emoji: "🌿",
-  image: "/images/revisions/svt/photosynthese.png",
+  image: "/images/revisions/svt/photosynthese.webp",
 
   content: {
     definition:
@@ -130,7 +130,7 @@ export const svtFiches = [
   slug: "systeme-nerveux",
   title: "Le Système nerveux",
   emoji: "🧠",
-  image: "/images/revisions/svt/systeme-nerveux.png",
+  image: "/images/revisions/svt/systeme-nerveux.webp",
 
   content: {
     definition:
@@ -148,7 +148,7 @@ export const svtFiches = [
   slug: "ecosystemes",
   title: "Les Écosystèmes",
   emoji: "🌍",
-  image: "/images/revisions/svt/ecosystemes.png",
+  image: "/images/revisions/svt/ecosystemes.webp",
 
   content: {
     definition:
@@ -166,7 +166,7 @@ export const svtFiches = [
   slug: "evolution",
   title: "L'Évolution des espèces",
   emoji: "🐒",
-  image: "/images/revisions/svt/evolution.png",
+  image: "/images/revisions/svt/evolution.webp",
 
   content: {
     definition:

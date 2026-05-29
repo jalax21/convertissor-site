@@ -5,7 +5,7 @@ export const histoireFiches = [
   slug: "prehistoire",
   title: "La Préhistoire",
   emoji: "🦴",
-  image: "/images/revisions/histoire/prehistoire.png",
+  image: "/images/revisions/histoire/prehistoire.webp",
 
   content: {
     resume:
@@ -20,7 +20,7 @@ export const histoireFiches = [
   slug: "egypte-antique",
   title: "L'Égypte antique",
   emoji: "🏺",
-  image: "/images/revisions/histoire/egypte-antique.png",
+  image: "/images/revisions/histoire/egypte-antique.webp",
 
   content: {
     resume:
@@ -35,7 +35,7 @@ export const histoireFiches = [
   slug: "grece-antique",
   title: "La Grèce antique",
   emoji: "🏛️",
-  image: "/images/revisions/histoire/grece-antique.png",
+  image: "/images/revisions/histoire/grece-antique.webp",
 
   content: {
     resume:
@@ -50,7 +50,7 @@ export const histoireFiches = [
   slug: "empire-romain",
   title: "L'Empire romain",
   emoji: "🦅",
-  image: "/images/revisions/histoire/empire-romain.png",
+  image: "/images/revisions/histoire/empire-romain.webp",
 
   content: {
     resume:
@@ -65,7 +65,7 @@ export const histoireFiches = [
   slug: "moyen-age",
   title: "Le Moyen Âge",
   emoji: "🏰",
-  image: "/images/revisions/histoire/moyen-age.png",
+  image: "/images/revisions/histoire/moyen-age.webp",
 
   content: {
     resume:
@@ -80,7 +80,7 @@ export const histoireFiches = [
   slug: "renaissance",
   title: "La Renaissance",
   emoji: "🎨",
-  image: "/images/revisions/histoire/renaissance.png",
+  image: "/images/revisions/histoire/renaissance.webp",
 
   content: {
     resume:
@@ -95,7 +95,7 @@ export const histoireFiches = [
   slug: "revolution-francaise",
   title: "La Révolution française",
   emoji: "🇫🇷",
-  image: "/images/revisions/histoire/revolution-francaise.png",
+  image: "/images/revisions/histoire/revolution-francaise.webp",
 
   content: {
     resume:
@@ -110,7 +110,7 @@ export const histoireFiches = [
     slug: "premiere-guerre-mondiale",
     title: "Première Guerre mondiale",
     emoji: "⚔️",
-    image: "/images/revisions/histoire/premiere-guerre-mondiale.png",
+    image: "/images/revisions/histoire/premiere-guerre-mondiale.webp",
 
     content: {
       resume:
@@ -126,7 +126,7 @@ export const histoireFiches = [
   slug: "seconde-guerre-mondiale",
   title: "Seconde Guerre mondiale",
   emoji: "🌍",
-  image: "/images/revisions/histoire/seconde-guerre-mondiale.png",
+  image: "/images/revisions/histoire/seconde-guerre-mondiale.webp",
 
   content: {
     resume:
@@ -141,7 +141,7 @@ export const histoireFiches = [
   slug: "guerre-froide",
   title: "La Guerre froide",
   emoji: "☢️",
-  image: "/images/revisions/histoire/guerre-froide.png",
+  image: "/images/revisions/histoire/guerre-froide.webp",
 
   content: {
     resume:

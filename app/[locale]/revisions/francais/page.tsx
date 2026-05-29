@@ -10,53 +10,43 @@ export default async function FrancaisPage({
   const { locale } = await params
   const fiches = [
   {
-    title: "Nature des mots",
-    emoji: "📝",
+    title: "📝 Nature des mots",
     href: `/${locale}/revisions/francais/nature-des-mots`,
   },
   {
-    title: "Fonctions grammaticales",
-    emoji: "📚",
+    title: "📚 Fonctions grammaticales",
     href: `/${locale}/revisions/francais/fonctions-grammaticales`,
   },
   {
-    title: "Participe passé",
-    emoji: "✍️",
+    title: "✍️ Participe passé",
     href: `/${locale}/revisions/francais/accord-participe-passe`,
   },
   {
-    title: "Homophones",
-    emoji: "🔤",
+    title: "🔤 Homophones",
     href: `/${locale}/revisions/francais/homophones`,
   },
   {
-    title: "Figures de style",
-    emoji: "🎭",
+    title: "🎭 Figures de style",
     href: `/${locale}/revisions/francais/figure-de-style`,
   },
   {
-    title: "Types de phrases",
-    emoji: "💬",
+    title: "💬 Types de phrases",
     href: `/${locale}/revisions/francais/types-de-phrases`,
   },
   {
-    title: "Présent",
-    emoji: "📖",
+    title: "📖 Présent",
     href: `/${locale}/revisions/francais/conjugaison-present`,
   },
   {
-    title: "Conditionnel",
-    emoji: "🤔",
+    title: "🤔 Conditionnel",
     href: `/${locale}/revisions/francais/conditionnel`,
   },
   {
-    title: "Subordonnées",
-    emoji: "🔗",
+    title: "🔗Subordonnées", 
     href: `/${locale}/revisions/francais/proposition-subordonnee`,
   },
   {
-    title: "Registres littéraires",
-    emoji: "📜",
+    title: "📜 Registres littéraires",
     href: `/${locale}/revisions/francais/registre-litteraire`,
   },
 ]
@@ -134,10 +124,7 @@ export default async function FrancaisPage({
                 transition
               "
             >
-              <span className="text-4xl">
-                {fiche.emoji}
-              </span>
-
+              
               <span className="text-lg font-bold text-center">
                 {fiche.title}
               </span>
