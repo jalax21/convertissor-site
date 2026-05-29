@@ -31,27 +31,43 @@ export default async function Page({
       <div className="max-w-3xl mx-auto">
 
         {/* TITRE */}
-        <div className="mt-8 flex justify-center">
+<div className="mt-8 mb-10">
 
-  <Link
-    href={`/${locale}`}
-    className="
-      px-8
-      py-4
-      rounded-2xl
-      bg-blue-600
-      text-white
-      hover:bg-blue-700
-      transition
-      font-bold
-      shadow-md
-      text-lg
-    "
-  >
-    ← Retour
-  </Link>
+  <div className="flex items-center justify-between gap-4">
+
+    <div className="flex items-center gap-3">
+
+      <span className="text-5xl">
+        {fiche.emoji}
+      </span>
+
+      <h1 className="text-4xl font-black">
+        {fiche.title}
+      </h1>
+
+    </div>
+
+    <Link
+      href={`/${locale}/revisions/svt`}
+      className="
+        px-8
+        py-4
+        rounded-2xl
+        bg-blue-600
+        text-white
+        hover:bg-blue-700
+        transition
+        font-bold
+        shadow-md
+      "
+    >
+      ← Retour
+    </Link>
+
+  </div>
 
 </div>
+  
 
         {/* DEFINITION */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
