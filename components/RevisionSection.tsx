@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-export default function RevisionSection({
-  locale,
-}: {
+export default function RevisionSection({locale,}: 
+  
+{
   locale: string
 }) {
 
