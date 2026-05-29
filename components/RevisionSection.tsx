@@ -11,32 +11,32 @@ const revisions = [
   {
     title: "Maths",
     emoji: "📐",
-    href: `/${locale}/revisions/maths`
+    href: `/${locale}/revisions/maths`,
   },
   {
     title: "Physique",
     emoji: "⚡",
-    href: "/revisions/physique",
+    href: `/${locale}/revisions/physique`,
   },
   {
     title: "Français",
     emoji: "📚",
-    href: "/revisions/francais",
+    href: `/${locale}/revisions/francais`,
   },
   {
     title: "Histoire",
     emoji: "🏛️",
-    href: "/revisions/histoire",
+    href: `/${locale}/revisions/histoire`,
   },
   {
     title: "SVT",
     emoji: "🧬",
-    href: "/revisions/svt",
+    href: `/${locale}/revisions/svt`,
   },
   {
     title: "Anglais",
     emoji: "🇬🇧",
-    href: "/revisions/anglais",
+    href: `/${locale}/revisions/anglais`,
   },
 ]
 
