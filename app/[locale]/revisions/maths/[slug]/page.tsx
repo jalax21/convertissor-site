@@ -76,7 +76,7 @@ export default async function Page({
             📘 Définition
           </h2>
 
-          <p
+          <div
   className="text-xl leading-8 text-gray-700 dark:text-gray-300"
   dangerouslySetInnerHTML={{
     __html: fiche.content.definition,
@@ -88,10 +88,7 @@ export default async function Page({
 
 <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
-  <h2 className="text-2xl font-bold mb-4">
-    🖼 Illustration
-  </h2>
-
+  
   <div className="flex justify-center">
 
     <Image
@@ -100,6 +97,7 @@ export default async function Page({
   width={900}
   height={600}
   className="rounded-2xl"
+  priority
 />
 
   </div>

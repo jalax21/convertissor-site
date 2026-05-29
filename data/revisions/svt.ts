@@ -38,7 +38,7 @@ export const svtFiches = [
 
 {
   slug: "genetique",
-  title: "Génétique",
+  title: "La Génétique",
   emoji: "🧬",
   image: "/images/revisions/svt/genetique.png",
 
@@ -56,7 +56,7 @@ export const svtFiches = [
 
 {
   slug: "respiration",
-  title: "Respiration",
+  title: "La Respiration",
   emoji: "🫁",
   image: "/images/revisions/svt/respiration.png",
 
@@ -74,7 +74,7 @@ export const svtFiches = [
 
 {
   slug: "circulation-sanguine",
-  title: "Circulation sanguine",
+  title: "La Circulation sanguine",
   emoji: "❤️",
   image: "/images/revisions/svt/circulation-sanguine.png",
 
@@ -92,7 +92,7 @@ export const svtFiches = [
 
 {
   slug: "digestion",
-  title: "Digestion",
+  title: "La Digestion",
   emoji: "🍎",
   image: "/images/revisions/svt/digestion.png",
 
@@ -110,7 +110,7 @@ export const svtFiches = [
 
 {
   slug: "photosynthese",
-  title: "Photosynthèse",
+  title: "La Photosynthèse",
   emoji: "🌿",
   image: "/images/revisions/svt/photosynthese.png",
 
@@ -128,7 +128,7 @@ export const svtFiches = [
 
 {
   slug: "systeme-nerveux",
-  title: "Système nerveux",
+  title: "Le Système nerveux",
   emoji: "🧠",
   image: "/images/revisions/svt/systeme-nerveux.png",
 
@@ -146,7 +146,7 @@ export const svtFiches = [
 
 {
   slug: "ecosystemes",
-  title: "Écosystèmes",
+  title: "Les Écosystèmes",
   emoji: "🌍",
   image: "/images/revisions/svt/ecosystemes.png",
 
@@ -164,7 +164,7 @@ export const svtFiches = [
 
 {
   slug: "evolution",
-  title: "Évolution des espèces",
+  title: "L'Évolution des espèces",
   emoji: "🐒",
   image: "/images/revisions/svt/evolution.png",
 

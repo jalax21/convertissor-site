@@ -35,8 +35,7 @@ export const mathsFiches = [
   content: {
 
     definition:
-  "<strong><u>Théorème de Thalès</u></strong> - Soit un triangle ABC, et deux points D et E, D sur la droite (AB) et E sur la droite (AC), de sorte que la droite (DE) soit parallèle à la droite (BC).Alors :<br /><div style='text-align:center'>AD/AB = AE/AC = DE/BC</div><br /><br /><strong><u>Réciproque du théorème de Thalès</u></strong> - Dans un triangle ABC, supposons donnés des points D et E appartenant respectivement aux segments [AB] et [AC]. Si les rapports AD/AB et AE/AC sont égaux, alors les droites (DE) et (BC) sont parallèles.",
-
+  "<strong><u>Théorème de Thalès</u></strong><br /><br />Soit un triangle ABC et deux points D et E, D sur la droite (AB) et E sur la droite (AC), tels que la droite (DE) soit parallèle à la droite (BC).<br /><br /><strong>AD / AB = AE / AC = DE / BC</strong><br /><br /><strong><u>Réciproque du théorème de Thalès</u></strong><br /><br />Dans un triangle ABC, si D appartient à [AB] et E appartient à [AC], et que les rapports AD/AB et AE/AC sont égaux, alors les droites (DE) et (BC) sont parallèles.",
     formule:
       "AD / AB = AE / AC = DE / BC",
 

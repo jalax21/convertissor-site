@@ -11,53 +11,43 @@ export default async function SvtPage({
 
   const fiches = [
     {
-      title: "La cellule",
-      emoji: "🔬",
+      title: "🔬 La cellule",
       href: `/${locale}/revisions/svt/cellule`,
     },
     {
-      title: "L'ADN",
-      emoji: "🧬",
+      title: "🧬 L'ADN",
       href: `/${locale}/revisions/svt/adn`,
     },
     {
-      title: "Génétique",
-      emoji: "🧬",
+      title: "🧬 Génétique",
       href: `/${locale}/revisions/svt/genetique`,
     },
     {
-      title: "Respiration",
-      emoji: "🫁",
+      title: "🫁 Respiration",
       href: `/${locale}/revisions/svt/respiration`,
     },
     {
-      title: "Circulation sanguine",
-      emoji: "❤️",
+      title: "❤️ Circulation sanguine",
       href: `/${locale}/revisions/svt/circulation-sanguine`,
     },
     {
-      title: "Digestion",
-      emoji: "🍎",
+      title: "🍎 Digestion",
       href: `/${locale}/revisions/svt/digestion`,
     },
     {
-      title: "Photosynthèse",
-      emoji: "🌿",
-      href: `/${locale}/revisions/svt/photosynthese`,
+      title: "🌿 Photosynthèse",
+            href: `/${locale}/revisions/svt/photosynthese`,
     },
     {
-      title: "Système nerveux",
-      emoji: "🧠",
+      title: "🧠 Système nerveux",    
       href: `/${locale}/revisions/svt/systeme-nerveux`,
     },
     {
-      title: "Écosystèmes",
-      emoji: "🌍",
+      title: "🌍 Écosystèmes",
       href: `/${locale}/revisions/svt/ecosystemes`,
     },
     {
-      title: "Évolution",
-      emoji: "🐒",
+      title: "🐒 Évolution",    
       href: `/${locale}/revisions/svt/evolution`,
     },
   ]
@@ -134,10 +124,7 @@ export default async function SvtPage({
                 transition
               "
             >
-              <span className="text-4xl">
-                {fiche.emoji}
-              </span>
-
+              
               <span className="text-lg font-bold text-center">
                 {fiche.title}
               </span>

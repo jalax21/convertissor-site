@@ -1,7 +1,6 @@
 "use client"
 
 import Script from "next/script"
-import { useEffect } from "react"
 
 declare global {
   interface Window {
@@ -10,26 +9,36 @@ declare global {
 }
 
 export default function AdBanner() {
-  useEffect(() => {
+
+  const handleLoad = () => {
+
     try {
+
       ;(window.adsbygoogle = window.adsbygoogle || []).push({})
-    } catch (e) {
-      console.log(e)
+
+    } catch (err) {
+
+      console.error("Adsense error:", err)
     }
-  }, [])
+  }
 
   return (
     <>
       <Script
+        id="adsense-script"
         async
         strategy="afterInteractive"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2235128568846852"
         crossOrigin="anonymous"
+        onLoad={handleLoad}
       />
 
       <ins
         className="adsbygoogle"
-        style={{ display: "block", minHeight: "90px" }}
+        style={{
+          display: "block",
+          minHeight: "90px"
+        }}
         data-ad-client="ca-pub-2235128568846852"
         data-ad-slot="5787723309"
         data-ad-format="auto"

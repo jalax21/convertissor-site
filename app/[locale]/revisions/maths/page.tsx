@@ -10,53 +10,43 @@ export default async function MathsPage({
   const { locale } = await params
   const fiches = [
     {
-      title: "Pythagore",
-      emoji: "📐",
+      title: "📐 Pythagore",
       href: `/${locale}/revisions/maths/pythagore`
     },
     {
-      title: "Thalès",
-      emoji: "📏",
+      title: "📏 Thalès",
       href: "/${locale}/revisions/maths/thales",
     },
     {
-      title: "Fractions",
-      emoji: "➗",
+      title: "➗ Fractions",
       href: "/${locale}/revisions/maths/fractions",
     },
     {
-      title: "Pourcentages",
-      emoji: "💯",
+      title: "💯 Pourcentages",
       href: "/${locale}/revisions/maths/pourcentages",
     },
     {
-      title: "Équations",
-      emoji: "✏️",
+      title: "✏️ Équations",
       href: "/${locale}/revisions/maths/equations",
     },
     {
-      title: "Puissances",
-      emoji: "⚡",
+      title: "⚡Puissances",
       href: "/${locale}/revisions/maths/puissances",
     },
     {
-      title: "Fonctions",
-      emoji: "📈",
+      title: "📈 Fonctions",
       href: "/${locale}/revisions/maths/fonctions",
     },
     {
-      title: "Probabilités",
-      emoji: "🎲",
+      title: "🎲 Probabilités",
       href: "/${locale}/revisions/maths/probabilites",
     },
     {
-      title: "Statistiques",
-      emoji: "📊",
+      title: "📊 Statistiques",
       href: "/${locale}/revisions/maths/statistiques",
     },
     {
-      title: "Racines carrées",
-      emoji: "√",
+      title: "√ Racines carrées",
       href: "/${locale}/revisions/maths/racines-carrees",
     },
   ]
@@ -136,10 +126,7 @@ export default async function MathsPage({
                 transition
               "
             >
-              <span className="text-4xl">
-                {fiche.emoji}
-              </span>
-
+              
               <span className="text-lg font-bold text-center">
                 {fiche.title}
               </span>

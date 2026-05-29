@@ -69,6 +69,25 @@ export default async function Page({
 </div>
   
 
+        {/* IMAGE */}
+        <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
+
+      
+          <div className="flex justify-center">
+
+            <Image
+              src={fiche.image}
+              alt={fiche.title}
+              width={900}
+              height={600}
+              className="rounded-2xl"
+              priority
+            />
+
+          </div>
+
+        </section>
+        
         {/* DEFINITION */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
@@ -85,26 +104,7 @@ export default async function Page({
 
         </section>
 
-        {/* IMAGE */}
-        <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
-
-          <h2 className="text-2xl font-bold mb-4">
-            🖼 Illustration
-          </h2>
-
-          <div className="flex justify-center">
-
-            <Image
-              src={fiche.image}
-              alt={fiche.title}
-              width={900}
-              height={600}
-              className="rounded-2xl"
-            />
-
-          </div>
-
-        </section>
+        
 
         {/* FORMULE */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
