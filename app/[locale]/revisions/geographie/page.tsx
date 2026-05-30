@@ -1,7 +1,7 @@
-import Link from "next/link"
 import AdBanner from "@/components/AdBanner"
+import Link from "next/link"
 
-export default async function SvtPage({
+export default async function GeographiePage({
   params,
 }: {
   params: Promise<{ locale: string }>
@@ -11,44 +11,44 @@ export default async function SvtPage({
 
   const fiches = [
     {
-      title: "🔬 La cellule",
-      href: `/${locale}/revisions/svt/cellule`,
+      title: "🌍 Continents et océans",
+      href: `/${locale}/revisions/geographie/continents-oceans`,
     },
     {
-      title: "🧬 L'ADN",
-      href: `/${locale}/revisions/svt/adn`,
+      title: "🌦️ Les climats",
+      href: `/${locale}/revisions/geographie/climats`,
     },
     {
-      title: "🧬 La Génétique",
-      href: `/${locale}/revisions/svt/genetique`,
+      title: "⛰️ Le relief terrestre",
+      href: `/${locale}/revisions/geographie/relief`,
     },
     {
-      title: "🫁 La Respiration",
-      href: `/${locale}/revisions/svt/respiration`,
+      title: "👨‍👩‍👧‍👦 Population mondiale",
+      href: `/${locale}/revisions/geographie/population-mondiale`,
     },
     {
-      title: "❤️ La Circulation sanguine",
-      href: `/${locale}/revisions/svt/circulation-sanguine`,
+      title: "🏙️ Urbanisation",
+      href: `/${locale}/revisions/geographie/urbanisation`,
     },
     {
-      title: "🍎 La Digestion",
-      href: `/${locale}/revisions/svt/digestion`,
+      title: "♻️ Développement durable",
+      href: `/${locale}/revisions/geographie/developpement-durable`,
     },
     {
-      title: "🌿 La Photosynthèse",
-            href: `/${locale}/revisions/svt/photosynthese`,
+      title: "🌋 Risques naturels",
+      href: `/${locale}/revisions/geographie/risques-naturels`,
     },
     {
-      title: "🧠 Le Système nerveux",    
-      href: `/${locale}/revisions/svt/systeme-nerveux`,
+      title: "🌐 Mondialisation",
+      href: `/${locale}/revisions/geographie/mondialisation`,
     },
     {
-      title: "🌍 Les Écosystèmes",
-      href: `/${locale}/revisions/svt/ecosystemes`,
+      title: "⚡ Les énergies",
+      href: `/${locale}/revisions/geographie/energies`,
     },
     {
-      title: "🐒 L'Évolution",    
-      href: `/${locale}/revisions/svt/evolution`,
+      title: "🗺️ Lire une carte",
+      href: `/${locale}/revisions/geographie/cartographie`,
     },
   ]
 
@@ -67,11 +67,11 @@ export default async function SvtPage({
             <div className="flex items-center gap-3">
 
               <span className="text-5xl">
-                🧬
+                🌍
               </span>
 
               <h1 className="text-4xl font-black">
-                Fiches SVT
+                Fiches Géographie
               </h1>
 
             </div>
@@ -96,12 +96,12 @@ export default async function SvtPage({
           </div>
 
           <p className="mt-3 text-gray-500 dark:text-gray-400">
-            Révise rapidement les notions importantes de SVT.
+            Révise rapidement les notions essentielles de géographie.
           </p>
 
         </div>
 
-        {/* BOUTONS */}
+        {/* FICHES */}
         <div className="grid grid-cols-2 gap-4">
 
           {fiches.map((fiche) => (
@@ -115,20 +115,16 @@ export default async function SvtPage({
                 rounded-2xl
                 p-6
                 flex
-                flex-col
                 items-center
                 justify-center
-                gap-3
+                text-center
                 hover:bg-gray-100
                 dark:hover:bg-gray-800
                 transition
+                font-bold
               "
             >
-              
-              <span className="text-lg font-bold text-center">
-                {fiche.title}
-              </span>
-
+              {fiche.title}
             </Link>
           ))}
 

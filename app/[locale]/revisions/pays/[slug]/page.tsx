@@ -1,6 +1,7 @@
-import { francaisFiches } from "@/data/revisions/francais"
+import { paysFiches } from "@/data/revisions/pays"
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import AdBanner from "@/components/AdBanner"
 
 export default async function Page({
@@ -14,7 +15,7 @@ export default async function Page({
 
   const { slug, locale } = await params
 
-  const fiche = francaisFiches.find(
+  const fiche = paysFiches.find(
     (f) => f.slug === slug
   )
 
@@ -29,25 +30,17 @@ export default async function Page({
 
       <div className="max-w-3xl mx-auto">
 
-        {/* TITRE + BOUTON RETOUR */}
+        {/* TITRE + RETOUR */}
         <div className="mt-8 mb-10">
 
           <div className="flex items-center justify-between gap-4">
 
-            <div className="flex items-center gap-3">
-
-              <span className="text-5xl">
-                {fiche.emoji}
-              </span>
-
-              <h1 className="text-4xl font-black">
-                {fiche.title}
-              </h1>
-
-            </div>
+            <h1 className="text-4xl font-black">
+              {fiche.title}
+            </h1>
 
             <Link
-              href={`/${locale}/revisions/francais`}
+              href={`/${locale}/revisions/pays`}
               className="
                 px-6
                 py-3
@@ -67,17 +60,51 @@ export default async function Page({
 
         </div>
 
-        {/* DEFINITION */}
+        {/* IMAGE */}
+        <section className="mb-6">
+
+          <div className="flex justify-center">
+
+            <Image
+              src={fiche.image}
+              alt={fiche.title}
+              width={1000}
+              height={400}
+              className="rounded-3xl"
+              priority
+            />
+
+          </div>
+
+        </section>
+
+        {/* DÉFINITION */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            📘 Définition
+            📘 Présentation
           </h2>
 
           <div
-  className="text-xl leading-10 text-gray-700 dark:text-gray-300"
+            className="text-xl leading-10 text-gray-700 dark:text-gray-300"
+            dangerouslySetInnerHTML={{
+              __html: fiche.content.definition,
+            }}
+          />
+
+        </section>
+
+        {/* INFORMATIONS */}
+        <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
+
+          <h2 className="text-2xl font-bold mb-4">
+            🌍 Informations clés
+          </h2>
+
+          <div
+  className="text-xl text-left font-semibold"
   dangerouslySetInnerHTML={{
-    __html: fiche.content.definition,
+    __html: fiche.content.formule,
   }}
 />
 
@@ -87,24 +114,11 @@ export default async function Page({
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            ✏ Exemple
+            ⭐ À découvrir
           </h2>
 
-          <div className="text-2xl text-center">
+          <div className="text-xl text-center">
             {fiche.content.exemple}
-          </div>
-
-        </section>
-
-        {/* A RETENIR */}
-        <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
-
-          <h2 className="text-2xl font-bold mb-4">
-            🧠 À retenir
-          </h2>
-
-          <div className="text-3xl font-black text-center">
-            {fiche.content.formule}
           </div>
 
         </section>

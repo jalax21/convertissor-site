@@ -9,35 +9,37 @@ export default function RevisionSection({locale,}:
 
 const revisions = [
   {
-    title: "Maths",
-    emoji: "📐",
+    title: "📐 Maths",
     href: `/${locale}/revisions/maths`,
   },
   {
-    title: "Physique",
-    emoji: "⚡",
+    title: "⚡ Physique",
     href: `/${locale}/revisions/physique`,
   },
   {
-    title: "Français",
-    emoji: "📚",
+    title: "📚 Français",
     href: `/${locale}/revisions/francais`,
   },
   {
-    title: "Histoire",
-    emoji: "🏛️",
+    title: "🏛️ Histoire",
     href: `/${locale}/revisions/histoire`,
   },
   {
-    title: "SVT",
-    emoji: "🧬",
+    title: "🧬SVT",
     href: `/${locale}/revisions/svt`,
   },
   {
-    title: "Anglais",
-    emoji: "🇬🇧",
+    title: "🇬🇧 Anglais",
     href: `/${locale}/revisions/anglais`,
   },
+  {
+  title: "🌍 Géographie",
+  href: `/${locale}/revisions/geographie`,
+},
+{
+  title: "🌎 Pays du monde",
+  href: `/${locale}/revisions/pays`,
+},
 ]
 
 
@@ -77,9 +79,6 @@ const revisions = [
               transition
             "
           >
-            <span className="text-4xl">
-              {item.emoji}
-            </span>
 
             <span className="text-lg font-bold">
               {item.title}

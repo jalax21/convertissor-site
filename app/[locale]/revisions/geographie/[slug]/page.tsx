@@ -1,6 +1,7 @@
-import { francaisFiches } from "@/data/revisions/francais"
+import { geographieFiches } from "@/data/revisions/geographie"
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import AdBanner from "@/components/AdBanner"
 
 export default async function Page({
@@ -14,7 +15,7 @@ export default async function Page({
 
   const { slug, locale } = await params
 
-  const fiche = francaisFiches.find(
+  const fiche = geographieFiches.find(
     (f) => f.slug === slug
   )
 
@@ -36,10 +37,7 @@ export default async function Page({
 
             <div className="flex items-center gap-3">
 
-              <span className="text-5xl">
-                {fiche.emoji}
-              </span>
-
+            
               <h1 className="text-4xl font-black">
                 {fiche.title}
               </h1>
@@ -47,7 +45,7 @@ export default async function Page({
             </div>
 
             <Link
-              href={`/${locale}/revisions/francais`}
+              href={`/${locale}/revisions/geographie`}
               className="
                 px-6
                 py-3
@@ -66,6 +64,23 @@ export default async function Page({
           </div>
 
         </div>
+        {/* IMAGE */}
+<section className="mb-6">
+
+  <div className="flex justify-center">
+
+    <Image
+      src={fiche.image}
+      alt={fiche.title}
+      width={1000}
+      height={400}
+      className="rounded-3xl"
+      priority
+    />
+
+  </div>
+
+</section>
 
         {/* DEFINITION */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
