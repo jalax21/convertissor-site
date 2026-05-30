@@ -36,18 +36,18 @@ export const paysFiches = [
 
   {
     slug: "albania-alb",
-    title: "🇦🇱  Albania",
-    image: "/images/revisions/pays/default.webp",
+    title: "🇦🇱  Albanie",
+    image: "/images/revisions/pays/albania.webp",
 
     content: {
       definition:
-        "Albania est un pays situé en Europe. Sa capitale est Tirana.",
+        "l'Albanie est un pays situé dans le sud-est de l'Europe, dans la région des Balkans. Sa capitale est Tirana. L'Albanie est bordée par le Monténégro, le Kosovo, la Macédoine du Nord et la Grèce, ainsi que par la mer Adriatique et la mer Ionienne..",
 
       formule:
-        "• Capitale : Tirana<br />• Population : 2 363 314 habitants<br />• Superficie : 28 748 km²<br />• Langue(s) : Albanian<br />• Monnaie : Albanian lek (L)",
+        "• Capitale : Tirana<br />• Population : 2 363 314 habitants<br />• Superficie : 28 748 km²<br />• Langue(s) : Albanais<br />• Monnaie : Albanian lek (L)",
 
       exemple:
-        "Albania est un pays du continent Europe.",
+        "Le lac d'Ohrid, situé entre l'Albanie et la Macédoine du Nord, est considéré comme l'un des plus anciens lacs d'Europe avec un âge estimé à plus d'un million d'années.",
     },
   },
 
@@ -240,18 +240,18 @@ export const paysFiches = [
 
   {
     slug: "austria-aut",
-    title: "🇦🇹  Austria",
-    image: "/images/revisions/pays/default.webp",
+    title: "🇦🇹  Autriche",
+    image: "/images/revisions/pays/austria.webp",
 
     content: {
       definition:
-        "Austria est un pays situé en Europe. Sa capitale est Vienna.",
+        "Autriche est un pays situé au centre de l'Europe. Sa capitale est Vienne. L'Autriche est connue pour ses montagnes des Alpes, son patrimoine culturel et son histoire musicale..",
 
       formule:
-        "• Capitale : Vienna<br />• Population : 9 200 931 habitants<br />• Superficie : 83 871 km²<br />• Langue(s) : German<br />• Monnaie : euro (€)",
+        "• Capitale : Vienna<br />• Population : 9 200 931 habitants<br />• Superficie : 83 871 km²<br />• Langue(s) : Allemand<br />• Monnaie : euro (€)",
 
       exemple:
-        "Austria est un pays du continent Europe.",
+        "L'Autriche est le pays de naissance du célèbre compositeur Wolfgang Amadeus Mozart, considéré comme l'un des plus grands musiciens de l'histoire.br />👉 Il a commencé à composer de la musique dès l'âge de 5 ans !",
     },
   },
 
@@ -359,18 +359,18 @@ export const paysFiches = [
 
   {
     slug: "belgium-bel",
-    title: "🇧🇪  Belgium",
-    image: "/images/revisions/pays/default.webp",
+    title: "🇧🇪  Belgique",
+    image: "/images/revisions/pays/belgium.webp",
 
     content: {
       definition:
-        "Belgium est un pays situé en Europe. Sa capitale est Brussels.",
+        "Belgique est un pays situé en Europe de l'Ouest. Sa capitale est Bruxelles. La Belgique est connue pour ses chocolats, ses gaufres, ses frites et son rôle important au sein de l'Europe.",
 
       formule:
-        "• Capitale : Brussels<br />• Population : 11 825 551 habitants<br />• Superficie : 30 528 km²<br />• Langue(s) : German, French, Dutch<br />• Monnaie : euro (€)",
+        "• Capitale : Brussels<br />• Population : 11 825 551 habitants<br />• Superficie : 30 528 km²<br />• Langue(s) : Allemand, Francais, Hollandais<br />• Monnaie : euro (€)",
 
       exemple:
-        "Belgium est un pays du continent Europe.",
+        "La Belgique est célèbre pour ses bandes dessinées. C'est le pays d'origine de personnages connus comme Tintin et Les Schtroumpfs.<br />👉 Les aventures de Tintin ont été traduites dans des dizaines de langues et sont lues dans le monde entier !.",
     },
   },
 
@@ -461,18 +461,18 @@ export const paysFiches = [
 
   {
     slug: "bosnia-and-herzegovina-bih",
-    title: "🇧🇦  Bosnia and Herzegovina",
-    image: "/images/revisions/pays/default.webp",
+    title: "🇧🇦  Bosnie-Herzégovine",
+    image: "/images/revisions/pays/bosnia.webp",
 
     content: {
       definition:
-        "Bosnia and Herzegovina est un pays situé en Europe. Sa capitale est Sarajevo.",
+        "Bosnie-Herzégovine est un pays situé dans le sud-est de l'Europe, dans la région des Balkans. Sa capitale est Sarajevo. Le pays est connu pour ses montagnes, ses rivières et son riche mélange de cultures et de traditions.",
 
       formule:
         "• Capitale : Sarajevo<br />• Population : 3 422 000 habitants<br />• Superficie : 51 209 km²<br />• Langue(s) : Bosnian, Croatian, Serbian<br />• Monnaie : Bosnia and Herzegovina convertible mark (KM)",
 
       exemple:
-        "Bosnia and Herzegovina est un pays du continent Europe.",
+        "Le célèbre pont de Stari Most, dans la ville de Mostar, est si connu qu'il est inscrit au patrimoine mondial de l'UNESCO.<br />👉 Chaque été, des plongeurs courageux sautent du haut du pont dans la rivière située plus de 20 mètres plus bas ! 🌉🏊‍♂️",
     },
   },
 
@@ -580,18 +580,18 @@ export const paysFiches = [
 
   {
     slug: "bulgaria-bgr",
-    title: "🇧🇬  Bulgaria",
-    image: "/images/revisions/pays/default.webp",
+    title: "🇧🇬  Bulgarie",
+    image: "/images/revisions/pays/bulgaria.webp",
 
     content: {
       definition:
-        "Bulgaria est un pays situé en Europe. Sa capitale est Sofia.",
+        "Bulgarie est un pays situé dans le sud-est de l'Europe, dans la région des Balkans. Sa capitale est Sofia. La Bulgarie est connue pour ses montagnes, ses plages sur la mer Noire et son riche patrimoine historique.",
 
       formule:
-        "• Capitale : Sofia<br />• Population : 6 437 360 habitants<br />• Superficie : 110 879 km²<br />• Langue(s) : Bulgarian<br />• Monnaie : Bulgarian lev (лв)",
+        "• Capitale : Sofia<br />• Population : 6 437 360 habitants<br />• Superficie : 110 879 km²<br />• Langue(s) : Bulgar<br />• Monnaie : Bulgarian lev (лв)",
 
       exemple:
-        "Bulgaria est un pays du continent Europe.",
+        "La Bulgarie est l'un des plus anciens pays d'Europe à avoir conservé son nom depuis sa création en 681 !<br />👉 Cela signifie que le nom « Bulgarie » est utilisé depuis plus de 1 300 ans. 🇧🇬📜",
     },
   },
 
