@@ -44,6 +44,28 @@ export const mathsFiches = [
 
   },
 },
+{
+    slug: "fraction",
+
+    title: "Fractions",
+
+    emoji: "➗",
+
+    image: "/images/revisions/maths/fractions.webp",
+
+    content: {
+
+      definition:
+        "",
+
+      formule:
+        "",
+
+      exemple:
+        "",
+
+    },
+  },
 
   {
     slug: "pourcentages",
