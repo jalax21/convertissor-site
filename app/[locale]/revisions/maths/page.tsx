@@ -92,7 +92,7 @@ export default async function MathsPage({
         shadow-md
       "
     >
-      ← Retour
+      {locale === "fr" ? "← Retour" : "← Back"}
     </Link>
 
   </div>

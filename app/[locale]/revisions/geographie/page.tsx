@@ -90,7 +90,7 @@ export default async function GeographiePage({
                 shadow-md
               "
             >
-              ← Retour
+              {locale === "fr" ? "← Retour" : "← Back"}
             </Link>
 
           </div>

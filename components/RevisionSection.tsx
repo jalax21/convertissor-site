@@ -1,62 +1,73 @@
 "use client"
 
 import Link from "next/link"
-export default function RevisionSection({locale,}: 
-  
-{
+
+export default function RevisionSection({
+  locale,
+}: {
   locale: string
 }) {
 
-const revisions = [
-  {
-    title: "📐 Maths",
-    href: `/${locale}/revisions/maths`,
-  },
-  {
-    title: "⚡ Physique",
-    href: `/${locale}/revisions/physique`,
-  },
-  {
-    title: "📚 Français",
-    href: `/${locale}/revisions/francais`,
-  },
-  {
-    title: "🏛️ Histoire",
-    href: `/${locale}/revisions/histoire`,
-  },
-  {
-    title: "🧬SVT",
-    href: `/${locale}/revisions/svt`,
-  },
-  {
-    title: "🇬🇧 Anglais",
-    href: `/${locale}/revisions/anglais`,
-  },
-  {
-  title: "🌍 Géographie",
-  href: `/${locale}/revisions/geographie`,
-},
-{
-  title: "🌎 Pays du monde",
-  href: `/${locale}/revisions/pays`,
-},
-]
+  const text = {
+    title:
+      locale === "fr"
+        ? "📘 Révisions"
+        : "📘 Revision Sheets",
 
+    subtitle:
+      locale === "fr"
+        ? "Fiches rapides pour apprendre facilement"
+        : "Quick study sheets for easy learning",
+  }
+
+  const revisions = [
+    {
+      title: locale === "fr" ? "📐 Maths" : "📐 Mathematics",
+      href: `/${locale}/revisions/maths`,
+    },
+    {
+      title: locale === "fr" ? "⚡ Physique" : "⚡ Physics",
+      href: `/${locale}/revisions/physique`,
+    },
+    {
+      title: locale === "fr" ? "📚 Français" : "📚 French",
+      href: `/${locale}/revisions/francais`,
+    },
+    {
+      title: locale === "fr" ? "🏛️ Histoire" : "🏛️ History",
+      href: `/${locale}/revisions/histoire`,
+    },
+    {
+      title: locale === "fr" ? "🧬 SVT" : "🧬 Biology",
+      href: `/${locale}/revisions/svt`,
+    },
+    {
+      title: locale === "fr" ? "🇬🇧 Anglais" : "🇬🇧 English",
+      href: `/${locale}/revisions/anglais`,
+    },
+    {
+      title: locale === "fr" ? "🌍 Géographie" : "🌍 Geography",
+      href: `/${locale}/revisions/geographie`,
+    },
+    {
+      title: locale === "fr" ? "🌎 Pays du monde" : "🌎 Countries of the World",
+      href: `/${locale}/revisions/pays`,
+    },
+  ]
 
   return (
     <section className="mt-12">
-      {/* TITRE */}
+
       <div className="mb-5">
         <h2 className="text-3xl font-bold">
-          📘 Révisions
+          {text.title}
         </h2>
 
         <p className="mt-1 text-gray-500 dark:text-gray-400">
-          Fiches rapides pour apprendre facilement
+          {text.subtitle}
         </p>
       </div>
 
-      {/* GRID */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
 
         {revisions.map((item) => (
@@ -79,7 +90,6 @@ const revisions = [
               transition
             "
           >
-
             <span className="text-lg font-bold">
               {item.title}
             </span>
@@ -87,6 +97,7 @@ const revisions = [
         ))}
 
       </div>
+
     </section>
   )
 }

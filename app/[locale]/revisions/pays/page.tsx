@@ -35,7 +35,7 @@ export default async function PaysPage({
             </div>
 
             <Link
-              href={`/${locale}/revisions`}
+              href={`/${locale}`}
               className="
                 px-6
                 py-3
@@ -48,7 +48,7 @@ export default async function PaysPage({
                 shadow-md
               "
             >
-              ← Retour
+              {locale === "fr" ? "← Retour" : "← Back"}
             </Link>
 
           </div>

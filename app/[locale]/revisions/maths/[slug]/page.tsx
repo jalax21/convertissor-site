@@ -62,7 +62,7 @@ export default async function Page({
         shadow-md
       "
     >
-      ← Retour
+      {locale === "fr" ? "← Retour" : "← Back"}
     </Link>
 
   </div>

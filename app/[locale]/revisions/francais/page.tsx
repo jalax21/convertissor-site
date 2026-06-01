@@ -1,141 +1,116 @@
 import AdBanner from "@/components/AdBanner"
 import Link from "next/link"
 
+import { francaisFiches } from "@/data/revisions/francais"
+import { englishFiches } from "@/data/revisions/francais-en"
+
 export default async function FrancaisPage({
-  params,
+params,
 }: {
-  params: Promise<{ locale: string }>
+params: Promise<{ locale: string }>
 }) {
 
-  const { locale } = await params
-  const fiches = [
-  {
-    title: "📝 Nature des mots",
-    href: `/${locale}/revisions/francais/nature-des-mots`,
-  },
-  {
-    title: "📚 Fonctions grammaticales",
-    href: `/${locale}/revisions/francais/fonctions-grammaticales`,
-  },
-  {
-    title: "✍️ Participe passé",
-    href: `/${locale}/revisions/francais/accord-participe-passe`,
-  },
-  {
-    title: "🔤 Homophones",
-    href: `/${locale}/revisions/francais/homophones`,
-  },
-  {
-    title: "🎭 Figures de style",
-    href: `/${locale}/revisions/francais/figure-de-style`,
-  },
-  {
-    title: "💬 Types de phrases",
-    href: `/${locale}/revisions/francais/types-de-phrases`,
-  },
-  {
-    title: "📖 Présent",
-    href: `/${locale}/revisions/francais/conjugaison-present`,
-  },
-  {
-    title: "🤔 Conditionnel",
-    href: `/${locale}/revisions/francais/conditionnel`,
-  },
-  {
-    title: "🔗Subordonnées", 
-    href: `/${locale}/revisions/francais/proposition-subordonnee`,
-  },
-  {
-    title: "📜 Registres littéraires",
-    href: `/${locale}/revisions/francais/registre-litteraire`,
-  },
-]
+const { locale } = await params
 
-  return (
-    <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
+const fiches =
+locale === "en"
+? englishFiches
+: francaisFiches
 
-      {/* PUB */}
-      <AdBanner />
+return ( <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
 
-      <div className="max-w-3xl mx-auto">
+  <AdBanner />
 
-        {/* TITRE */}
-        <div className="mt-8 mb-10">
+  <div className="max-w-3xl mx-auto">
 
-  <div className="flex items-center justify-between gap-4">
+    {/* TITRE */}
+    <div className="mt-8 mb-10">
 
-    <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between gap-4">
 
-      <span className="text-5xl">
-        📚
-      </span>
+        <div className="flex items-center gap-3">
 
-      <h1 className="text-4xl font-black">
-        Fiches Français
-      </h1>
+          <span className="text-5xl">
+            📚
+          </span>
 
-    </div>
-
-    <Link
-      href={`/${locale}`}
-      className="
-        px-6
-        py-3
-        rounded-2xl
-        bg-blue-600
-        text-white
-        hover:bg-blue-700
-        transition
-        font-bold
-        shadow-md
-      "
-    >
-      ← Retour
-    </Link>
-
-  </div>
-
-  <p className="mt-3 text-gray-500 dark:text-gray-400">
-    Révise rapidement les notions importantes.
-  </p>
-
-</div>
-
-        {/* BOUTONS */}
-        <div className="grid grid-cols-2 gap-4">
-
-          {fiches.map((fiche) => (
-            <a
-              key={fiche.href}
-              href={fiche.href}
-              className="
-                border
-                border-gray-300
-                dark:border-gray-700
-                rounded-2xl
-                p-6
-                flex
-                flex-col
-                items-center
-                justify-center
-                gap-3
-                hover:bg-gray-100
-                dark:hover:bg-gray-800
-                transition
-              "
-            >
-              
-              <span className="text-lg font-bold text-center">
-                {fiche.title}
-              </span>
-
-            </a>
-          ))}
+          <h1 className="text-4xl font-black">
+            {locale === "en"
+              ? "French Revision Sheets"
+              : "Fiches Français"}
+          </h1>
 
         </div>
 
+        <Link
+          href={`/${locale}`}
+          className="
+            px-6
+            py-3
+            rounded-2xl
+            bg-blue-600
+            text-white
+            hover:bg-blue-700
+            transition
+            font-bold
+            shadow-md
+          "
+        >
+          {locale === "fr" ? "← Retour" : "← Back"}
+        </Link>
+
       </div>
 
-    </main>
-  )
+      <p className="mt-3 text-gray-500 dark:text-gray-400">
+        {locale === "en"
+          ? "Quickly review important concepts."
+          : "Révise rapidement les notions importantes."}
+      </p>
+
+    </div>
+
+    {/* FICHES */}
+    <div className="grid grid-cols-2 gap-4">
+
+      {fiches.map((fiche) => (
+
+        <Link
+          key={fiche.slug}
+          href={`/${locale}/revisions/francais/${fiche.slug}`}
+          className="
+            border
+            border-gray-300
+            dark:border-gray-700
+            rounded-2xl
+            p-6
+            flex
+            flex-col
+            items-center
+            justify-center
+            gap-3
+            hover:bg-gray-100
+            dark:hover:bg-gray-800
+            transition
+          "
+        >
+
+          <span className="text-5xl">
+            {fiche.emoji}
+          </span>
+
+          <span className="text-lg font-bold text-center">
+            {fiche.title}
+          </span>
+
+        </Link>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</main>
+
+)
 }

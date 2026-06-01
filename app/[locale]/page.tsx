@@ -1,176 +1,340 @@
-import { MetadataRoute } from "next"
+import Script from "next/script"
+import AdBanner from "@/components/AdBanner"
+import RevisionSection from "@/components/RevisionSection"
 
-import { mathsFiches } from "@/data/revisions/maths"
-import { francaisFiches } from "@/data/revisions/francais"
-import { histoireFiches } from "@/data/revisions/histoire"
-import { svtFiches } from "@/data/revisions/svt"
-import { paysFiches } from "@/data/revisions/pays"
-import { geographieFiches } from "@/data/revisions/geographie"
+export default async function HomePage({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}) {
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://quickunits.fr"
+  const { locale } = await params
 
-  const revisionPages = [
-    ...mathsFiches.map((fiche) => ({
-      url: `${baseUrl}/fr/revisions/maths/${fiche.slug}`,
-      lastModified: new Date(),
-    })),
+  const text = {
+  title:
+    locale === "fr"
+      ? "QuickUnits.fr"
+      : "QuickUnits.fr",
 
-    ...francaisFiches.map((fiche) => ({
-      url: `${baseUrl}/fr/revisions/francais/${fiche.slug}`,
-      lastModified: new Date(),
-    })),
+  bottomTitle:
+    locale === "fr"
+      ? "Convertisseurs"
+      : "Converters",
 
-    ...histoireFiches.map((fiche) => ({
-      url: `${baseUrl}/fr/revisions/histoire/${fiche.slug}`,
-      lastModified: new Date(),
-    })),
+    distance:
+      locale === "fr"
+        ? "Distances"
+        : "Distances",
 
-    ...svtFiches.map((fiche) => ({
-      url: `${baseUrl}/fr/revisions/svt/${fiche.slug}`,
-      lastModified: new Date(),
-    })),
+    power:
+      locale === "fr"
+        ? "Puissances"
+        : "Powers",
 
-    ...paysFiches.map((fiche) => ({
-      url: `${baseUrl}/fr/revisions/pays/${fiche.slug}`,
-      lastModified: new Date(),
-    })),
+    volume:
+      locale === "fr"
+        ? "Volumes"
+        : "Volumes",
 
-    ...geographieFiches.map((fiche) => ({
-      url: `${baseUrl}/fr/revisions/geographie/${fiche.slug}`,
-      lastModified: new Date(),
-    })),
-  ]
+    force:
+      locale === "fr"
+        ? "Forces"
+        : "Forces",
 
-  const converterPages = [
-    "distance",
-    "puissance",
-    "volume",
-    "force",
-    "surface",
-    "temperature",
-    "weight",
-    "speed",
-    "time",
-    "angle",
-    "storage",
-    "internet-speed",
-  ].map((slug) => ({
-    url: `${baseUrl}/fr/convert/${slug}`,
-    lastModified: new Date(),
-  }))
+    surface:
+      locale === "fr"
+        ? "Surfaces"
+        : "Surfaces",
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-    },
+    temperature:
+      locale === "fr"
+        ? "Température"
+        : "Temperature",
 
-    {
-      url: `${baseUrl}/fr`,
-      lastModified: new Date(),
-    },
+    weight:
+      locale === "fr"
+        ? "Poids"
+        : "Weight",
 
-    {
-      url: `${baseUrl}/en`,
-      lastModified: new Date(),
-    },
+    storage:
+      locale === "fr"
+       ? "Stockages"
+       : "Storages",
 
-    // Pages catégories révisions
+    internetSpeed:
+      locale === "fr"
+      ? "Débit internet"
+      : "Internet Speed",
+           
+  }
 
-    {
-      url: `${baseUrl}/fr/revisions/maths`,
-      lastModified: new Date(),
-    },
+  return (
+    <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-8">
 
-    {
-      url: `${baseUrl}/fr/revisions/francais`,
-      lastModified: new Date(),
-    },
+      {/* HEADER */}
 
-    {
-      url: `${baseUrl}/fr/revisions/histoire`,
-      lastModified: new Date(),
-    },
+<div className="relative mt-8">
 
-    {
-      url: `${baseUrl}/fr/revisions/svt`,
-      lastModified: new Date(),
-    },
+  {/* BANNIERE PUB */}
 
-    {
-      url: `${baseUrl}/fr/revisions/pays`,
-      lastModified: new Date(),
-    },
+         <AdBanner />
+  
+  {/* TITRE CENTRE */}
 
-    {
-      url: `${baseUrl}/fr/revisions/geographie`,
-      lastModified: new Date(),
-    },
+  <h1 className="text-6xl md:text-7xl font-bold text-center">
+    {text.title}
+  </h1>
 
-    // Pages catégories convertisseurs
+  {/* LANGUES EN HAUT A DROITE */}
 
-    {
-      url: `${baseUrl}/fr/convert/distance`,
-      lastModified: new Date(),
-    },
+  <div className="absolute top-1/2 right-0 -translate-y-1/2 flex gap-2">
 
-    {
-      url: `${baseUrl}/fr/convert/puissance`,
-      lastModified: new Date(),
-    },
+    <a
+      href="/en"
+      className="border border-gray-300 dark:border-gray-700 px-4 py-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+    >
+      EN
+    </a>
 
-    {
-      url: `${baseUrl}/fr/convert/volume`,
-      lastModified: new Date(),
-    },
+    <a
+      href="/fr"
+      className="border border-gray-300 dark:border-gray-700 px-4 py-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+    >
+      FR
+    </a>
 
-    {
-      url: `${baseUrl}/fr/convert/force`,
-      lastModified: new Date(),
-    },
+  </div>
 
-    {
-      url: `${baseUrl}/fr/convert/surface`,
-      lastModified: new Date(),
-    },
+</div>
 
-    {
-      url: `${baseUrl}/fr/convert/temperature`,
-      lastModified: new Date(),
-    },
+      <div className="max-w-2xl mx-auto">
 
-    {
-      url: `${baseUrl}/fr/convert/weight`,
-      lastModified: new Date(),
-    },
+      
+        
 
-    {
-      url: `${baseUrl}/fr/convert/speed`,
-      lastModified: new Date(),
-    },
+        {/* TITRE CATEGORIES */}
 
-    {
-      url: `${baseUrl}/fr/convert/time`,
-      lastModified: new Date(),
-    },
+<div className="mt-12 mb-8">
 
-    {
-      url: `${baseUrl}/fr/convert/angle`,
-      lastModified: new Date(),
-    },
+  <div className="flex items-center gap-3">
+    <span className="text-4xl">
+      🧮
+    </span>
 
-    {
-      url: `${baseUrl}/fr/convert/storage`,
-      lastModified: new Date(),
-    },
+    <h2 className="text-3xl font-bold">
+      {text.bottomTitle}
+    </h2>
+  </div>
 
-    {
-      url: `${baseUrl}/fr/convert/internet-speed`,
-      lastModified: new Date(),
-    },
+  <p className="mt-2 text-gray-500 dark:text-gray-400">
+    {locale === "fr"
+      ? "Convertisseurs simples et rapides"
+      : "Fast and simple converters"}
+  </p>
 
-    ...revisionPages,
-    ...converterPages,
-  ]
+</div>
+
+{/* CATEGORIES */}
+
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+
+  {/* DISTANCE */}
+
+  <a
+    href={`/${locale}/convert/distance`}
+    className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+  >
+    <span className="text-base font-bold">
+      {text.distance}
+    </span>
+
+    <span className="text-3xl">
+      📏
+    </span>
+  </a>
+
+  {/* POWER */}
+
+  <a
+    href={`/${locale}/convert/puissance`}
+    className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+  >
+    <span className="text-base font-bold">
+      {text.power}
+    </span>
+
+    <span className="text-3xl">
+      ⚡
+    </span>
+  </a>
+  
+  {/* VOLUME */}
+
+  <a
+    href={`/${locale}/convert/volume`}
+    className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+  >
+    <span className="text-base font-bold">
+      {text.volume}
+    </span>
+
+    <span className="text-3xl">
+      🧊
+    </span>
+  </a>
+
+  {/* FORCE */}
+
+  <a
+    href={`/${locale}/convert/force`}
+    className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+  >
+    <span className="text-base font-bold">
+      {text.force}
+    </span>
+
+    <span className="text-3xl">
+      💪
+    </span>
+  </a>
+
+  {/* SURFACE */}
+
+  <a
+    href={`/${locale}/convert/surface`}
+    className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+  >
+    <span className="text-base font-bold">
+      {text.surface}
+    </span>
+
+    <span className="text-3xl">
+      ◼️
+    </span>
+  </a>
+
+  {/* TEMPERATURE */}
+
+  <a
+    href={`/${locale}/convert/temperature`}
+    className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+  >
+    <span className="text-base font-bold">
+      {text.temperature}
+    </span>
+
+    <span className="text-3xl">
+      🌡️
+    </span>
+  </a>
+
+  {/* WEIGHT */}
+
+  <a
+    href={`/${locale}/convert/weight`}
+    className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+  >
+    <span className="text-base font-bold">
+      {text.weight}
+    </span>
+
+    <span className="text-3xl">
+      ⚖️
+    </span>
+  </a>
+
+  {/* SPEED */}
+
+<a
+  href={`/${locale}/convert/speed`}
+  className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+>
+  <span className="text-base font-bold">
+    {locale === "fr" ? "Vitesses" : "Speed"}
+  </span>
+
+  <span className="text-3xl">
+    🚗
+  </span>
+</a>
+
+{/* TIME */}
+
+<a
+  href={`/${locale}/convert/time`}
+  className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+>
+  <span className="text-base font-bold">
+    {locale === "fr"
+      ? "Temps"
+      : "Time"}
+  </span>
+
+  <span className="text-3xl">
+    ⏱️
+  </span>
+
+</a>
+
+<a
+  href={`/${locale}/convert/angle`}
+  className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+>
+  <span className="text-base font-bold">
+    {locale === "fr"
+      ? "Angles"
+      : "Angles"}
+  </span>
+
+  <span className="text-3xl">
+    📐
+  </span>
+</a>
+
+{/* STORAGE */}
+
+<a
+  href={`/${locale}/convert/storage`}
+  className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+>
+  <span className="text-base font-bold">
+    {locale === "fr"
+      ? "Stockage"
+      : "Storage"}
+  </span>
+
+  <span className="text-3xl">
+    💾
+  </span>
+
+</a>
+
+{/* INTERNET SPEED */}
+
+<a
+  href={`/${locale}/convert/internet-speed`}
+  className="border border-gray-300 dark:border-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+>
+  <span className="text-base font-bold">
+    {locale === "fr"
+      ? "Débit internet"
+      : "Internet Speed"}
+  </span>
+
+  <span className="text-3xl">
+    🌐
+  </span>
+
+</a>
+
+
+
+        </div>
+        
+        <RevisionSection locale={locale} />
+
+      </div>
+
+    </main>
+  )
 }

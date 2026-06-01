@@ -91,7 +91,7 @@ export default async function HistoirePage({
                 shadow-md
               "
             >
-              ← Retour
+              {locale === "fr" ? "← Retour" : "← Back"}
             </Link>
 
           </div>

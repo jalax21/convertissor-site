@@ -1,4 +1,5 @@
 import { francaisFiches } from "@/data/revisions/francais"
+import { englishFiches } from "@/data/revisions/francais-en"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import AdBanner from "@/components/AdBanner"
@@ -14,9 +15,14 @@ export default async function Page({
 
   const { slug, locale } = await params
 
-  const fiche = francaisFiches.find(
-    (f) => f.slug === slug
-  )
+  const fiches =
+  locale === "en"
+    ? englishFiches
+    : francaisFiches
+
+const fiche = fiches.find(
+  (f) => f.slug === slug
+)
 
   if (!fiche) {
     notFound()
@@ -60,7 +66,7 @@ export default async function Page({
                 shadow-md
               "
             >
-              ← Retour
+              {locale === "fr" ? "← Retour" : "← Back"}
             </Link>
 
           </div>
@@ -108,6 +114,58 @@ export default async function Page({
           </div>
 
         </section>
+        {/* POINTS CLÉS */}
+<section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
+
+  <h2 className="text-2xl font-bold mb-4">
+    ✅ Points clés
+  </h2>
+
+  <ul className="space-y-3">
+    {fiche.content.pointsCles?.map((point, index) => (
+      <li
+        key={index}
+        className="text-lg leading-8"
+      >
+        • {point}
+      </li>
+    ))}
+  </ul>
+
+</section>
+
+{/* ERREURS FRÉQUENTES */}
+<section className="mb-6 rounded-3xl border border-red-300 dark:border-red-700 p-6">
+
+  <h2 className="text-2xl font-bold mb-4">
+    ❌ Erreurs fréquentes
+  </h2>
+
+  <ul className="space-y-3">
+    {fiche.content.erreurs?.map((erreur, index) => (
+      <li
+        key={index}
+        className="text-lg leading-8"
+      >
+        • {erreur}
+      </li>
+    ))}
+  </ul>
+
+</section>
+
+{/* ASTUCE */}
+<section className="mb-6 rounded-3xl border border-green-300 dark:border-green-700 p-6">
+
+  <h2 className="text-2xl font-bold mb-4">
+    💡 Astuce
+  </h2>
+
+  <p className="text-xl leading-8">
+    {fiche.content.astuce}
+  </p>
+
+</section>
 
       </div>
 

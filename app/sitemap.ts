@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next"
+
 import { mathsFiches } from "@/data/revisions/maths"
 import { francaisFiches } from "@/data/revisions/francais"
 import { histoireFiches } from "@/data/revisions/histoire"
@@ -9,7 +10,7 @@ import { geographieFiches } from "@/data/revisions/geographie"
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://quickunits.fr"
 
-  const pages = [
+  const revisionPages = [
     ...mathsFiches.map((fiche) => ({
       url: `${baseUrl}/fr/revisions/maths/${fiche.slug}`,
       lastModified: new Date(),
@@ -41,6 +42,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]
 
+  const converterPages = [
+    "distance",
+    "puissance",
+    "volume",
+    "force",
+    "surface",
+    "temperature",
+    "weight",
+    "speed",
+    "time",
+    "angle",
+    "storage",
+    "internet-speed",
+  ].map((slug) => ({
+    url: `${baseUrl}/fr/convert/${slug}`,
+    lastModified: new Date(),
+  }))
+
   return [
     {
       url: baseUrl,
@@ -56,6 +75,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/en`,
       lastModified: new Date(),
     },
+
+    // Pages catégories révisions
 
     {
       url: `${baseUrl}/fr/revisions/maths`,
@@ -87,6 +108,69 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
 
-    ...pages,
+    // Pages catégories convertisseurs
+
+    {
+      url: `${baseUrl}/fr/convert/distance`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/puissance`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/volume`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/force`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/surface`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/temperature`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/weight`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/speed`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/time`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/angle`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/storage`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/fr/convert/internet-speed`,
+      lastModified: new Date(),
+    },
+
+    ...revisionPages,
+    ...converterPages,
   ]
 }
