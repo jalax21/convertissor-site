@@ -1,57 +1,20 @@
-import Link from "next/link"
 import AdBanner from "@/components/AdBanner"
+import Link from "next/link"
+
+import { histoireFiches } from "@/data/revisions/histoire"
+import { historySheets } from "@/data/revisions/histoire-en"
 
 export default async function HistoirePage({
   params,
 }: {
   params: Promise<{ locale: string }>
 }) {
-
   const { locale } = await params
 
-  const fiches = [
-    {
-      title: "🦴 La Préhistoire",
-      href: `/${locale}/revisions/histoire/prehistoire`,
-    },
-    {
-      title: "🏺 L'Égypte antique",
-      href: `/${locale}/revisions/histoire/egypte-antique`,
-    },
-    {
-      title: "🏛️ La Grèce antique",
-      href: `/${locale}/revisions/histoire/grece-antique`,
-    },
-    {
-      title: "🦅 L'Empire romain",
-      href: `/${locale}/revisions/histoire/empire-romain`,
-    },
-    {
-      title: "🏰 Le Moyen Âge",
-      href: `/${locale}/revisions/histoire/moyen-age`,
-    },
-    {
-      title: "🎨 La Renaissance",
-      href: `/${locale}/revisions/histoire/renaissance`,
-    },
-    {
-      title: "🇫🇷 La Révolution française",
-      href: `/${locale}/revisions/histoire/revolution-francaise`,
-    },
-    {
-      title: "⚔️ Première Guerre mondiale",
-      emoji: "",
-      href: `/${locale}/revisions/histoire/premiere-guerre-mondiale`,
-    },
-    {
-      title: "🌍 Seconde Guerre mondiale",
-      href: `/${locale}/revisions/histoire/seconde-guerre-mondiale`,
-    },
-    {
-      title: "☢️ La Guerre froide",
-      href: `/${locale}/revisions/histoire/guerre-froide`,
-    },
-  ]
+  const fiches =
+    locale === "en"
+      ? historySheets
+      : histoireFiches
 
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
@@ -72,7 +35,9 @@ export default async function HistoirePage({
               </span>
 
               <h1 className="text-4xl font-black">
-                Fiches Histoire
+                {locale === "en"
+                  ? "History Revision Sheets"
+                  : "Fiches Histoire"}
               </h1>
 
             </div>
@@ -97,18 +62,21 @@ export default async function HistoirePage({
           </div>
 
           <p className="mt-3 text-gray-500 dark:text-gray-400">
-            Révise rapidement les grandes périodes et événements historiques.
+            {locale === "en"
+              ? "Quickly review major historical periods and events."
+              : "Révise rapidement les grandes périodes et événements historiques."}
           </p>
 
         </div>
 
-        {/* BOUTONS */}
+        {/* FICHES */}
         <div className="grid grid-cols-2 gap-4">
 
           {fiches.map((fiche) => (
-            <a
-              key={fiche.href}
-              href={fiche.href}
+
+            <Link
+              key={fiche.slug}
+              href={`/${locale}/revisions/histoire/${fiche.slug}`}
               className="
                 border
                 border-gray-300
@@ -125,7 +93,8 @@ export default async function HistoirePage({
                 transition
               "
             >
-              <span className="text-4xl">
+
+              <span className="text-5xl">
                 {fiche.emoji}
               </span>
 
@@ -133,7 +102,8 @@ export default async function HistoirePage({
                 {fiche.title}
               </span>
 
-            </a>
+            </Link>
+
           ))}
 
         </div>

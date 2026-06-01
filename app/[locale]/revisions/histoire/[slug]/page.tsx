@@ -1,4 +1,6 @@
 import { histoireFiches } from "@/data/revisions/histoire"
+import { historySheets } from "@/data/revisions/histoire-en"
+
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import AdBanner from "@/components/AdBanner"
@@ -12,10 +14,14 @@ export default async function Page({
     locale: string
   }>
 }) {
-
   const { slug, locale } = await params
 
-  const fiche = histoireFiches.find(
+  const fiches =
+    locale === "en"
+      ? historySheets
+      : histoireFiches
+
+  const fiche = fiches.find(
     (f) => f.slug === slug
   )
 
@@ -30,95 +36,97 @@ export default async function Page({
 
       <div className="max-w-3xl mx-auto">
 
+        {/* TITRE */}
         <div className="mt-8 mb-10">
 
-  <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-4">
 
-    <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3">
 
-      <span className="text-5xl">
-        {fiche.emoji}
-      </span>
+              <span className="text-5xl">
+                {fiche.emoji}
+              </span>
 
-      <h1 className="text-4xl font-black">
-        {fiche.title}
-      </h1>
+              <h1 className="text-4xl font-black">
+                {fiche.title}
+              </h1>
 
-    </div>
+            </div>
 
-    <Link
-      href={`/${locale}/revisions/histoire`}
-      className="
-        px-6
-        py-3
-        rounded-2xl
-        bg-blue-600
-        text-white
-        hover:bg-blue-700
-        transition
-        font-bold
-        shadow-md
-      "
-    >
-      {locale === "fr" ? "← Retour" : "← Back"}
-    </Link>
+            <Link
+              href={`/${locale}/revisions/histoire`}
+              className="
+                px-6
+                py-3
+                rounded-2xl
+                bg-blue-600
+                text-white
+                hover:bg-blue-700
+                transition
+                font-bold
+                shadow-md
+              "
+            >
+              {locale === "fr" ? "← Retour" : "← Back"}
+            </Link>
 
-  </div>
+          </div>
 
-</div>
+        </div>
+
         {/* IMAGE */}
-<section className="mb-6">
+        <section className="mb-6">
 
-  <div className="flex justify-center">
+          <div className="flex justify-center">
 
-    <Image
-      src={fiche.image}
-      alt={fiche.title}
-      width={1000}
-      height={400}
-      className="rounded-3xl"
-      priority
-    />
+            <Image
+              src={fiche.image}
+              alt={fiche.title}
+              width={1000}
+              height={400}
+              className="rounded-3xl"
+              priority
+            />
 
-  </div>
+          </div>
 
-</section>
+        </section>
 
-        {/* DEFINITION */}
+        {/* RÉSUMÉ */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            📘 Résumé
+            {locale === "en"
+              ? "📘 Summary"
+              : "📘 Résumé"}
           </h2>
 
           <p
-  className="text-xl leading-8 text-gray-700 dark:text-gray-300"
-  dangerouslySetInnerHTML={{
-    __html: fiche.content.resume ??"",
-  }}
-/>
+            className="text-xl leading-8 text-gray-700 dark:text-gray-300"
+            dangerouslySetInnerHTML={{
+              __html: fiche.content.resume ?? "",
+            }}
+          />
 
         </section>
 
-            
-    
-
-        {/* A RETENIR */}
+        {/* À RETENIR */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            📌 À retenir
+            {locale === "en"
+              ? "📌 Key Facts"
+              : "📌 À retenir"}
           </h2>
 
           <div
-  className="text-xl font-black text-center"
-  dangerouslySetInnerHTML={{
-    __html: fiche.content.aretenir ?? "",
-  }}
-/>
+            className="text-xl font-black text-center"
+            dangerouslySetInnerHTML={{
+              __html: fiche.content.aretenir ?? "",
+            }}
+          />
 
         </section>
-        
 
       </div>
 
