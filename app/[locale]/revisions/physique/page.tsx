@@ -1,7 +1,7 @@
 import Link from "next/link"
 import AdBanner from "@/components/AdBanner"
 
-export default async function SvtPage({
+export default async function PhysiquePage({
   params,
 }: {
   params: Promise<{ locale: string }>
@@ -10,53 +10,47 @@ export default async function SvtPage({
   const { locale } = await params
 
   const fiches = [
-  {
-    title: locale === "en" ? "🔬 The Cell" : "🔬 La cellule",
-    href: `/${locale}/revisions/svt/cellule`,
-  },
-  {
-    title: locale === "en" ? "🧬 DNA" : "🧬 L'ADN",
-    href: `/${locale}/revisions/svt/adn`,
-  },
-  {
-    title: locale === "en" ? "🧬 Genetics" : "🧬 La Génétique",
-    href: `/${locale}/revisions/svt/genetique`,
-  },
-  {
-    title: locale === "en" ? "🫁 Respiration" : "🫁 La Respiration",
-    href: `/${locale}/revisions/svt/respiration`,
-  },
-  {
-    title: locale === "en"
-      ? "❤️ Blood Circulation"
-      : "❤️ La Circulation sanguine",
-    href: `/${locale}/revisions/svt/circulation-sanguine`,
-  },
-  {
-    title: locale === "en" ? "🍎 Digestion" : "🍎 La Digestion",
-    href: `/${locale}/revisions/svt/digestion`,
-  },
-  {
-    title: locale === "en" ? "🌿 Photosynthesis" : "🌿 La Photosynthèse",
-    href: `/${locale}/revisions/svt/photosynthese`,
-  },
-  {
-    title: locale === "en"
-      ? "🧠 The Nervous System"
-      : "🧠 Le Système nerveux",
-    href: `/${locale}/revisions/svt/systeme-nerveux`,
-  },
-  {
-    title: locale === "en" ? "🌍 Ecosystems" : "🌍 Les Écosystèmes",
-    href: `/${locale}/revisions/svt/ecosystemes`,
-  },
-  {
-    title: locale === "en"
-      ? "🐒 Evolution of Species"
-      : "🐒 L'Évolution",
-    href: `/${locale}/revisions/svt/evolution`,
-  },
-]
+    {
+      title: locale === "en" ? "💪 Forces" : "💪 Les Forces",
+      href: `/${locale}/revisions/physique/forces`,
+    },
+    {
+      title: locale === "en" ? "🚗 Motion" : "🚗 Le Mouvement",
+      href: `/${locale}/revisions/physique/mouvement`,
+    },
+    {
+      title: locale === "en" ? "⚡ Energy" : "⚡ L'Énergie",
+      href: `/${locale}/revisions/physique/energie`,
+    },
+    {
+      title: locale === "en" ? "🔌 Electricity" : "🔌 L'Électricité",
+      href: `/${locale}/revisions/physique/electricite`,
+    },
+    {
+      title: locale === "en" ? "💡 Light" : "💡 La Lumière",
+      href: `/${locale}/revisions/physique/lumiere`,
+    },
+    {
+      title: locale === "en" ? "🔊 Sound" : "🔊 Le Son",
+      href: `/${locale}/revisions/physique/son`,
+    },
+    {
+      title: locale === "en" ? "🌍 Gravity" : "🌍 La Gravitation",
+      href: `/${locale}/revisions/physique/gravitation`,
+    },
+    {
+      title: locale === "en" ? "🫧 Pressure" : "🫧 La Pression",
+      href: `/${locale}/revisions/physique/pression`,
+    },
+    {
+      title: locale === "en" ? "⚛️ Atoms" : "⚛️ Les Atomes",
+      href: `/${locale}/revisions/physique/atomes`,
+    },
+    {
+      title: locale === "en" ? "☢️ Radioactivity" : "☢️ La Radioactivité",
+      href: `/${locale}/revisions/physique/radioactivite`,
+    },
+  ]
 
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
@@ -73,12 +67,14 @@ export default async function SvtPage({
             <div className="flex items-center gap-3">
 
               <span className="text-5xl">
-                🧬
+                ⚛️
               </span>
 
               <h1 className="text-4xl font-black">
-  {locale === "en" ? "Biology Revision Sheets" : "Fiches SVT"}
-</h1>
+                {locale === "en"
+                  ? "Physics"
+                  : "Physique"}
+              </h1>
 
             </div>
 
@@ -102,10 +98,10 @@ export default async function SvtPage({
           </div>
 
           <p className="mt-3 text-gray-500 dark:text-gray-400">
-  {locale === "en"
-    ? "Quickly review the most important biology concepts."
-    : "Révise rapidement les notions importantes de SVT."}
-</p>
+            {locale === "en"
+              ? "Quickly review the most important physics concepts."
+              : "Révise rapidement les notions importantes de physique."}
+          </p>
 
         </div>
 
@@ -132,7 +128,6 @@ export default async function SvtPage({
                 transition
               "
             >
-              
               <span className="text-lg font-bold text-center">
                 {fiche.title}
               </span>

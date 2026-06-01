@@ -1,5 +1,5 @@
-import AdBanner from "@/components/AdBanner"
 import Link from "next/link"
+import AdBanner from "@/components/AdBanner"
 
 export default async function GeographiePage({
   params,
@@ -11,43 +11,63 @@ export default async function GeographiePage({
 
   const fiches = [
     {
-      title: "🌍 Continents et océans",
+      title: locale === "en"
+        ? "🌍 Continents and Oceans"
+        : "🌍 Continents et océans",
       href: `/${locale}/revisions/geographie/continents-oceans`,
     },
     {
-      title: "🌦️ Les climats",
+      title: locale === "en"
+        ? "🌦️ Climates"
+        : "🌦️ Les climats",
       href: `/${locale}/revisions/geographie/climats`,
     },
     {
-      title: "⛰️ Le relief terrestre",
+      title: locale === "en"
+        ? "⛰️ Landforms"
+        : "⛰️ Le relief terrestre",
       href: `/${locale}/revisions/geographie/relief`,
     },
     {
-      title: "👨‍👩‍👧‍👦 Population mondiale",
+      title: locale === "en"
+        ? "👨‍👩‍👧‍👦 World Population"
+        : "👨‍👩‍👧‍👦 Population mondiale",
       href: `/${locale}/revisions/geographie/population-mondiale`,
     },
     {
-      title: "🏙️ Urbanisation",
+      title: locale === "en"
+        ? "🏙️ Urbanization"
+        : "🏙️ Urbanisation",
       href: `/${locale}/revisions/geographie/urbanisation`,
     },
     {
-      title: "♻️ Développement durable",
+      title: locale === "en"
+        ? "♻️ Sustainable Development"
+        : "♻️ Développement durable",
       href: `/${locale}/revisions/geographie/developpement-durable`,
     },
     {
-      title: "🌋 Risques naturels",
+      title: locale === "en"
+        ? "🌋 Natural Hazards"
+        : "🌋 Risques naturels",
       href: `/${locale}/revisions/geographie/risques-naturels`,
     },
     {
-      title: "🌐 Mondialisation",
+      title: locale === "en"
+        ? "🌐 Globalization"
+        : "🌐 Mondialisation",
       href: `/${locale}/revisions/geographie/mondialisation`,
     },
     {
-      title: "⚡ Les énergies",
+      title: locale === "en"
+        ? "⚡ Energy Sources"
+        : "⚡ Les énergies",
       href: `/${locale}/revisions/geographie/energies`,
     },
     {
-      title: "🗺️ Lire une carte",
+      title: locale === "en"
+        ? "🗺️ Reading a Map"
+        : "🗺️ Lire une carte",
       href: `/${locale}/revisions/geographie/cartographie`,
     },
   ]
@@ -59,7 +79,6 @@ export default async function GeographiePage({
 
       <div className="max-w-3xl mx-auto">
 
-        {/* TITRE */}
         <div className="mt-8 mb-10">
 
           <div className="flex items-center justify-between gap-4">
@@ -71,7 +90,9 @@ export default async function GeographiePage({
               </span>
 
               <h1 className="text-4xl font-black">
-                Fiches Géographie
+                {locale === "en"
+                  ? "Geography Revision Sheets"
+                  : "Fiches Géographie"}
               </h1>
 
             </div>
@@ -96,12 +117,13 @@ export default async function GeographiePage({
           </div>
 
           <p className="mt-3 text-gray-500 dark:text-gray-400">
-            Révise rapidement les notions essentielles de géographie.
+            {locale === "en"
+              ? "Quickly review the essential concepts of geography."
+              : "Révise rapidement les notions essentielles de géographie."}
           </p>
 
         </div>
 
-        {/* FICHES */}
         <div className="grid grid-cols-2 gap-4">
 
           {fiches.map((fiche) => (
@@ -115,16 +137,18 @@ export default async function GeographiePage({
                 rounded-2xl
                 p-6
                 flex
+                flex-col
                 items-center
                 justify-center
-                text-center
+                gap-3
                 hover:bg-gray-100
                 dark:hover:bg-gray-800
                 transition
-                font-bold
               "
             >
-              {fiche.title}
+              <span className="text-lg font-bold text-center">
+                {fiche.title}
+              </span>
             </Link>
           ))}
 

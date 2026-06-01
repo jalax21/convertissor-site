@@ -1,4 +1,5 @@
-import { svtFiches } from "@/data/revisions/svt"
+import { svtFiches as frFiches } from "@/data/revisions/svt"
+import { svtSheets as enFiches } from "@/data/revisions/svt-en"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import AdBanner from "@/components/AdBanner"
@@ -14,10 +15,11 @@ export default async function Page({
 }) {
 
   const { slug, locale } = await params
+  const fiches = locale === "en" ? enFiches : frFiches
 
-  const fiche = svtFiches.find(
-    (f) => f.slug === slug
-  )
+  const fiche = fiches.find(
+  (f) => f.slug === slug
+)
 
   if (!fiche) {
     notFound()
@@ -61,7 +63,7 @@ export default async function Page({
         shadow-md
       "
     >
-      ← Retour
+      {locale === "fr" ? "← Retour" : "← Back"}
     </Link>
 
   </div>
@@ -92,7 +94,7 @@ export default async function Page({
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            📘 Définition
+            {locale === "en" ? "📘 Definition" : "📘 Définition"}
           </h2>
 
           <p
@@ -110,7 +112,7 @@ export default async function Page({
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            🧠 À retenir
+            {locale === "en" ? "🧠 Key Points" : "🧠 À retenir"}
           </h2>
 
           <div className="text-xl font-black text-center">
@@ -123,7 +125,7 @@ export default async function Page({
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            ✏ Exemple
+            {locale === "en" ? "✏ Example" : "✏ Exemple"}
           </h2>
 
           <p className="text-xl font-black text-center">

@@ -1,4 +1,5 @@
 import { geographieFiches } from "@/data/revisions/geographie"
+import { geographySheets } from "@/data/revisions/geographie-en"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -14,10 +15,14 @@ export default async function Page({
 }) {
 
   const { slug, locale } = await params
+  const fiches =
+  locale === "en"
+    ? geographySheets
+    : geographieFiches
 
-  const fiche = geographieFiches.find(
-    (f) => f.slug === slug
-  )
+  const fiche = fiches.find(
+  (f) => f.slug === slug
+)
 
   if (!fiche) {
     notFound()
@@ -86,8 +91,8 @@ export default async function Page({
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            📘 Définition
-          </h2>
+  {locale === "en" ? "📘 Definition" : "📘 Définition"}
+</h2>
 
           <div
   className="text-xl leading-10 text-gray-700 dark:text-gray-300"
@@ -102,8 +107,8 @@ export default async function Page({
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            ✏ Exemple
-          </h2>
+  {locale === "en" ? "✏ Example" : "✏ Exemple"}
+</h2>
 
           <div className="text-2xl text-center">
             {fiche.content.exemple}
@@ -115,8 +120,8 @@ export default async function Page({
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            🧠 À retenir
-          </h2>
+  {locale === "en" ? "🧠 Key Points" : "🧠 À retenir"}
+</h2>
 
           <div className="text-3xl font-black text-center">
             {fiche.content.formule}

@@ -1,9 +1,9 @@
-import { mathsFiches } from "@/data/revisions/maths"
-import { mathSheets } from "@/data/revisions/maths-en"
-import { notFound } from "next/navigation"
-import Link from "next/link"
+import { physiqueFiches as frFiches } from "@/data/revisions/physique"
+import { physicsSheets as enFiches } from "@/data/revisions/physique-en"
 import Image from "next/image"
+import { notFound } from "next/navigation"
 import AdBanner from "@/components/AdBanner"
+import Link from "next/link"
 
 export default async function Page({
   params,
@@ -15,15 +15,11 @@ export default async function Page({
 }) {
 
   const { slug, locale } = await params
-
-  const fiches =
-    locale === "en"
-      ? mathSheets
-      : mathsFiches
+  const fiches = locale === "en" ? enFiches : frFiches
 
   const fiche = fiches.find(
-    (f) => f.slug === slug
-  )
+  (f) => f.slug === slug
+)
 
   if (!fiche) {
     notFound()
@@ -37,46 +33,48 @@ export default async function Page({
       <div className="max-w-3xl mx-auto">
 
         {/* TITRE */}
-        <div className="mt-8 mb-10">
+<div className="mt-8 mb-10">
 
-          <div className="flex items-center justify-between gap-4">
+  <div className="flex items-center justify-between gap-4">
 
-            <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3">
 
-              <span className="text-5xl">
-                {fiche.emoji}
-              </span>
+      <span className="text-5xl">
+        {fiche.emoji}
+      </span>
 
-              <h1 className="text-4xl font-black">
-                {fiche.title}
-              </h1>
+      <h1 className="text-4xl font-black">
+        {fiche.title}
+      </h1>
 
-            </div>
+    </div>
 
-            <Link
-              href={`/${locale}/revisions/maths`}
-              className="
-                px-8
-                py-4
-                rounded-2xl
-                bg-blue-600
-                text-white
-                hover:bg-blue-700
-                transition
-                font-bold
-                shadow-md
-              "
-            >
-              {locale === "fr" ? "← Retour" : "← Back"}
-            </Link>
+    <Link
+      href={`/${locale}/revisions/svt`}
+      className="
+        px-8
+        py-4
+        rounded-2xl
+        bg-blue-600
+        text-white
+        hover:bg-blue-700
+        transition
+        font-bold
+        shadow-md
+      "
+    >
+      {locale === "fr" ? "← Retour" : "← Back"}
+    </Link>
 
-          </div>
+  </div>
 
-        </div>
+</div>
+  
 
         {/* IMAGE */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
+      
           <div className="flex justify-center">
 
             <Image
@@ -91,14 +89,12 @@ export default async function Page({
           </div>
 
         </section>
-
+        
         {/* DEFINITION */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            {locale === "en"
-              ? "📘 Definition"
-              : "📘 Définition"}
+            {locale === "en" ? "📘 Definition" : "📘 Définition"}
           </h2>
 
           <p
@@ -110,13 +106,13 @@ export default async function Page({
 
         </section>
 
+        
+
         {/* FORMULE */}
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            {locale === "en"
-              ? "🧠 Formula"
-              : "🧠 Formule"}
+            {locale === "en" ? "🧠 Key Points" : "🧠 À retenir"}
           </h2>
 
           <div className="text-xl font-black text-center">
@@ -129,9 +125,7 @@ export default async function Page({
         <section className="mb-6 rounded-3xl border border-gray-300 dark:border-gray-700 p-6">
 
           <h2 className="text-2xl font-bold mb-4">
-            {locale === "en"
-              ? "✏ Example"
-              : "✏ Exemple"}
+            {locale === "en" ? "✏ Example" : "✏ Exemple"}
           </h2>
 
           <p className="text-xl font-black text-center">
