@@ -2,8 +2,7 @@ export const francaisFiches = [
 
   {
 slug: "nature-des-mots",
-title: "Nature des mots",
-emoji: "📝",
+title: "📝 Nature des mots",
 
 content: {
 definition:
@@ -39,8 +38,7 @@ astuce:
 
   {
 slug: "fonctions-grammaticales",
-title: "Fonctions grammaticales",
-emoji: "📚",
+title: "📚 Fonctions grammaticales",
 
 content: {
 definition:
@@ -73,8 +71,7 @@ astuce:
 
   {
 slug: "accord-participe-passe",
-title: "Accord du participe passé",
-emoji: "✍️",
+title: "✍️ Accord du participe passé",
 
 content: {
 definition:
@@ -107,8 +104,7 @@ astuce:
 
 {
 slug: "homophones",
-title: "Homophones",
-emoji: "🔤",
+title: "🔤 Homophones",
 
 content: {
 definition:
@@ -141,8 +137,7 @@ astuce:
 
 {
 slug: "types-de-phrases",
-title: "Types de phrases",
-emoji: "💬",
+title: "💬 Types de phrases",
 
 content: {
 definition:
@@ -179,8 +174,7 @@ astuce:
 
 {
 slug: "conjugaison-present",
-title: "Présent de l'indicatif",
-emoji: "📖",
+title: "📖 Présent de l'indicatif",
 
 content: {
 definition:
@@ -213,8 +207,7 @@ astuce:
 },
 {
 slug: "conditionnel",
-title: "Conditionnel",
-emoji: "🔗",
+title: "🔗 Conditionnel",
 
 content: {
 definition:
@@ -248,8 +241,7 @@ astuce:
 
 {
 slug: "figure-de-style",
-title: "Figures de style",
-emoji: "🎭",
+title: "🎭 Figures de style",
 
 content: {
 definition:
@@ -283,8 +275,7 @@ astuce:
 
 {
 slug: "proposition-subordonnee",
-title: "Subordonnées",
-emoji: "🔗",
+title: "🔗 Subordonnées",
 
 content: {
 definition:
@@ -318,8 +309,7 @@ astuce:
 
 {
 slug: "registre-litteraire",
-title: "Registres littéraires",
-emoji: "📜",
+title: "📜 Registres littéraires",
 
 content: {
 definition:
@@ -351,243 +341,6 @@ astuce:
 },
 },
 
-{
-slug: "homophones",
-title: "Homophones",
-emoji: "🔤",
 
-content: {
-definition:
-"Homophones are words that are pronounced the same way but have different meanings and spellings.",
-
-formule:
-"their/there • to/too • your/you're • its/it's",
-
-exemple:
-"They are going to school. • I have two cats.",
-
-pointsCles: [
-"Homophones are common sources of spelling mistakes.",
-"Context helps determine the correct spelling.",
-"Each homophone has its own grammatical role."
-],
-
-erreurs: [
-"Confusing their and there.",
-"Confusing your and you're.",
-"Confusing its and it's."
-],
-
-astuce:
-"Replace the word with another one to check whether the spelling makes sense."
-},
-},
-
-{
-slug: "types-de-phrases",
-title: "Types of Sentences",
-emoji: "💬",
-
-content: {
-definition:
-"Sentences can have different purposes depending on what we want to express. They can provide information, ask a question, give an order, or express a feeling.",
-
-formule:
-"Declarative • Interrogative • Imperative • Exclamatory",
-
-exemple:
-"I am going to school. (declarative) • Where do you live? (interrogative) • Close the door! (imperative) • What a beautiful landscape! (exclamatory)",
-
-pointsCles: [
-"A declarative sentence provides information.",
-"An interrogative sentence asks a question.",
-"An imperative sentence gives an order, advice, or instruction.",
-"An exclamatory sentence expresses a strong emotion.",
-"A sentence can sometimes be both imperative and exclamatory."
-],
-
-erreurs: [
-"Confusing interrogative and exclamatory sentences.",
-"Forgetting punctuation marks (?, !).",
-"Thinking that every exclamatory sentence must contain an emotional word."
-],
-
-astuce:
-"Look at the punctuation mark at the end of the sentence. It often reveals the sentence type."
-},
-},
-
-{
-slug: "conjugaison-present",
-title: "Present Tense",
-emoji: "📖",
-
-content: {
-definition:
-"The present tense is the most commonly used tense in French. It expresses an action happening now, a habit, a general truth, or a repeated action.",
-
-formule:
-"I speak • You speak • He speaks • We speak • You speak • They speak",
-
-exemple:
-"I do my homework. • We eat at noon. • The Earth revolves around the Sun.",
-
-pointsCles: [
-"The present tense expresses an action happening now.",
-"It can also express a habit.",
-"It is used for general truths.",
-"Different verb groups have different endings.",
-"Irregular verbs must be memorized."
-],
-
-erreurs: [
-"Mixing up verb endings.",
-"Forgetting the correct ending for the subject.",
-"Misconjugating irregular verbs."
-],
-
-astuce:
-"Identify the verb group first, then apply the correct endings."
-}
-},
-
-{
-slug: "conditionnel",
-title: "Conditional Mood",
-emoji: "🔗",
-
-content: {
-definition:
-"The conditional mood is used to express an action that depends on a condition, a hypothesis, a wish, advice, or a polite request.",
-
-formule:
-"If + past tense → conditional",
-
-exemple:
-"If I had more time, I would travel more. • I would like to visit Canada. • Could you help me?",
-
-pointsCles: [
-"The conditional often expresses a condition.",
-"It can express wishes and dreams.",
-"It is used for giving advice.",
-"It makes requests more polite.",
-"It frequently appears in sentences with 'if'."
-],
-
-erreurs: [
-"Using the conditional directly after 'if'.",
-"Confusing the future tense and the conditional.",
-"Forgetting that the clause introduced by 'if' usually uses the past tense."
-],
-
-astuce:
-"Remember: 'If + past tense → conditional'."
-}
-},
-
-{
-slug: "figure-de-style",
-title: "Figures of Speech",
-emoji: "🎭",
-
-content: {
-definition:
-"Figures of speech are techniques used to make writing more expressive, vivid, and imaginative.",
-
-formule:
-"Simile • Metaphor • Personification • Hyperbole",
-
-exemple:
-"This man is as strong as a lion. (simile) • The moon watches over the city. (personification)",
-
-pointsCles: [
-"A simile compares two things using words such as 'like' or 'as'.",
-"A metaphor compares without using comparison words.",
-"Personification gives human traits to objects or ideas.",
-"Hyperbole deliberately exaggerates reality.",
-"Figures of speech are common in literature and poetry."
-],
-
-erreurs: [
-"Confusing similes and metaphors.",
-"Failing to identify exaggeration.",
-"Thinking personification only applies to animals."
-],
-
-astuce:
-"Look for expressions that seem exaggerated or highly imaginative."
-}
-},
-
-{
-slug: "proposition-subordonnee",
-title: "Subordinate Clauses",
-emoji: "🔗",
-
-content: {
-definition:
-"A subordinate clause is a part of a sentence that depends on a main clause. It provides additional information and generally cannot stand alone.",
-
-formule:
-"Main Clause + Subordinate Clause",
-
-exemple:
-"I think that you are right. ('that you are right' is a subordinate clause.)",
-
-pointsCles: [
-"A subordinate clause depends on a main clause.",
-"It is often introduced by words such as that, who, because, when, or if.",
-"It provides additional information.",
-"There are several types of subordinate clauses.",
-"Complex sentences often contain more than one clause."
-],
-
-erreurs: [
-"Confusing the main clause and the subordinate clause.",
-"Assuming a subordinate clause can always be removed.",
-"Forgetting the linking word."
-],
-
-astuce:
-"Look for words such as 'that', 'who', 'because', or 'if'."
-}
-},
-
-{
-slug: "registre-litteraire",
-title: "Literary Registers",
-emoji: "📜",
-
-content: {
-definition:
-"A literary register refers to the effect an author wants to create in the reader. Depending on the register, a text may make the reader laugh, feel emotional, frightened, surprised, or thoughtful.",
-
-formule:
-"Comic • Tragic • Lyric • Epic • Fantastic",
-
-exemple:
-"A tragedy aims to evoke fear and pity in the audience.",
-
-pointsCles: [
-"The comic register aims to make readers laugh.",
-"The tragic register presents painful or unavoidable situations.",
-"The lyric register expresses emotions and feelings.",
-"The epic register highlights heroic achievements.",
-"The fantastic register introduces strange or supernatural events."
-],
-
-erreurs: [
-"Confusing literary genre and register.",
-"Thinking a text can only have one register.",
-"Failing to identify the effect intended by the author."
-],
-
-astuce:
-"Ask yourself what emotion the author wants the reader to feel."
-}
-},
 
 ]
-
-
-

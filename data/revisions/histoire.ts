@@ -3,8 +3,7 @@ export const histoireFiches = [
 
   {
   slug: "prehistoire",
-  title: "La Préhistoire",
-  emoji: "🦴",
+  title: "🦴 La Préhistoire",
   image: "/images/revisions/histoire/prehistoire.webp",
 
   content: {
@@ -18,8 +17,7 @@ export const histoireFiches = [
 
   {
   slug: "egypte-antique",
-  title: "L'Égypte antique",
-  emoji: "🏺",
+  title: "🏺 L'Égypte antique",
   image: "/images/revisions/histoire/egypte-antique.webp",
 
   content: {
@@ -33,8 +31,7 @@ export const histoireFiches = [
 
   {
   slug: "grece-antique",
-  title: "La Grèce antique",
-  emoji: "🏛️",
+  title: "🏛️ La Grèce antique",
   image: "/images/revisions/histoire/grece-antique.webp",
 
   content: {
@@ -48,8 +45,7 @@ export const histoireFiches = [
 
  {
   slug: "empire-romain",
-  title: "L'Empire romain",
-  emoji: "🦅",
+  title: "🦅 L'Empire romain",
   image: "/images/revisions/histoire/empire-romain.webp",
 
   content: {
@@ -63,8 +59,7 @@ export const histoireFiches = [
 
   {
   slug: "moyen-age",
-  title: "Le Moyen Âge",
-  emoji: "🏰",
+  title: "🏰 Le Moyen Âge",
   image: "/images/revisions/histoire/moyen-age.webp",
 
   content: {
@@ -78,8 +73,7 @@ export const histoireFiches = [
 
   {
   slug: "renaissance",
-  title: "La Renaissance",
-  emoji: "🎨",
+  title: "🎨 La Renaissance",
   image: "/images/revisions/histoire/renaissance.webp",
 
   content: {
@@ -93,8 +87,7 @@ export const histoireFiches = [
 
   {
   slug: "revolution-francaise",
-  title: "La Révolution française",
-  emoji: "🇫🇷",
+  title: "🇫🇷 La Révolution française",
   image: "/images/revisions/histoire/revolution-francaise.webp",
 
   content: {
@@ -108,8 +101,7 @@ export const histoireFiches = [
 
   {
     slug: "premiere-guerre-mondiale",
-    title: "Première Guerre mondiale",
-    emoji: "⚔️",
+    title: "⚔️ Première Guerre mondiale",
     image: "/images/revisions/histoire/premiere-guerre-mondiale.webp",
 
     content: {
@@ -124,8 +116,7 @@ export const histoireFiches = [
 
   {
   slug: "seconde-guerre-mondiale",
-  title: "Seconde Guerre mondiale",
-  emoji: "🌍",
+  title: "🌍 Seconde Guerre mondiale",
   image: "/images/revisions/histoire/seconde-guerre-mondiale.webp",
 
   content: {
@@ -139,8 +130,7 @@ export const histoireFiches = [
 
   {
   slug: "guerre-froide",
-  title: "La Guerre froide",
-  emoji: "☢️",
+  title: "☢️ La Guerre froide",
   image: "/images/revisions/histoire/guerre-froide.webp",
 
   content: {

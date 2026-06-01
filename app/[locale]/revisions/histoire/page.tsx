@@ -94,10 +94,7 @@ export default async function HistoirePage({
               "
             >
 
-              <span className="text-5xl">
-                {fiche.emoji}
-              </span>
-
+              
               <span className="text-lg font-bold text-center">
                 {fiche.title}
               </span>

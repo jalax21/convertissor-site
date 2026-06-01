@@ -2,8 +2,7 @@ export const englishFiches = [
 
 {
 slug: "nature-des-mots",
-title: "Parts of Speech",
-emoji: "📝",
+title: "📝 Parts of Speech",
 
 content: {
 definition:
@@ -35,8 +34,7 @@ astuce:
 
 {
 slug: "fonctions-grammaticales",
-title: "Grammatical Functions",
-emoji: "📚",
+title: "📚 Grammatical Functions",
 
 content: {
 definition:
@@ -67,8 +65,7 @@ astuce:
 
 {
 slug: "accord-participe-passe",
-title: "Past Participle Agreement",
-emoji: "✍️",
+title: "✍️ Past Participle Agreement",
 
 content: {
 definition:
@@ -99,8 +96,7 @@ astuce:
 
 {
 slug: "homophones",
-title: "Homophones",
-emoji: "🔤",
+title: "🔤 Homophones",
 
 content: {
 definition:
@@ -131,8 +127,7 @@ astuce:
 
 {
 slug: "types-de-phrases",
-title: "Types of Sentences",
-emoji: "💬",
+title: "💬 Types of Sentences",
 
 content: {
 definition:
@@ -165,8 +160,7 @@ astuce:
 
 {
 slug: "conjugaison-present",
-title: "Present Tense",
-emoji: "📖",
+title: "📖 Present Tense",
 
 content: {
 definition:
@@ -199,8 +193,7 @@ astuce:
 
 {
 slug: "conditionnel",
-title: "Conditional Mood",
-emoji: "🔗",
+title: "🔗 Conditional Mood",
 
 content: {
 definition:
@@ -233,8 +226,7 @@ astuce:
 
 {
 slug: "figure-de-style",
-title: "Figures of Speech",
-emoji: "🎭",
+title: "🎭 Figures of Speech",
 
 content: {
 definition:
@@ -267,8 +259,7 @@ astuce:
 
 {
 slug: "proposition-subordonnee",
-title: "Subordinate Clauses",
-emoji: "🔗",
+title: "🔗 Subordinate Clauses",
 
 content: {
 definition:
@@ -301,8 +292,7 @@ astuce:
 
 {
 slug: "registre-litteraire",
-title: "Literary Registers",
-emoji: "📜",
+title: "📜 Literary Registers",
 
 content: {
 definition:

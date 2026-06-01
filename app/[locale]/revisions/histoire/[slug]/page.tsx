@@ -43,9 +43,7 @@ export default async function Page({
 
             <div className="flex items-center gap-3">
 
-              <span className="text-5xl">
-                {fiche.emoji}
-              </span>
+              
 
               <h1 className="text-4xl font-black">
                 {fiche.title}

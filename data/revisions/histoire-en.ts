@@ -2,8 +2,7 @@ export const historySheets = [
 
 {
   slug: "prehistoire",
-  title: "Prehistory",
-  emoji: "🦴",
+  title: "🦴 Prehistory",
   image: "/images/revisions/histoire/prehistoire.webp",
 
 
@@ -18,8 +17,7 @@ export const historySheets = [
 
 {
   slug: "egypte-antique",
-  title: "Ancient Egypt",
-  emoji: "🏺",
+  title: "🏺 Ancient Egypt",
   image: "/images/revisions/histoire/egypte-antique.webp",
 
   content: {
@@ -33,8 +31,7 @@ export const historySheets = [
 
 {
   slug: "grece-antique",
-  title: "Ancient Greece",
-  emoji: "🏛️",
+  title: "🏛️ Ancient Greece",
   image: "/images/revisions/histoire/grece-antique.webp",
 
 
@@ -49,8 +46,7 @@ export const historySheets = [
 
 {
   slug: "empire-romain",
-  title: "The Roman Empire",
-  emoji: "🦅",
+  title: "🦅 The Roman Empire",
   image: "/images/revisions/histoire/empire-romain.webp",
 
   content: {
@@ -64,8 +60,7 @@ export const historySheets = [
 
 {
   slug: "moyen-age",
-  title: "The Middle Ages",
-   emoji: "🏰",
+  title: "🏰 The Middle Ages",
   image: "/images/revisions/histoire/moyen-age.webp",
 
 
@@ -80,8 +75,7 @@ export const historySheets = [
 
 {
   slug: "renaissance",
-  title: "The Renaissance",
-   emoji: "🎨",
+  title: "🎨 The Renaissance",
   image: "/images/revisions/histoire/renaissance.webp",
 
   content: {
@@ -111,8 +105,7 @@ export const historySheets = [
 
 {
   slug: "premiere-guerre-mondiale",
-  title: "World War I",
-    emoji: "⚔️",
+  title: "⚔️ World War I",
   image: "/images/revisions/histoire/premiere-guerre-mondiale.webp",
 
   content: {
@@ -126,8 +119,7 @@ export const historySheets = [
 
 {
   slug: "seconde-guerre-mondiale",
-  title: "World War II",
-  emoji: "🌍",
+  title: "🌍 World War II",
   image: "/images/revisions/histoire/seconde-guerre-mondiale.webp",
 
   content: {
@@ -141,8 +133,7 @@ export const historySheets = [
 
 {
   slug: "guerre-froide",
-  title: "The Cold War",
-   emoji: "☢️",
+  title: "☢️ The Cold War",
   image: "/images/revisions/histoire/guerre-froide.webp",
 
 

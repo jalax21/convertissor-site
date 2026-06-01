@@ -94,10 +94,6 @@ return ( <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark
           "
         >
 
-          <span className="text-5xl">
-            {fiche.emoji}
-          </span>
-
           <span className="text-lg font-bold text-center">
             {fiche.title}
           </span>
