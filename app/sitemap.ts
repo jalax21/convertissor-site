@@ -44,13 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
 
      ...anglaisFiches.map((fiche) => ({
-    url: `${baseUrl}/fr/revisions/anglais/${fiche.slug}`,
-    lastModified: now,
-  })),
-]
-  ]
+  url: `${baseUrl}/fr/revisions/anglais/${fiche.slug}`,
+  lastModified: now,
+})),
+];
 
-  const converterPages = [
+const converterPages = [
     "distance",
     "puissance",
     "volume",
