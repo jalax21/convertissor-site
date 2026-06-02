@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +14,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "QuickUnits - Smart tools for learning and life",
+  metadataBase: new URL("https://quickunits.fr"),
+
+  title: {
+    default: "QuickUnits.fr",
+    template: "%s | QuickUnits.fr",
+  },
+
   description:
-  "QuickUnits offers smart tools for learning, conversions, calculations and everyday knowledge.",
+    "Convertisseurs, outils pratiques et fiches de révision gratuits.",
+
+  alternates: {
+    languages: {
+      fr: "https://quickunits.fr/fr",
+      en: "https://quickunits.fr/en",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -25,24 +38,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-  <html
-    lang="en"
-    className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-  >
-    <head>
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2235128568846852"
-        crossOrigin="anonymous"
-      ></script>
-    </head>
+    <html
+      lang="fr"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2235128568846852"
+          crossOrigin="anonymous"
+        />
+      </head>
 
-    <body className="min-h-full flex flex-col">
-      {children}
-
-      <Analytics />
-
-    </body>
-  </html>
-);
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
 }

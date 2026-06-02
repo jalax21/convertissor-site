@@ -1,7 +1,36 @@
 import Script from "next/script"
 import AdBanner from "@/components/AdBanner"
 import RevisionSection from "@/components/RevisionSection"
+import type { Metadata } from "next";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const isFrench = locale === "fr";
+
+  return {
+    title: isFrench
+      ? "QuickUnits.fr - Convertisseurs et outils"
+      : "QuickUnits.fr - Converters and tools",
+
+    description: isFrench
+      ? "Convertisseurs, outils pratiques et fiches de révision gratuits."
+      : "Free converters, practical tools and study sheets.",
+
+    alternates: {
+      canonical: `https://quickunits.fr/${locale}`,
+
+      languages: {
+        fr: "https://quickunits.fr/fr",
+        en: "https://quickunits.fr/en",
+      },
+    },
+  };
+}
 export default async function HomePage({
   params
 }: {

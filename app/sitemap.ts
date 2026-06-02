@@ -6,40 +6,48 @@ import { histoireFiches } from "@/data/revisions/histoire"
 import { svtFiches } from "@/data/revisions/svt"
 import { paysFiches } from "@/data/revisions/pays"
 import { geographieFiches } from "@/data/revisions/geographie"
+import { anglaisFiches } from "@/data/revisions/anglais"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://quickunits.fr"
+  const now = new Date()
 
   const revisionPages = [
     ...mathsFiches.map((fiche) => ({
       url: `${baseUrl}/fr/revisions/maths/${fiche.slug}`,
-      lastModified: new Date(),
+      lastModified: now,
     })),
 
     ...francaisFiches.map((fiche) => ({
       url: `${baseUrl}/fr/revisions/francais/${fiche.slug}`,
-      lastModified: new Date(),
+      lastModified: now,
     })),
 
     ...histoireFiches.map((fiche) => ({
       url: `${baseUrl}/fr/revisions/histoire/${fiche.slug}`,
-      lastModified: new Date(),
+      lastModified: now,
     })),
 
     ...svtFiches.map((fiche) => ({
       url: `${baseUrl}/fr/revisions/svt/${fiche.slug}`,
-      lastModified: new Date(),
+      lastModified: now,
     })),
 
     ...paysFiches.map((fiche) => ({
       url: `${baseUrl}/fr/revisions/pays/${fiche.slug}`,
-      lastModified: new Date(),
+      lastModified: now,
     })),
 
     ...geographieFiches.map((fiche) => ({
       url: `${baseUrl}/fr/revisions/geographie/${fiche.slug}`,
-      lastModified: new Date(),
+      lastModified: now,
     })),
+
+     ...anglaisFiches.map((fiche) => ({
+    url: `${baseUrl}/fr/revisions/anglais/${fiche.slug}`,
+    lastModified: now,
+  })),
+]
   ]
 
   const converterPages = [
@@ -55,122 +63,59 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "angle",
     "storage",
     "internet-speed",
-  ].map((slug) => ({
-    url: `${baseUrl}/fr/convert/${slug}`,
-    lastModified: new Date(),
-  }))
+  ].flatMap((slug) => [
+    {
+      url: `${baseUrl}/fr/convert/${slug}`,
+      lastModified: now,
+    },
+    {
+      url: `${baseUrl}/en/convert/${slug}`,
+      lastModified: now,
+    },
+  ])
 
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-    },
-
+    // Accueil
     {
       url: `${baseUrl}/fr`,
-      lastModified: new Date(),
+      lastModified: now,
     },
-
     {
       url: `${baseUrl}/en`,
-      lastModified: new Date(),
+      lastModified: now,
     },
 
-    // Pages catégories révisions
-
+    // Catégories FR
     {
       url: `${baseUrl}/fr/revisions/maths`,
-      lastModified: new Date(),
+      lastModified: now,
     },
-
     {
       url: `${baseUrl}/fr/revisions/francais`,
-      lastModified: new Date(),
+      lastModified: now,
     },
-
     {
       url: `${baseUrl}/fr/revisions/histoire`,
-      lastModified: new Date(),
+      lastModified: now,
     },
-
     {
       url: `${baseUrl}/fr/revisions/svt`,
-      lastModified: new Date(),
+      lastModified: now,
     },
-
     {
       url: `${baseUrl}/fr/revisions/pays`,
-      lastModified: new Date(),
+      lastModified: now,
     },
-
     {
       url: `${baseUrl}/fr/revisions/geographie`,
-      lastModified: new Date(),
+      lastModified: now,
     },
-
-    // Pages catégories convertisseurs
-
     {
-      url: `${baseUrl}/fr/convert/distance`,
-      lastModified: new Date(),
+      url: `${baseUrl}/fr/revisions/anglais`,
+      lastModified: now,
     },
 
-    {
-      url: `${baseUrl}/fr/convert/puissance`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/volume`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/force`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/surface`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/temperature`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/weight`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/speed`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/time`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/angle`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/storage`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${baseUrl}/fr/convert/internet-speed`,
-      lastModified: new Date(),
-    },
-
-    ...revisionPages,
     ...converterPages,
+    ...revisionPages,
   ]
 }
