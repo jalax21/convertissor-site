@@ -50,17 +50,10 @@ export default async function MentionsLegalesPage({
               ? "Nom ou raison sociale :"
               : "Name or Company Name:"}
           </strong>{" "}
-          [TO COMPLETE]
+          JLX Média
         </li>
 
-        <li>
-          <strong>
-            {isFrench
-              ? "Adresse :"
-              : "Address:"}
-          </strong>{" "}
-          [TO COMPLETE]
-        </li>
+        
 
         <li>
   <strong>Email :</strong>{" "}
@@ -86,7 +79,7 @@ export default async function MentionsLegalesPage({
       </p>
 
       <p className="mt-4">
-        <strong>[YOUR NAME]</strong>
+        <strong>JLX</strong>
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">
