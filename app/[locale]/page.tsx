@@ -197,7 +197,7 @@ export default async function HomePage({
     
   {/* LANGUES EN HAUT A DROITE */}
 
-  <div className="absolute top-1/2 right-0 -translate-y-1/2">
+  <div className="absolute top-6 right-6 z-10">
 
   <Link
   href={locale === "fr" ? "/en" : "/fr"}
