@@ -16,9 +16,9 @@ export default function RevisionSection({
 
     subtitle:
       locale === "fr"
-        ? "Fiches rapides pour apprendre facilement"
-        : "Quick study sheets for easy learning",
-  }
+        ? "Accédez à des fiches de révision gratuites couvrant les principales matières scolaires avec résumés, définitions, formules et notions essentielles."
+        : "Access free study sheets covering major school subjects with summaries, definitions, formulas and key concepts.",
+  };
 
   const revisions = [
     {
@@ -53,7 +53,7 @@ export default function RevisionSection({
       title: locale === "fr" ? "🌎 Pays du monde" : "🌎 Countries of the World",
       href: `/${locale}/revisions/pays`,
     },
-  ]
+  ];
 
   return (
     <section className="mt-12">
@@ -63,9 +63,9 @@ export default function RevisionSection({
           {text.title}
         </h2>
 
-        <p className="mt-1 text-gray-500 dark:text-gray-400">
-          {text.subtitle}
-        </p>
+        <p className="mt-2 text-gray-500 dark:text-gray-400 leading-7">
+  {text.subtitle}
+</p>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

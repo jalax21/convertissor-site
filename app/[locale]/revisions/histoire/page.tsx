@@ -1,4 +1,3 @@
-import AdBanner from "@/components/AdBanner"
 import Link from "next/link"
 
 import { histoireFiches } from "@/data/revisions/histoire"
@@ -19,8 +18,7 @@ export default async function HistoirePage({
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
 
-      <AdBanner />
-
+      
       <div className="max-w-3xl mx-auto">
 
         {/* TITRE */}

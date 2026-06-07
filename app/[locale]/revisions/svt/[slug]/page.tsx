@@ -2,7 +2,6 @@ import { svtFiches as frFiches } from "@/data/revisions/svt"
 import { svtSheets as enFiches } from "@/data/revisions/svt-en"
 import Image from "next/image"
 import { notFound } from "next/navigation"
-import AdBanner from "@/components/AdBanner"
 import Link from "next/link"
 
 export default async function Page({
@@ -28,8 +27,7 @@ export default async function Page({
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
 
-      <AdBanner />
-
+      
       <div className="max-w-3xl mx-auto">
 
         {/* TITRE */}

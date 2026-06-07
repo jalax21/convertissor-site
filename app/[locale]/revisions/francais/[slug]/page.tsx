@@ -2,7 +2,6 @@ import { francaisFiches } from "@/data/revisions/francais"
 import { englishFiches } from "@/data/revisions/francais-en"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import AdBanner from "@/components/AdBanner"
 
 export default async function Page({
   params,
@@ -31,8 +30,7 @@ const fiche = fiches.find(
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
 
-      <AdBanner />
-
+      
       <div className="max-w-3xl mx-auto">
 
         {/* TITRE + BOUTON RETOUR */}

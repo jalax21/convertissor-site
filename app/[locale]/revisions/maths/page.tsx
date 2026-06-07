@@ -1,5 +1,4 @@
 import Link from "next/link"
-import AdBanner from "@/components/AdBanner"
 
 export default async function MathsPage({
   params,
@@ -75,8 +74,7 @@ export default async function MathsPage({
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
 
-      <AdBanner />
-
+      
       <div className="max-w-3xl mx-auto">
 
         {/* TITRE */}

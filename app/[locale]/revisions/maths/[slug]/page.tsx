@@ -3,7 +3,6 @@ import { mathSheets } from "@/data/revisions/maths-en"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import AdBanner from "@/components/AdBanner"
 
 export default async function Page({
   params,
@@ -32,8 +31,7 @@ export default async function Page({
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
 
-      <AdBanner />
-
+      
       <div className="max-w-3xl mx-auto">
 
         {/* TITRE */}

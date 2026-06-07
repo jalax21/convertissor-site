@@ -2,7 +2,6 @@
 
 import { use, useState } from "react"
 import Link from "next/link"
-import AdBanner from "@/components/AdBanner"
 
 const units: Record<string, number> = {
 
@@ -71,7 +70,7 @@ export default function InternetSpeedConverter({
   }
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-8">
+    <main className="bg-white dark:bg-gray-900 text-black dark:text-white p-8">
 
       <div className="max-w-2xl mx-auto">
 
@@ -294,9 +293,7 @@ export default function InternetSpeedConverter({
             : "← Back"}
         </Link>
 
-        {/* BANNIERE PUB */}
-
-        <AdBanner />
+        
 
       </div>
 

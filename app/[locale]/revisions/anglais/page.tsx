@@ -1,4 +1,3 @@
-import AdBanner from "@/components/AdBanner"
 import Link from "next/link"
 
 import { anglaisFiches } from "@/data/revisions/anglais"
@@ -14,8 +13,7 @@ export default async function AnglaisPage({
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-8">
       <div className="max-w-5xl mx-auto">
 
-        <AdBanner />
-
+        
         <div className="mb-8">
           <Link
             href={`/${locale}`}
