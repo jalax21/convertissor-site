@@ -1,5 +1,4 @@
 import { paysFiches } from "@/data/revisions/pays"
-import AdBanner from "@/components/AdBanner"
 import Link from "next/link"
 
 export default async function PaysPage({
@@ -13,8 +12,7 @@ export default async function PaysPage({
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
 
-      <AdBanner />
-
+      
       <div className="max-w-6xl mx-auto">
 
         {/* TITRE */}

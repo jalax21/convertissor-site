@@ -424,10 +424,6 @@ export default function VolumeConverter({
             : "← Back"}
         </Link>
 
-        {/* BANNIERE PUB */}
-
-        <AdBanner />
-
       </div>
 
     </main>
