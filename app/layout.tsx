@@ -99,18 +99,10 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: [
-      {
-        url: "/favicon.ico",
-      },
-    ],
-    shortcut: ["/favicon.ico"],
-    apple: [
-      {
-        url: "/apple-touch-icon.png",
-      },
-    ],
-  },
+  icon: "/favicon.webp",
+  shortcut: "/favicon.webp",
+  apple: "/apple-touch-icon.png",
+},
 
   category: "education",
 };
