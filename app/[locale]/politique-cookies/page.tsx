@@ -1,11 +1,72 @@
 import { Metadata } from "next";
 import BackButton from "@/components/BackButton";
+import Script from "next/script";
 
-export const metadata: Metadata = {
-  title: "Cookie Policy | QuickUnits",
-  description:
-    "Cookie Policy regarding Google AdSense, Google Analytics and Vercel Analytics.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const isFrench = locale === "fr";
+
+  const title = isFrench
+  ? "Politique de cookies | QuickUnits"
+  : "Cookie Policy | QuickUnits";
+
+  const description = isFrench
+  ? "Politique relative à l'utilisation des cookies sur QuickUnits."
+  : "Cookie policy explaining how QuickUnits uses cookies.";
+
+  const url =
+  locale === "fr"
+    ? "https://quickunits.fr/fr/politique-cookies"
+    : "https://quickunits.fr/en/politique-cookies";
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical: url,
+      languages: {
+  fr: "https://quickunits.fr/fr/politique-cookies",
+  en: "https://quickunits.fr/en/politique-cookies",
+},
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "QuickUnits",
+      type: "website",
+      locale: isFrench ? "fr_FR" : "en_US",
+alternateLocale: isFrench ? ["en_US"] : ["fr_FR"],
+
+      images: [
+        {
+          url: "https://quickunits.fr/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "QuickUnits",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://quickunits.fr/og-image.jpg"],
+    },
+  };
+}
 
 export default async function CookiesPage({
   params,
@@ -263,6 +324,43 @@ export default async function CookiesPage({
     contact@quickunits.fr
   </a>
 </p>
+<Script
+  id="cookie-policy-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+
+      name: isFrench
+        ? "Politique de cookies"
+        : "Cookie Policy",
+
+      description: isFrench
+        ? "Politique relative à l'utilisation des cookies sur QuickUnits."
+        : "Cookie policy explaining how QuickUnits uses cookies.",
+
+      url:
+        locale === "fr"
+          ? "https://quickunits.fr/fr/politique-cookies"
+          : "https://quickunits.fr/en/politique-cookies",
+
+      mainEntityOfPage: {
+  "@type": "WebPage",
+  "@id":
+    locale === "fr"
+      ? "https://quickunits.fr/fr/politique-cookies"
+      : "https://quickunits.fr/en/politique-cookies",
+},
+
+publisher: {
+  "@type": "Organization",
+  name: "QuickUnits",
+  url: "https://quickunits.fr",
+},
+    }),
+  }}
+/>
     </main>
   );
 }

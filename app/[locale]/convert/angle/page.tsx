@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -99,7 +99,7 @@ export default function AngleConverter({
   return (
     <main className="bg-white dark:bg-gray-900 text-black dark:text-white p-8">
 
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto">
 
         {/* TITRE */}
 
@@ -119,7 +119,7 @@ export default function AngleConverter({
 
         {/* CARTE */}
 
-        <div className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-700 rounded-2xl p-6 shadow-sm">
 
           {/* VALUE */}
 
@@ -268,21 +268,43 @@ export default function AngleConverter({
           </div>
 
         </div>
+       
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions d'angles"
+  titleEn="Understanding Angle Conversions"
+  descriptionFr="Les angles sont utilisés en mathématiques, en physique et en navigation."
+  descriptionEn="Angles are used in mathematics, physics and navigation."
+  formulas={[
+    "1° = 0.0174533 rad",
+    "1 rad = 57.2958°",
+    "1 turn = 360°",
+    "1 quadrant = 90°",
+  ]}
+  popularConversions={[
+    "90° = π/2 rad",
+    "180° = π rad",
+    "360° = 2π rad",
+    "45° = π/4 rad",
+  ]}
+  faq={[
+  {
+    questionFr: "Quelle est la différence entre un degré et un radian ?",
+    questionEn: "What is the difference between a degree and a radian?",
+    answerFr: "Le degré est utilisé au quotidien alors que le radian est privilégié en mathématiques.",
+    answerEn: "Degrees are commonly used while radians are preferred in mathematics."
+  },
+  {
+    questionFr: "Combien de degrés contient un tour complet ?",
+    questionEn: "How many degrees are in a full turn?",
+    answerFr: "Un tour complet contient 360 degrés.",
+    answerEn: "A full turn contains 360 degrees."
+  }
+]}
+/>
+        
 
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
-
-          {locale === "fr"
-            ? "Conversions populaires :"
-            : "Popular conversions:"}
-
-          <div className="mt-2">
-            degrees to radians • radians to degrees •
-            degrees to gradians • gradians to degrees •
-            radians to gradians
-          </div>
-
-        </div>
-
+  
         {/* BOUTON RETOUR */}
 
         <Link
@@ -297,6 +319,7 @@ export default function AngleConverter({
               
         
       </div>
+      
 
     </main>
   )

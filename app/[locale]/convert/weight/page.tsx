@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -303,18 +303,50 @@ export default function WeightConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de poids"
+  titleEn="Understanding Weight Conversions"
+  descriptionFr="Les conversions de poids sont utilisées dans la vie quotidienne, la nutrition, le commerce, les sciences et l'industrie. Convertissez facilement kilogrammes, grammes, livres, onces et tonnes."
+  descriptionEn="Weight conversions are commonly used in everyday life, nutrition, commerce, science and industry. Easily convert kilograms, grams, pounds, ounces and tons."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "1 kg = 1000 g",
+    "1 lb = 453.592 g",
+    "1 oz = 28.3495 g",
+    "1 tonne = 1000 kg",
+  ]}
 
-  <div className="mt-2">
-    kg to lbs • lbs to kg • grams to ounces • ounces to grams •
-    tons to kilograms • kilograms to tons
-  </div>
+  popularConversions={[
+    "1 kg = 2.20462 lb",
+    "1 lb = 0.453592 kg",
+    "1 oz = 28.3495 g",
+    "1000 g = 1 kg",
+    "1 tonne = 1000 kg",
+    "1 carat = 0.2 g",
+  ]}
 
-</div>
+  faq={[
+    {
+      questionFr: "Combien de livres dans un kilogramme ?",
+      questionEn: "How many pounds are in a kilogram?",
+      answerFr: "Un kilogramme correspond à environ 2,20462 livres.",
+      answerEn: "One kilogram equals approximately 2.20462 pounds."
+    },
+    {
+      questionFr: "Combien de grammes dans une once ?",
+      questionEn: "How many grams are in an ounce?",
+      answerFr: "Une once correspond à 28,3495 grammes.",
+      answerEn: "One ounce equals 28.3495 grams."
+    },
+    {
+      questionFr: "Quelle est la différence entre une tonne métrique et une tonne US ?",
+      questionEn: "What is the difference between a metric ton and a US ton?",
+      answerFr: "Une tonne métrique vaut 1000 kg tandis qu'une tonne US vaut environ 907,18 kg.",
+      answerEn: "A metric ton equals 1000 kg while a US short ton equals approximately 907.18 kg."
+    }
+  ]}
+/>
 
         {/* BOUTON RETOUR */}
 

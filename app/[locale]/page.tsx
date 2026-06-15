@@ -8,26 +8,60 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
- 
+
   const isFrench = locale === "fr";
-  
+
+  const title = isFrench
+    ? "QuickUnits.fr - Convertisseurs et outils gratuits"
+    : "QuickUnits.fr - Free converters and tools";
+
+  const description = isFrench
+    ? "Plus de 100 convertisseurs gratuits et fiches de révision pour les élèves et étudiants."
+    : "More than 100 free converters and study sheets for students.";
+
+  const url = `https://quickunits.fr/${locale}`;
 
   return {
-    title: isFrench
-      ? "QuickUnits.fr - Convertisseurs et outils"
-      : "QuickUnits.fr - Converters and tools",
-
-    description: isFrench
-      ? "Convertisseurs, outils pratiques et fiches de révision gratuits."
-      : "Free converters, practical tools and study sheets.",
+    title,
+    description,
 
     alternates: {
-      canonical: `https://quickunits.fr/${locale}`,
-
+      canonical: url,
       languages: {
         fr: "https://quickunits.fr/fr",
         en: "https://quickunits.fr/en",
+        "x-default": "https://quickunits.fr/fr",
       },
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "QuickUnits",
+      type: "website",
+      locale: isFrench ? "fr_FR" : "en_US",
+
+      images: [
+        {
+          url: "https://quickunits.fr/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "QuickUnits",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://quickunits.fr/og-image.jpg"],
     },
   };
 }
@@ -372,11 +406,11 @@ export default async function HomePage({
       : "Free converters and study sheets"}
   </h2>
 
-  <p className="mt-2 text-gray-500 dark:text-gray-400 leading-7 ">
-    {locale === "fr"
-      ? "QuickUnits propose plus de 100 convertisseurs gratuits permettant de convertir rapidement les distances, poids, températures, volumes, vitesses, puissances, surfaces et unités informatiques. Le site met également à disposition des fiches de révision pour les principales matières scolaires afin d'aider les élèves à apprendre plus efficacement."
-      : "QuickUnits offers more than 100 free converters for distances, weights, temperatures, volumes, speeds, power, surfaces and storage units. The website also provides study sheets for the main school subjects to help students learn more efficiently."}
-  </p>
+  <p className="mt-2 text-gray-500 dark:text-gray-400 leading-7">
+  {locale === "fr"
+    ? "QuickUnits propose plus de 100 convertisseurs gratuits permettant de convertir rapidement les distances, poids, températures, volumes, vitesses, puissances, surfaces, unités informatiques et de nombreuses autres mesures du quotidien. Tous les outils sont accessibles gratuitement, sans inscription et fonctionnent aussi bien sur ordinateur que sur mobile. En complément des convertisseurs, QuickUnits met à disposition des fiches de révision gratuites couvrant les principales matières scolaires afin d'aider les collégiens, lycéens et étudiants à réviser efficacement, comprendre les notions essentielles et préparer leurs examens dans les meilleures conditions."
+    : "QuickUnits offers more than 100 free converters for distances, weights, temperatures, volumes, speeds, power, surface areas, storage units and many other everyday measurements. All tools are free to use, require no registration and work perfectly on desktop and mobile devices. In addition to converters, QuickUnits provides free study sheets covering major school subjects to help students review key concepts, improve understanding and prepare for exams more efficiently."}
+</p>
 
   <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
 
@@ -413,14 +447,14 @@ export default async function HomePage({
 
       <h3 className="text-xl font-semibold mb-4">
         {locale === "fr"
-          ? "Comment convertir des kilomètres en miles ?"
-          : "How to convert kilometers to miles?"}
+    ? "Comment convertir des kilomètres en miles ?"
+    : "How do I convert kilometers to miles?"}
       </h3>
 
       <p className="text-gray-400 leading-7">
-        {locale === "fr"
-          ? "Utilisez notre convertisseur de distance pour convertir instantanément des kilomètres en miles et inversement."
-          : "Use our distance converter to instantly convert kilometers to miles and vice versa."}
+         {locale === "fr"
+    ? "Utilisez notre convertisseur de distance pour convertir instantanément des kilomètres en miles et inversement."
+    : "Use our distance converter to instantly convert kilometers to miles and vice versa."}
       </p>
 
     </div>
@@ -431,14 +465,14 @@ export default async function HomePage({
 
       <h3 className="text-xl font-semibold mb-4">
         {locale === "fr"
-          ? "QuickUnits est-il gratuit ?"
-          : "Is QuickUnits free?"}
+    ? "QuickUnits est-il gratuit ?"
+    : "Is QuickUnits free?"}
       </h3>
 
       <p className="text-gray-400 leading-7">
         {locale === "fr"
-          ? "Oui, tous les convertisseurs, calculateurs et fiches de révision sont entièrement gratuits."
-          : "Yes, all converters, calculators and study sheets are completely free."}
+    ? "Oui, tous les convertisseurs, calculateurs et fiches de révision sont entièrement gratuits."
+    : "Yes, all converters, calculators and study sheets are completely free."}
       </p>
 
     </div>
@@ -449,14 +483,14 @@ export default async function HomePage({
 
       <h3 className="text-xl font-semibold mb-4">
         {locale === "fr"
-          ? "Faut-il créer un compte ?"
-          : "Do I need an account?"}
+    ? "Faut-il créer un compte ?"
+    : "Do I need to create an account?"}
       </h3>
 
       <p className="text-gray-400 leading-7">
-        {locale === "fr"
-          ? "Non, aucun compte n'est nécessaire pour utiliser les outils QuickUnits."
-          : "No, no account is required to use QuickUnits tools."}
+         {locale === "fr"
+    ? "Non, aucun compte n'est nécessaire pour utiliser les outils QuickUnits."
+    : "No account is required to use QuickUnits tools."}
       </p>
 
     </div>
@@ -467,14 +501,14 @@ export default async function HomePage({
 
       <h3 className="text-xl font-semibold mb-4">
         {locale === "fr"
-          ? "Les résultats sont-ils fiables ?"
-          : "Are the results accurate?"}
+    ? "Les résultats sont-ils fiables ?"
+    : "Are the conversion results accurate?"}
       </h3>
 
       <p className="text-gray-400 leading-7">
-        {locale === "fr"
-          ? "Les calculs utilisent des formules et facteurs de conversion reconnus afin d'offrir des résultats précis."
-          : "Calculations use recognized formulas and conversion factors to provide accurate results."}
+         {locale === "fr"
+    ? "Les calculs utilisent des formules de conversion reconnues afin de fournir des résultats précis."
+    : "Calculations use recognized conversion formulas to provide accurate results."}
       </p>
 
     </div>
@@ -485,14 +519,14 @@ export default async function HomePage({
 
       <h3 className="text-xl font-semibold mb-4">
         {locale === "fr"
-          ? "QuickUnits fonctionne-t-il sur mobile ?"
-          : "Does QuickUnits work on mobile devices?"}
+    ? "QuickUnits fonctionne-t-il sur mobile ?"
+    : "Does QuickUnits work on mobile devices?"}
       </h3>
 
       <p className="text-gray-400 leading-7">
         {locale === "fr"
-          ? "Oui, le site est entièrement compatible avec les smartphones, tablettes et ordinateurs."
-          : "Yes, the website is fully compatible with smartphones, tablets and desktop computers."}
+    ? "Oui, le site est entièrement compatible avec les smartphones, tablettes et ordinateurs."
+    : "Yes, the website works perfectly on smartphones, tablets and desktop computers."}
       </p>
 
     </div>
@@ -503,17 +537,62 @@ export default async function HomePage({
 
       <h3 className="text-xl font-semibold mb-4">
         {locale === "fr"
-          ? "Quelles conversions sont disponibles ?"
-          : "Which conversions are available?"}
+    ? "À quelle vitesse les conversions sont-elles effectuées ?"
+    : "How fast are conversions calculated?"}
       </h3>
 
       <p className="text-gray-400 leading-7">
         {locale === "fr"
-          ? "Distances, poids, températures, volumes, vitesses, surfaces, puissances, temps, stockage informatique et bien plus encore."
-          : "Distances, weights, temperatures, volumes, speeds, surfaces, power, time, storage units and much more."}
+    ? "Les résultats sont calculés instantanément dès la saisie ou la modification d'une valeur."
+    : "Results are calculated instantly as soon as a value is entered or modified."}
       </p>
 
     </div>
+    <div className="rounded-2xl border border-slate-700 bg-slate-900/30 p-6 text-center h-full">
+
+  <h3 className="text-xl font-semibold mb-4">
+    {locale === "fr"
+    ? "Les fiches de révision sont-elles gratuites ?"
+    : "Are the study sheets free?"}
+  </h3>
+
+  <p className="text-gray-400 leading-7">
+     {locale === "fr"
+    ? "Oui, toutes les fiches de révision sont accessibles gratuitement afin d'aider les élèves à apprendre plus efficacement."
+    : "Yes, all study sheets are available free of charge to help students learn more effectively."}
+  </p>
+
+</div>
+<div className="rounded-2xl border border-slate-700 bg-slate-900/30 p-6 text-center h-full">
+
+  <h3 className="text-xl font-semibold mb-4">
+    {locale === "fr"
+    ? "Quels types d'unités puis-je convertir ?"
+    : "What units can I convert?"}
+  </h3>
+
+  <p className="text-gray-400 leading-7">
+     {locale === "fr"
+    ? "Vous pouvez convertir des distances, poids, températures, volumes, vitesses, surfaces, puissances, temps et unités informatiques."
+    : "You can convert distances, weights, temperatures, volumes, speeds, areas, power, time and computer storage units."}
+  </p>
+
+</div>
+<div className="rounded-2xl border border-slate-700 bg-slate-900/30 p-6 text-center h-full">
+
+  <h3 className="text-xl font-semibold mb-4">
+    {locale === "fr"
+    ? "QuickUnits est-il adapté aux étudiants et professionnels ?"
+    : "Is QuickUnits suitable for students and professionals?"}
+  </h3>
+
+  <p className="text-gray-400 leading-7">
+     {locale === "fr"
+    ? "Oui, les outils QuickUnits sont conçus aussi bien pour les étudiants, enseignants, professionnels que pour un usage quotidien."
+    : "Yes, QuickUnits tools are designed for students, teachers, professionals and everyday use."}
+  </p>
+
+</div>
 
   </div>
 
@@ -526,7 +605,13 @@ export default async function HomePage({
     <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
-    __html: JSON.stringify(faqSchema),
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "QuickUnits",
+      url: "https://quickunits.fr",
+      logo: "https://quickunits.fr/logo.png",
+    }),
   }}
 />
 </main>

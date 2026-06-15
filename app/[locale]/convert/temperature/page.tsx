@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -272,18 +272,50 @@ export default function TemperatureConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de température"
+  titleEn="Understanding Temperature Conversions"
+  descriptionFr="Les unités de température sont utilisées dans les sciences, la météo, la cuisine et l'industrie. Le Celsius est la norme dans la plupart des pays tandis que le Fahrenheit reste courant aux États-Unis."
+  descriptionEn="Temperature units are used in science, weather, cooking and industry. Celsius is the standard in most countries while Fahrenheit is still widely used in the United States."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "°F = (°C × 9/5) + 32",
+    "°C = (°F - 32) × 5/9",
+    "K = °C + 273.15",
+    "°C = K - 273.15",
+  ]}
 
-  <div className="mt-2">
-    celsius to fahrenheit • fahrenheit to celsius •
-    kelvin to celsius • celsius to kelvin
-  </div>
+  popularConversions={[
+    "0°C = 32°F",
+    "20°C = 68°F",
+    "37°C = 98.6°F",
+    "100°C = 212°F",
+    "273.15 K = 0°C",
+    "32°F = 0°C",
+  ]}
 
-</div>
+  faq={[
+    {
+      questionFr: "Comment convertir Celsius en Fahrenheit ?",
+      questionEn: "How do you convert Celsius to Fahrenheit?",
+      answerFr: "Multipliez la température en Celsius par 9, divisez par 5 puis ajoutez 32.",
+      answerEn: "Multiply the temperature in Celsius by 9, divide by 5, then add 32."
+    },
+    {
+      questionFr: "Pourquoi les États-Unis utilisent-ils le Fahrenheit ?",
+      questionEn: "Why do the United States use Fahrenheit?",
+      answerFr: "Le Fahrenheit est historiquement utilisé aux États-Unis alors que la majorité des pays utilisent désormais le Celsius.",
+      answerEn: "Fahrenheit is historically used in the United States while most countries now use Celsius."
+    },
+    {
+      questionFr: "Quelle est la température de congélation de l'eau ?",
+      questionEn: "What is the freezing point of water?",
+      answerFr: "L'eau gèle à 0°C, soit 32°F ou 273,15 K.",
+      answerEn: "Water freezes at 0°C, which equals 32°F or 273.15 K."
+    }
+  ]}
+/>
 
         {/* BOUTON RETOUR */}
 

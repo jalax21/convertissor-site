@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -299,20 +299,44 @@ export default function DistanceConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de distance"
+  titleEn="Understanding Distance Conversions"
+  descriptionFr="Les unités de distance sont utilisées dans les transports, la construction, les sciences et la vie quotidienne."
+  descriptionEn="Distance units are used in transportation, construction, science and everyday life."
+  formulas={[
+    "1 km = 1000 m",
+    "1 mi = 1.609 km",
+    "1 ft = 0.3048 m",
+    "1 in = 2.54 cm",
+  ]}
+  popularConversions={[
+    "1 km = 0.621 mi",
+    "1 mi = 1.609 km",
+    "1 m = 3.281 ft",
+    "1 ft = 0.3048 m",
+    "1 cm = 0.3937 in",
+    "1 in = 2.54 cm",
+  ]}
+  faq={[
+  {
+    questionFr: "Combien de kilomètres dans un mile ?",
+    questionEn: "How many kilometers are in a mile?",
+    answerFr: "Un mile correspond à 1,60934 kilomètres.",
+    answerEn: "One mile equals 1.60934 kilometers."
+  },
+  {
+    questionFr: "Pourquoi utilise-t-on encore les miles ?",
+    questionEn: "Why are miles still used?",
+    answerFr: "Les miles sont encore utilisés aux États-Unis et au Royaume-Uni pour les distances routières.",
+    answerEn: "Miles are still used in the United States and United Kingdom for road distances."
+  }
+]}
+/>
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
 
-  <div className="mt-2">
 
-    km to miles • miles to km • meters to feet • feet to meters •
-    centimeters to inches • inches to centimeters
-
-  </div>
-
-</div>
 
         {/* BOUTON RETOUR */}
 

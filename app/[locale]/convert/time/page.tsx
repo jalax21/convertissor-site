@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -297,19 +297,50 @@ export default function TimeConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de temps"
+  titleEn="Understanding Time Conversions"
+  descriptionFr="Les unités de temps permettent de mesurer des durées allant de la nanoseconde au siècle. Elles sont utilisées dans les sciences, l'informatique, les calendriers et la vie quotidienne."
+  descriptionEn="Time units measure durations ranging from nanoseconds to centuries. They are used in science, computing, calendars and everyday life."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "1 min = 60 s",
+    "1 h = 60 min",
+    "1 jour = 24 h",
+    "1 semaine = 7 jours",
+  ]}
 
-  <div className="mt-2">
-    seconds to minutes • minutes to hours • hours to days •
-    days to weeks • milliseconds to seconds •
-    years to days
-  </div>
+  popularConversions={[
+    "1 h = 60 min",
+    "1 jour = 24 h",
+    "1 semaine = 7 jours",
+    "1 an = 365.25 jours",
+    "3600 s = 1 h",
+    "60000 ms = 1 min",
+  ]}
 
-</div>
+  faq={[
+    {
+      questionFr: "Combien de secondes dans une heure ?",
+      questionEn: "How many seconds are in an hour?",
+      answerFr: "Une heure contient 3600 secondes.",
+      answerEn: "One hour contains 3600 seconds."
+    },
+    {
+      questionFr: "Combien de jours dans une année ?",
+      questionEn: "How many days are in a year?",
+      answerFr: "Une année moyenne contient environ 365,25 jours.",
+      answerEn: "An average year contains approximately 365.25 days."
+    },
+    {
+      questionFr: "Pourquoi les mois n'ont-ils pas tous la même durée ?",
+      questionEn: "Why don't all months have the same length?",
+      answerFr: "Le calendrier grégorien utilise des mois de durées différentes pour s'aligner sur l'année solaire.",
+      answerEn: "The Gregorian calendar uses months of varying lengths to align with the solar year."
+    }
+  ]}
+/>
 
         {/* BOUTON RETOUR */}
 

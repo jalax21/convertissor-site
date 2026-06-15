@@ -1,12 +1,69 @@
 import { Metadata } from "next";
 import BackButton from "@/components/BackButton";
+import Script from "next/script";
 
-export const metadata: Metadata = {
-  title: "Legal Notice | QuickUnits",
-  description:
-    "Legal information about the QuickUnits website.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
 
+  const isFrench = locale === "fr";
+
+  const title = isFrench
+    ? "Mentions légales | QuickUnits"
+    : "Legal Notice | QuickUnits";
+
+  const description = isFrench
+    ? "Mentions légales du site QuickUnits, informations légales, hébergement, responsabilité et contact."
+    : "Legal notice of the QuickUnits website, hosting information, liability and contact details.";
+
+  const url = `https://quickunits.fr/${locale}/mentions-legales`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical: url,
+      languages: {
+        fr: "https://quickunits.fr/fr/mentions-legales",
+        en: "https://quickunits.fr/en/mentions-legales",
+      },
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "QuickUnits",
+      type: "website",
+      locale: isFrench ? "fr_FR" : "en_US",
+
+      images: [
+        {
+          url: "https://quickunits.fr/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "QuickUnits",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://quickunits.fr/og-image.jpg"],
+    },
+  };
+}
 export default async function MentionsLegalesPage({
   params,
 }: {
@@ -105,9 +162,14 @@ export default async function MentionsLegalesPage({
             ? "États-Unis"
             : "United States"}
         </p>
-        <p className="mt-2">
-          https://vercel.com
-        </p>
+        <a
+  href="https://vercel.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-blue-400 hover:text-blue-300 underline"
+>
+  https://vercel.com
+</a>
       </div>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">
@@ -199,6 +261,27 @@ export default async function MentionsLegalesPage({
           ? "Ces publicités peuvent utiliser des cookies ou technologies similaires conformément aux politiques de Google."
           : "These advertisements may use cookies or similar technologies in accordance with Google's policies."}
       </p>
+      <h2 className="text-2xl font-semibold mt-8 mb-4">
+  {isFrench
+    ? "Protection des données"
+    : "Data Protection"}
+</h2>
+
+<p>
+  {isFrench
+    ? "QuickUnits s'engage à protéger les données personnelles de ses utilisateurs conformément à la réglementation applicable."
+    : "QuickUnits is committed to protecting users' personal data in accordance with applicable regulations."}
+</p>
+
+<h2 className="text-2xl font-semibold mt-8 mb-4">
+  Cookies
+</h2>
+
+<p>
+  {isFrench
+    ? "Le site peut utiliser des cookies techniques, analytiques et publicitaires afin d'améliorer l'expérience utilisateur et de financer le service via Google AdSense."
+    : "The website may use technical, analytics and advertising cookies to improve user experience and support the service through Google AdSense."}
+</p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">
         Contact
@@ -218,6 +301,31 @@ export default async function MentionsLegalesPage({
     contact@quickunits.fr
   </a>
 </p>
+<Script
+  id="legal-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: isFrench
+        ? "Mentions légales"
+        : "Legal Notice",
+
+      description: isFrench
+        ? "Mentions légales du site QuickUnits."
+        : "Legal notice of the QuickUnits website.",
+
+      url: `https://quickunits.fr/${locale}/mentions-legales`,
+
+      publisher: {
+        "@type": "Organization",
+        name: "QuickUnits",
+        url: "https://quickunits.fr",
+      },
+    }),
+  }}
+/>
     </main>
   );
 }

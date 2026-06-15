@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -311,18 +311,44 @@ export default function SpeedConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de vitesse"
+  titleEn="Understanding Speed Conversions"
+  descriptionFr="Les unités de vitesse sont utilisées dans les transports, l'aviation, la navigation et les sciences. Elles permettent de mesurer la distance parcourue pendant une durée donnée."
+  descriptionEn="Speed units are used in transportation, aviation, navigation and science. They measure the distance traveled during a given period of time."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "1 km/h = 0.27778 m/s",
+    "1 mph = 1.60934 km/h",
+    "1 knot = 1.852 km/h",
+    "1 m/s = 3.6 km/h",
+  ]}
 
-  <div className="mt-2">
-    km/h to mph • mph to km/h • knots to km/h •
-    km/h to knots • m/s to km/h
-  </div>
+  popularConversions={[
+    "100 km/h = 62.14 mph",
+    "60 mph = 96.56 km/h",
+    "1 knot = 1.852 km/h",
+    "50 km/h = 13.89 m/s",
+    "1 m/s = 3.6 km/h",
+    "120 km/h = 74.56 mph",
+  ]}
 
-</div>
+  faq={[
+    {
+      questionFr: "Quelle est la différence entre km/h et mph ?",
+      questionEn: "What is the difference between km/h and mph?",
+      answerFr: "Le km/h est utilisé dans la plupart des pays alors que le mph est principalement utilisé aux États-Unis et au Royaume-Uni.",
+      answerEn: "Km/h is used in most countries while mph is mainly used in the United States and the United Kingdom."
+    },
+    {
+      questionFr: "Combien vaut un nœud en km/h ?",
+      questionEn: "How fast is one knot in km/h?",
+      answerFr: "Un nœud correspond à 1,852 kilomètre par heure.",
+      answerEn: "One knot equals 1.852 kilometers per hour."
+    }
+  ]}
+/>
 
         {/* BOUTON RETOUR */}
 

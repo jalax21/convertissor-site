@@ -1,11 +1,68 @@
 import { Metadata } from "next";
 import BackButton from "@/components/BackButton";
 
-export const metadata: Metadata = {
-  title: "Contact | QuickUnits",
-  description:
-    "Contact the QuickUnits team for questions, feedback or reports.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const isFrench = locale === "fr";
+
+  const title = isFrench
+    ? "Conditions d'utilisation | QuickUnits"
+    : "Terms of Use | QuickUnits";
+
+  const description = isFrench
+    ? "Conditions générales d'utilisation du site QuickUnits."
+    : "Terms and conditions governing the use of the QuickUnits website.";
+
+  const url = `https://quickunits.fr/${locale}/conditions-utilisation`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical: url,
+      languages: {
+        fr: "https://quickunits.fr/fr/conditions-utilisation",
+        en: "https://quickunits.fr/en/conditions-utilisation",
+      },
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "QuickUnits",
+      type: "article",
+      locale: isFrench ? "fr_FR" : "en_US",
+
+      images: [
+        {
+          url: "https://quickunits.fr/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "QuickUnits",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://quickunits.fr/og-image.jpg"],
+    },
+  };
+}
 
 export default async function ContactPage({
   params,
@@ -138,6 +195,24 @@ export default async function ContactPage({
           ? "QuickUnits est un site gratuit proposant des convertisseurs d'unités, des calculateurs, des outils pratiques et des ressources pédagogiques accessibles sans inscription."
           : "QuickUnits is a free website offering unit converters, calculators, practical tools and educational resources accessible without registration."}
       </p>
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: isFrench
+        ? "Conditions d'utilisation"
+        : "Terms of Use",
+
+      description: isFrench
+        ? "Conditions générales d'utilisation du site QuickUnits."
+        : "Terms and conditions governing the use of the QuickUnits website.",
+
+      url: `https://quickunits.fr/${locale}/conditions-utilisation`,
+    }),
+  }}
+/>
     </main>
   );
 }

@@ -1,11 +1,72 @@
 import { Metadata } from "next";
 import BackButton from "@/components/BackButton";
+import Script from "next/script";
 
-export const metadata: Metadata = {
-  title: "Conditions d'utilisation | QuickUnits",
-  description:
-    "Conditions générales d'utilisation du site QuickUnits.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const isFrench = locale === "fr";
+
+  const url =
+    locale === "fr"
+      ? "https://quickunits.fr/fr/conditions-utilisation"
+      : "https://quickunits.fr/en/conditions-utilisation";
+
+  const title = isFrench
+    ? "Conditions d'utilisation | QuickUnits"
+    : "Terms of Use | QuickUnits";
+
+  const description = isFrench
+    ? "Conditions générales d'utilisation du site QuickUnits."
+    : "Terms and conditions governing the use of the QuickUnits website.";
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical: url,
+      languages: {
+        fr: "https://quickunits.fr/fr/conditions-utilisation",
+        en: "https://quickunits.fr/en/conditions-utilisation",
+      },
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "QuickUnits",
+      type: "website",
+      locale: isFrench ? "fr_FR" : "en_US",
+
+      images: [
+        {
+          url: "https://quickunits.fr/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "QuickUnits",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://quickunits.fr/og-image.jpg"],
+    },
+  };
+}
 
 export default async function ConditionsUtilisationPage({
   params,
@@ -13,9 +74,16 @@ export default async function ConditionsUtilisationPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
   const isFrench = locale === "fr";
 
+  const url =
+    locale === "fr"
+      ? "https://quickunits.fr/fr/conditions-utilisation"
+      : "https://quickunits.fr/en/conditions-utilisation";
+
   return (
+    
     <main className="max-w-6xl mx-auto px-6 py-12 rounded-2xl bg-slate-900/30">
       <BackButton />
 
@@ -249,6 +317,32 @@ export default async function ConditionsUtilisationPage({
     contact@quickunits.fr
   </a>
 </p>
+<Script
+  id="terms-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+
+      name: isFrench
+        ? "Conditions d'utilisation"
+        : "Terms of Use",
+
+      description: isFrench
+        ? "Conditions générales d'utilisation du site QuickUnits."
+        : "Terms and conditions governing the use of the QuickUnits website.",
+
+      url,
+
+      publisher: {
+        "@type": "Organization",
+        name: "QuickUnits",
+        url: "https://quickunits.fr",
+      },
+    }),
+  }}
+/>
     </main>
   );
 }

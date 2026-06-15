@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -307,18 +307,44 @@ export default function SurfaceConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de surface"
+  titleEn="Understanding Area Conversions"
+  descriptionFr="Les unités de surface permettent de mesurer l'étendue d'un terrain, d'un bâtiment ou d'une zone géographique. Elles sont utilisées en immobilier, agriculture, construction et cartographie."
+  descriptionEn="Area units are used to measure land, buildings and geographical regions. They are commonly used in real estate, agriculture, construction and mapping."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "1 ha = 10 000 m²",
+    "1 km² = 1 000 000 m²",
+    "1 acre = 4046.86 m²",
+    "1 ft² = 0.092903 m²",
+  ]}
 
-  <div className="mt-2">
-    square meters to square feet • square feet to square meters •
-    hectares to acres • acres to hectares
-  </div>
+  popularConversions={[
+    "1 ha = 2.471 acres",
+    "1 acre = 4046.86 m²",
+    "1000 m² = 0.1 ha",
+    "1 km² = 100 ha",
+    "1 m² = 10.764 ft²",
+    "1 ft² = 0.092903 m²",
+  ]}
 
-</div>
+  faq={[
+    {
+      questionFr: "Combien de mètres carrés dans un hectare ?",
+      questionEn: "How many square meters are in a hectare?",
+      answerFr: "Un hectare correspond à 10 000 mètres carrés.",
+      answerEn: "One hectare equals 10,000 square meters."
+    },
+    {
+      questionFr: "Quelle est la différence entre hectare et acre ?",
+      questionEn: "What is the difference between a hectare and an acre?",
+      answerFr: "L'hectare est principalement utilisé dans les pays métriques tandis que l'acre est couramment utilisé dans les pays anglo-saxons.",
+      answerEn: "The hectare is mainly used in metric countries while the acre is commonly used in English-speaking countries."
+    }
+  ]}
+/>
 
         {/* BOUTON RETOUR */}
 

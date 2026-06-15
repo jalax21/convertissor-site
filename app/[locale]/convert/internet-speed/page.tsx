@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -269,18 +269,44 @@ export default function InternetSpeedConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de débit internet"
+  titleEn="Understanding Internet Speed Conversions"
+  descriptionFr="Les débits internet sont généralement exprimés en bits par seconde ou en octets par seconde. Ce convertisseur permet de comparer facilement les vitesses de téléchargement et de transfert de données."
+  descriptionEn="Internet speeds are commonly expressed in bits per second or bytes per second. This converter makes it easy to compare download and data transfer speeds."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "1 Byte = 8 bits",
+    "1 Mbps = 0.125 MB/s",
+    "1 Gbps = 1000 Mbps",
+    "1 MB/s = 8 Mbps",
+  ]}
 
-  <div className="mt-2">
-    Mbps to MB/s • MB/s to Mbps • kbps to Mbps •
-    Mbps to Gbps • Gbps to Mbps • bytes to bits
-  </div>
+  popularConversions={[
+    "100 Mbps = 12.5 MB/s",
+    "1 Gbps = 125 MB/s",
+    "50 Mbps = 6.25 MB/s",
+    "10 MB/s = 80 Mbps",
+    "500 Mbps = 62.5 MB/s",
+    "2 Gbps = 250 MB/s",
+  ]}
 
-</div>
+  faq={[
+    {
+      questionFr: "Quelle est la différence entre Mbps et MB/s ?",
+      questionEn: "What is the difference between Mbps and MB/s?",
+      answerFr: "Mbps signifie mégabits par seconde tandis que MB/s signifie mégaoctets par seconde. Un octet vaut 8 bits.",
+      answerEn: "Mbps means megabits per second while MB/s means megabytes per second. One byte equals 8 bits."
+    },
+    {
+      questionFr: "Pourquoi mon téléchargement est-il plus lent que mon débit internet ?",
+      questionEn: "Why is my download speed lower than my internet speed?",
+      answerFr: "Les fournisseurs internet affichent souvent les vitesses en Mbps alors que les logiciels de téléchargement utilisent les MB/s.",
+      answerEn: "Internet providers often advertise speeds in Mbps while download software displays speeds in MB/s."
+    }
+  ]}
+/>
 
         {/* BOUTON RETOUR */}
 

@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -142,7 +142,7 @@ export default function ForceConverter({
             </option>
 
             <option value="meganewton">
-              {locale === "fr" ? "MéganeWton" : "Meganewton"}
+              {locale === "fr" ? "Méganewton" : "Meganewton"}
             </option>
 
             <option value="dyne">
@@ -225,7 +225,7 @@ export default function ForceConverter({
             </option>
 
             <option value="meganewton">
-              {locale === "fr" ? "MéganeWton" : "Meganewton"}
+              {locale === "fr" ? "Méganewton" : "Meganewton"}
             </option>
 
             <option value="dyne">
@@ -291,19 +291,44 @@ export default function ForceConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+       <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de force"
+  titleEn="Understanding Force Conversions"
+  descriptionFr="Les unités de force sont utilisées en physique, en ingénierie, en mécanique et dans de nombreuses applications industrielles. Le newton est l'unité officielle du Système International."
+  descriptionEn="Force units are used in physics, engineering, mechanics and many industrial applications. The newton is the official SI unit of force."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "1 kN = 1000 N",
+    "1 MN = 1 000 000 N",
+    "1 lbf = 4.44822 N",
+    "1 dyn = 0.00001 N",
+  ]}
 
-  <div className="mt-2">
-    newtons to pounds-force • pounds-force to newtons •
-    kilonewtons to newtons • newtons to kilonewtons •
-    dynes to newtons
-  </div>
+  popularConversions={[
+    "1 N = 0.22481 lbf",
+    "1 lbf = 4.44822 N",
+    "1 kN = 1000 N",
+    "1 N = 100000 dyn",
+    "1 kgf = 9.80665 N",
+    "1 tf = 9806.65 N",
+  ]}
 
-</div>
+  faq={[
+    {
+      questionFr: "Qu'est-ce qu'un newton ?",
+      questionEn: "What is a newton?",
+      answerFr: "Le newton est l'unité de force du Système International. Il représente la force nécessaire pour accélérer une masse d'un kilogramme à un mètre par seconde carrée.",
+      answerEn: "The newton is the SI unit of force. It represents the force required to accelerate a one-kilogram mass by one meter per second squared."
+    },
+    {
+      questionFr: "Combien vaut une livre-force en newtons ?",
+      questionEn: "How many newtons are in a pound-force?",
+      answerFr: "Une livre-force correspond à 4,44822 newtons.",
+      answerEn: "One pound-force equals 4.44822 newtons."
+    }
+  ]}
+/>
 
         {/* BOUTON RETOUR */}
 

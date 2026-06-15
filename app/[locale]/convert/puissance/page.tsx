@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -289,19 +289,44 @@ export default function PowerConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de puissance"
+  titleEn="Understanding Power Conversions"
+  descriptionFr="Les unités de puissance permettent de mesurer l'énergie produite ou consommée dans le temps. Elles sont utilisées dans l'électricité, les moteurs, le chauffage et l'industrie."
+  descriptionEn="Power units measure the amount of energy produced or consumed over time. They are used in electricity, engines, heating systems and industry."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "1 kW = 1000 W",
+    "1 MW = 1000 kW",
+    "1 hp = 745.7 W",
+    "1 cv = 735.5 W",
+  ]}
 
-  <div className="mt-2">
-    watts to horsepower • horsepower to watts •
-    kilowatts to watts • watts to kilowatts
-  </div>
+  popularConversions={[
+    "1 hp = 745.7 W",
+    "1 kW = 1.341 hp",
+    "1000 W = 1 kW",
+    "1 MW = 1000 kW",
+    "1 cv = 735.5 W",
+    "1 TR = 3516.85 W",
+  ]}
 
-</div>
-
+  faq={[
+    {
+      questionFr: "Quelle est la différence entre watt et kilowatt ?",
+      questionEn: "What is the difference between watts and kilowatts?",
+      answerFr: "Un kilowatt correspond à 1000 watts. Le kilowatt est souvent utilisé pour mesurer la puissance des appareils électriques.",
+      answerEn: "One kilowatt equals 1000 watts. Kilowatts are commonly used to measure the power of electrical devices."
+    },
+    {
+      questionFr: "Combien de watts représente un cheval vapeur ?",
+      questionEn: "How many watts are in one horsepower?",
+      answerFr: "Un cheval vapeur mécanique représente environ 745,7 watts.",
+      answerEn: "One mechanical horsepower equals approximately 745.7 watts."
+    }
+  ]}
+/>
         {/* BOUTON RETOUR */}
 
         <Link

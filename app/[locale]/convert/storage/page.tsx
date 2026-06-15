@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -252,19 +252,44 @@ export default function StorageConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de stockage"
+  titleEn="Understanding Storage Conversions"
+  descriptionFr="Les unités de stockage sont utilisées pour mesurer la quantité de données numériques. Elles sont omniprésentes dans les ordinateurs, les smartphones, les disques durs et les services cloud."
+  descriptionEn="Storage units are used to measure digital data. They are commonly used in computers, smartphones, hard drives and cloud services."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "1 Byte = 8 bits",
+    "1 KB = 1024 B",
+    "1 MB = 1024 KB",
+    "1 GB = 1024 MB",
+  ]}
 
-  <div className="mt-2">
-    MB to GB • GB to TB • KB to MB • bytes to gigabytes •
-    TB to GB • GB to MB
-  </div>
+  popularConversions={[
+    "1 GB = 1024 MB",
+    "1 TB = 1024 GB",
+    "1 MB = 1024 KB",
+    "1 Byte = 8 bits",
+    "500 GB = 0.488 TB",
+    "2048 MB = 2 GB",
+  ]}
 
-</div>
-
+  faq={[
+    {
+      questionFr: "Quelle est la différence entre un bit et un octet ?",
+      questionEn: "What is the difference between a bit and a byte?",
+      answerFr: "Un octet est composé de 8 bits. Les débits internet sont souvent exprimés en bits tandis que le stockage est généralement exprimé en octets.",
+      answerEn: "A byte consists of 8 bits. Internet speeds are usually expressed in bits while storage is generally expressed in bytes."
+    },
+    {
+      questionFr: "Combien de mégaoctets contient un gigaoctet ?",
+      questionEn: "How many megabytes are in a gigabyte?",
+      answerFr: "Un gigaoctet contient 1024 mégaoctets selon la convention binaire utilisée par la plupart des systèmes informatiques.",
+      answerEn: "A gigabyte contains 1024 megabytes according to the binary convention used by most computer systems."
+    }
+  ]}
+/>
         {/* BOUTON RETOUR */}
 
         <Link

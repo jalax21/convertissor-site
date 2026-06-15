@@ -1,29 +1,120 @@
-import Link from "next/link"
-import { notFound } from "next/navigation"
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
-import { anglaisFiches } from "@/data/revisions/anglais"
+import { anglaisFiches } from "@/data/revisions/anglais";
+
+export async function generateStaticParams() {
+  return anglaisFiches.map((fiche) => ({
+    slug: fiche.slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{
+    locale: string;
+    slug: string;
+  }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  const fiche = anglaisFiches.find((f) => f.slug === slug);
+
+  if (!fiche) {
+    return {};
+  }
+
+  const title =
+    locale === "fr"
+      ? `${fiche.title} | Fiche de révision d'anglais`
+      : `${fiche.title} | English Revision Sheet`;
+
+  const description =
+    fiche.content.definition.length > 160
+      ? fiche.content.definition.slice(0, 157) + "..."
+      : fiche.content.definition;
+
+  const url = `https://quickunits.fr/${locale}/revisions/anglais/${slug}`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical: url,
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "QuickUnits",
+      type: "article",
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+
+      images: [
+        {
+          url: "https://quickunits.fr/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: fiche.title,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://quickunits.fr/og-image.jpg"],
+    },
+  };
+}
 
 export default async function AnglaisFichePage({
   params,
 }: {
   params: Promise<{
-    locale: string
-    slug: string
-  }>
+    locale: string;
+    slug: string;
+  }>;
 }) {
-  const { locale, slug } = await params
+  const { locale, slug } = await params;
 
-  const fiche = anglaisFiches.find((f) => f.slug === slug)
+  const fiche = anglaisFiches.find((f) => f.slug === slug);
 
   if (!fiche) {
-    notFound()
+    notFound();
   }
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: fiche.title,
+    description: fiche.content.definition,
+    author: {
+      "@type": "Organization",
+      name: "QuickUnits",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "QuickUnits",
+    },
+    inLanguage: locale,
+    mainEntityOfPage: `https://quickunits.fr/${locale}/revisions/anglais/${slug}`,
+  };
 
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-8">
       <div className="max-w-4xl mx-auto">
 
-        
         <Link
           href={`/${locale}/revisions/anglais`}
           className="inline-block mb-6 px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
@@ -51,7 +142,7 @@ export default async function AnglaisFichePage({
 
           <section>
             <h2 className="text-2xl font-semibold mb-3">
-              📌 {locale === "fr" ? "À retenir" : "Key formula"}
+              📌 {locale === "fr" ? "À retenir" : "Key point"}
             </h2>
 
             <div className="border border-gray-300 dark:border-gray-700 rounded-2xl p-5 font-medium">
@@ -105,7 +196,13 @@ export default async function AnglaisFichePage({
 
         </div>
 
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(articleSchema),
+          }}
+        />
       </div>
     </main>
-  )
+  );
 }

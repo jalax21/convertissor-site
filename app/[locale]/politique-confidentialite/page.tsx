@@ -1,11 +1,69 @@
 import { Metadata } from "next";
 import BackButton from "@/components/BackButton";
+import Script from "next/script";
+import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | QuickUnits",
-  description:
-    "Privacy Policy regarding Google Analytics, Google AdSense and Vercel Analytics.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const isFrench = locale === "fr";
+
+  const title = isFrench
+  ? "Politique de confidentialité | QuickUnits"
+  : "Privacy Policy | QuickUnits";
+
+  const description = isFrench
+  ? "Politique de confidentialité de QuickUnits concernant la collecte, l'utilisation et la protection des données."
+  : "QuickUnits privacy policy regarding data collection, usage and protection.";
+  const url = `https://quickunits.fr/${locale}/politique-confidentialite`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+  canonical: url,
+  languages: {
+    fr: "https://quickunits.fr/fr/politique-confidentialite",
+    en: "https://quickunits.fr/en/politique-confidentialite",
+  },
+},
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "QuickUnits",
+      type: "article",
+      locale: isFrench ? "fr_FR" : "en_US",
+
+      images: [
+        {
+          url: "https://quickunits.fr/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "QuickUnits",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://quickunits.fr/og-image.jpg"],
+    },
+  };
+}
 
 export default async function PrivacyPage({
   params,
@@ -247,6 +305,25 @@ export default async function PrivacyPage({
     contact@quickunits.fr
   </a>
 </p>
+<Script
+  id="privacy-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: isFrench
+        ? "Politique de confidentialité"
+        : "Privacy Policy",
+
+      description: isFrench
+        ? "Politique de confidentialité de QuickUnits."
+        : "QuickUnits privacy policy.",
+
+      url: `https://quickunits.fr/${locale}/politique-confidentialite`,
+    }),
+  }}
+/>
     </main>
   );
 }

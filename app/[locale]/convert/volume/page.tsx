@@ -1,5 +1,5 @@
 "use client"
-
+import ConverterSeoSection from "@/components/ConverterSeoSection"
 import { use, useState } from "react"
 import Link from "next/link"
 
@@ -400,18 +400,50 @@ export default function VolumeConverter({
           </div>
 
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <ConverterSeoSection
+  locale={locale}
+  titleFr="Comprendre les conversions de volume"
+  titleEn="Understanding Volume Conversions"
+  descriptionFr="Les unités de volume permettent de mesurer la capacité des liquides et des solides. Elles sont utilisées dans la cuisine, les sciences, l'industrie et le commerce international."
+  descriptionEn="Volume units are used to measure the capacity of liquids and solids. They are commonly used in cooking, science, industry and international trade."
 
-  {locale === "fr"
-    ? "Conversions populaires :"
-    : "Popular conversions:"}
+  formulas={[
+    "1 L = 1000 ml",
+    "1 m³ = 1000 L",
+    "1 gal US = 3.785 L",
+    "1 cup US = 236.588 ml",
+  ]}
 
-  <div className="mt-2">
-    liters to gallons • gallons to liters • ml to cups • cups to ml •
-    liters to milliliters • milliliters to liters
-  </div>
+  popularConversions={[
+    "1 L = 1000 ml",
+    "1 gal US = 3.785 L",
+    "1 L = 0.264 gal US",
+    "1 cup US = 236.588 ml",
+    "500 ml = 0.5 L",
+    "1 m³ = 1000 L",
+  ]}
 
-</div>
+  faq={[
+    {
+      questionFr: "Combien de millilitres dans un litre ?",
+      questionEn: "How many milliliters are in a liter?",
+      answerFr: "Un litre contient exactement 1000 millilitres.",
+      answerEn: "One liter contains exactly 1000 milliliters."
+    },
+    {
+      questionFr: "Quelle est la différence entre gallon US et gallon UK ?",
+      questionEn: "What is the difference between a US gallon and a UK gallon?",
+      answerFr: "Le gallon britannique est plus grand. Il vaut environ 4,546 litres contre 3,785 litres pour le gallon américain.",
+      answerEn: "The UK gallon is larger. It equals approximately 4.546 liters versus 3.785 liters for the US gallon."
+    },
+    {
+      questionFr: "Combien de litres dans un mètre cube ?",
+      questionEn: "How many liters are in a cubic meter?",
+      answerFr: "Un mètre cube correspond à 1000 litres.",
+      answerEn: "One cubic meter equals 1000 liters."
+    }
+  ]}
+/>
 
         {/* BOUTON RETOUR */}
 
