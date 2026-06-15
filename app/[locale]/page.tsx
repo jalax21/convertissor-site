@@ -169,16 +169,57 @@ export default async function HomePage({
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-8">
 
       {/* HEADER */}
+<div className="relative mt-8 rounded-3xl overflow-hidden min-h-[420px]">
 
-<div className="relative mt-8">
+  {/* IMAGE DE FOND */}
+  <img
+  src="/images/banner.webp"
+  alt="QuickUnits"
+  className="absolute inset-0 w-full h-full object-cover object-top"
+/>
+
+  <div className="absolute inset-0 bg-white/85 dark:bg-black/20"></div>
   
   {/* TITRE CENTRE */}
 
- <div className="text-center mt-8">
-  <h1 className="text-5xl md:text-7xl font-bold">
-    {text.title}
-  </h1>
-  <div className="inline-flex items-center rounded-full border border-gray-700 px-4 py-2 text-sm mb-6">
+ <div className="relative z-10 text-center pt-12">
+  <h1
+  className="
+    text-8xl
+    md:text-[9rem]
+    font-black
+    tracking-tight
+    text-white
+  "
+  style={{
+    textShadow: `
+      1px 1px 0 #1e3a8a,
+      2px 2px 0 #1e3a8a,
+      3px 3px 0 #1e3a8a,
+      4px 4px 0 #172554,
+      8px 8px 20px rgba(0,0,0,0.4)
+    `,
+  }}
+>
+  {text.title}
+</h1>
+  <div
+  className="
+    inline-flex
+    items-center
+    rounded-full
+    border
+    border-slate-600
+    bg-slate-900/90
+    text-white
+    px-4
+    py-2
+    text-sm
+    mb-6
+    shadow-lg
+    backdrop-blur-sm
+  "
+>
   {locale === "fr"
     ? "⚡ Plus de 100 convertisseurs gratuits"
     : "⚡ More than 100 free converters"}
@@ -190,13 +231,16 @@ export default async function HomePage({
     mx-auto
     rounded-3xl
     border
-    border-slate-700
-    bg-gradient-to-r
-    from-slate-900/80
-    to-slate-800/50
+    border-slate-600
+    bg-gradient-to-br
+    from-slate-900/95
+    via-slate-800/90
+    to-slate-900/95
+    backdrop-blur-md
+    shadow-2xl
     p-6
     text-center
-  "
+"
 >
   
 
@@ -235,8 +279,19 @@ export default async function HomePage({
 
   <Link
   href={locale === "fr" ? "/en" : "/fr"}
-  className="flex items-center gap-2 border border-gray-300 dark:border-gray-700 px-4 py-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition"
->
+  className="
+      flex items-center gap-2
+      px-4 py-2
+      rounded-xl
+      bg-slate-900/85
+      text-white
+      border border-slate-700
+      backdrop-blur-sm
+      shadow-lg
+      hover:bg-slate-800
+      transition
+    "
+  >
   {locale === "fr" ? (
     <>
       🇬🇧 <span>English</span>
